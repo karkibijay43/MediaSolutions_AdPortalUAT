@@ -1,6 +1,6 @@
-Feature: AdPortal UAT login  Feature
-Scenario: Log in with Default Username and Password
+Feature: AdPortal UAT login  feature
+Scenario: Log in with default username and password
 
-Given User is on AdPortal UAT Login Page
-When User enters Username and Password and clicks Log in
-Then User lands on Request Dashboard page
+Given User is on AdPortal UAT SignUp Page and clicks Log in link
+When User enters username and password and clicks log in
+Then User lands on request dashboard page

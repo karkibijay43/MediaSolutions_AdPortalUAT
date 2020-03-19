@@ -2,29 +2,27 @@ package adPortalstepdefinitions;
 
 import java.util.concurrent.TimeUnit;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 
 import java.util.List;
-import java.util.Scanner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class CreateCampaignStepDefinition {
+public class AdPortal_CreateCampaign_001_StepDefinition {
 	WebDriver driver;
 
 	@Given("^User is on AdPortal UAT SignUp page and clicks log in$")
@@ -41,7 +39,7 @@ public class CreateCampaignStepDefinition {
 		LogInLink.click();
 	}
 
-	@When("^User enters Username and Password and clicks LogIn$")
+	@When("^User enters Email and Password and clicks LogIn$")
 	public void enter_UserName_and_Password() {
 
 		WebElement email = driver.findElement(By.cssSelector("#email"));
@@ -109,27 +107,17 @@ public class CreateCampaignStepDefinition {
 	}
 
 	@Then("^User enters the address on the address field and selects the distance and clicks Next$")
-	public void enter_Address_and_Distance() throws InterruptedException 
-	
-	{	
+	public void enter_Address_and_Distance() throws InterruptedException
+
+	{
 		WebDriverWait waitForAddressEntry = new WebDriverWait(driver, 10);
 		waitForAddressEntry.until(
 				ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='Enter a location']")));
 
 		WebElement AddressField = driver.findElement(By.xpath("//input[@placeholder='Enter a location']"));
 		AddressField.clear();
-
-		// prompt the user to enter their Address
-
-		String EnterAddress;
-		EnterAddress = JOptionPane.showInputDialog(null, "Enter your Address");
-
-		/*
-		 * Scanner AddressScanner = new Scanner(System.in);
-		 * System.out.println("please enter the address for your commercial to air:");
-		 * String EnterAddress = AddressScanner.nextLine(); AddressScanner.close();
-		 */
-		AddressField.sendKeys(EnterAddress);
+		AddressField.sendKeys("Austin");
+		
 
 		try {
 			Thread.sleep(3000);
@@ -140,109 +128,33 @@ public class CreateCampaignStepDefinition {
 		}
 
 		AddressField.sendKeys(Keys.ARROW_DOWN);
-		// AddressField.sendKeys(Keys.RETURN);
+		WebElement headerTitle = driver.findElement(By.xpath("//div[@class='header large ng-star-inserted']"));
+		headerTitle.click();
 
-		WebElement headerTitle =driver.findElement(By.xpath("//div[@class='header large ng-star-inserted']"));
-			headerTitle.click();
-		  
-			 WebElement distanceArrowdropdown = driver.findElement(By.xpath("//span[@class='ng-arrow-wrapper']")); 	
-			 distanceArrowdropdown.click();
-		  //driver.findElement(By.id("a67b21b5bfa9"));
-					  
-		  //int distance; 
-		  String enterDistance; 
-		  enterDistance =JOptionPane.showInputDialog(null, "Enter your Distance in miles");
-		 // distance = Integer.parseInt(enterDistance);
-		  
-		  driver.findElement(By.xpath("//span[contains(text(),'50 miles')]"));
-		 
-			
-		
-		  if (enterDistance.equals ("2")) { 
-			  driver.findElement(By.
-		  xpath("//div[@class='ng-option ng-option-selected ng-star-inserted ng-option-marked']//span[@class='ng-option-label ng-star-inserted'][contains(text(),'2 miles')]"
-		  )).click(); 
-			  
-		  }
-		  else if (enterDistance.equals("20")) {
-			  driver.findElement(By.xpath("//span[contains(text(),'20 miles')]")).click(); } 
-			  
-			  else if (enterDistance.equals("30")) 
-			  { 
-				  driver.findElement(By.
-			  xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'30 miles')]"
-			  )).click(); } 
-			  else if (enterDistance.equals("40")) {
-			  driver.findElement(By.xpath("//span[contains(text(),'40 miles')]")).click(); 
-			  }
-		  
-		  if (enterDistance.equals("50")) {
-			  driver.findElement(By.xpath("//span[contains(text(),'50 miles')]")).click(); 
-			  }
-			 
-			  else {
-			  System.out.println("Please enter valid Distance in miles");
-			  }
-			 
-		/*
-		 * else if (distance ==4) {
-		 * 
-		 * driver.findElement(By.
-		 * xpath("//div[@class='ng-option ng-option-selected ng-star-inserted']//span[@class='ng-option-label ng-star-inserted'][contains(text(),'4 miles')]"
-		 * )).click(); }
-		 * 
-		 * else if (distance ==6) { driver.findElement(By.
-		 * xpath("//div[@class='ng-option ng-option-selected ng-star-inserted ng-option-marked']//span[@class='ng-option-label ng-star-inserted'][contains(text(),'6 miles')]"
-		 * )); } else if (distance ==8) { driver.findElement(By.
-		 * xpath("//div[@class='ng-option ng-star-inserted ng-option-marked']//span[@class='ng-option-label ng-star-inserted'][contains(text(),'8 miles')]"
-		 * )); } else if (distance == 10) { driver.findElement(By.
-		 * xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'10 miles')]"
-		 * )); } else if (distance ==12) {
-		 * driver.findElement(By.xpath("//span[contains(text(),'12 miles')]")); } else
-		 * if (distance ==14) { driver.findElement(By.
-		 * xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'14 miles')]"
-		 * )); } else if (distance ==16) {
-		 * driver.findElement(By.xpath("//span[contains(text(),'16 miles')]")); } else
-		 * if (distance ==18) {
-		 * driver.findElement(By.xpath("//span[contains(text(),'18 miles')]")); } else
-		 */
-		 
-		
+		WebElement distanceArrowdropdown = driver.findElement(By.xpath("//span[@class='ng-arrow-wrapper']"));
+		distanceArrowdropdown.click();		
 
-		
+		WebElement defaultDistance = driver.findElement(By.xpath("//span[contains(text(),'50 miles')]"));
+		defaultDistance.click();
 
-    
-		
-		  WebElement reachNextButton = driver.findElement(By.className("spp-btn"));
-		  
-		  if (reachNextButton.isEnabled()) { reachNextButton.click(); } else {
-		  
-		  System.out.println("Next button is not enabled"); }
-		  
-		  try { reachNextButton.click();
-		  
-		  } catch (StaleElementReferenceException e) {
-		  driver.findElement(By.className("spp-btn")).click();
-		  }
+		WebElement reachNextButton = driver.findElement(By.className("spp-btn"));
+
+		if (reachNextButton.isEnabled()) {
+			reachNextButton.click();
+		} else {
+
+			System.out.println("Next button is not enabled");
+		}
+
+		try {
+			reachNextButton.click();
+
+		} catch (StaleElementReferenceException e) {
+			driver.findElement(By.className("spp-btn")).click();
+		}
 	}
-		 
-			
 
-		
-
-	/*
-	 * WebDriverWait waitForGenderSelect = new WebDriverWait(driver, 10);
-	 * waitForGenderSelect.until(ExpectedConditions.presenceOfElementLocated(By.
-	 * xpath(
-	 * "//*[@id=\"card-item-wrapper\"]/div/div[2]/div[1]/div[1]/div/div/div[4]/div/div/div[2]/div[2]/label/span"
-	 * )));
-	 * 
-	 * WebElement genderSelect = driver.findElement(By.xpath(
-	 * "//*[@id=\"card-item-wrapper\"]/div/div[2]/div[1]/div[1]/div/div/div[4]/div/div/div[2]/div[2]/label/span"
-	 * )); genderSelect.click();
-	 * 
-	 * reachNextButton.click();
-	 */
+	
 
 	@Then("^User should be able to schedule a campaign")
 	public void Schedule_Campaign() {
@@ -258,7 +170,7 @@ public class CreateCampaignStepDefinition {
 
 			String date = dates.getText();
 
-			if (date.equalsIgnoreCase("23")) {
+			if (date.equalsIgnoreCase("30")) {
 				dates.click();
 				break;
 
@@ -285,17 +197,11 @@ public class CreateCampaignStepDefinition {
 
 		WebElement budgetAmount = driver.findElement(By.xpath("//input[@id='budget']"));
 		budgetAmount.clear();
-		int Amount;
-		String enterBudgetAmount;
-		enterBudgetAmount = JOptionPane.showInputDialog(null, "Enter your budget amount");
-		Amount = Integer.parseInt(enterBudgetAmount);
-		budgetAmount.sendKeys(String.valueOf(Amount));
-		if (Amount > 10000) {
-			JOptionPane.showMessageDialog(null, "Invalid Budget Amount, Budget Should be Between $250 and $10000");
-		}
-		
+		budgetAmount.sendKeys(String.valueOf(500));
 		WebElement ScheduleNextButton = driver.findElement(By.className("spp-btn"));
 		ScheduleNextButton.click();
 	}
 	
+	
+
 }

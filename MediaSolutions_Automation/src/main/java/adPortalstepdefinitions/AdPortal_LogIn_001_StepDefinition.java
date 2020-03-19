@@ -12,7 +12,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
 
-public class LogInStepDefinition {
+public class AdPortal_LogIn_001_StepDefinition {
 
 	WebDriver driver;
 
@@ -38,7 +38,7 @@ public class LogInStepDefinition {
 	public void enter_UserName_and_Password() {
 
 		WebElement email = driver.findElement(By.cssSelector("#email"));
-		email.sendKeys("MSTestEmail@charter.com");
+		email.sendKeys("MSolutionsTestEmail@charter.com");
 
 		WebElement password = driver.findElement(By.id("password"));
 		password.sendKeys("testpwd@MS1");

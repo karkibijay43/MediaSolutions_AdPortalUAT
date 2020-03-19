@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+		<listener class-name="/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/com/adPortal/extentReportListener/AdPortalExtentReporterNG"/>
+	</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner"/>
+      <class name="cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,4 +1,4 @@
-package com.framework.helper;
+package adPortalFramework.helper;
 
 
 
@@ -9,7 +9,7 @@ public class LoggerHelper {
 
 		private static boolean root=false;
 		
-		public static Logger getLogger(Class<LoggerHelper> cls){
+		public static Logger getLogger(Class cls){
 			if(root){
 				return Logger.getLogger(cls);
 			}

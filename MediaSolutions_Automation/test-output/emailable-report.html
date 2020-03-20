@@ -8,11 +8,109 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">5,361</td><td></td><td></td></tr>
+<tr><th colspan="7">Suite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">2</td><td class="num attn">1</td><td class="num">0</td><td class="num attn">3</td><td class="num">51,718</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner</td><td><a href="#m0">feature</a></td><td rowspan="1">1584588699020</td><td rowspan="1">5138</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="2">cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner</td><td><a href="#m0">setUpClass</a></td><td rowspan="1">1584729047162</td><td rowspan="1">1</td></tr><tr class="failedeven"><td><a href="#m1">testDownClass</a></td><td rowspan="1">1584729047170</td><td rowspan="1">1</td></tr><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner</td><td><a href="#m2">feature</a></td><td rowspan="1">1584729042196</td><td rowspan="1">2481</td></tr><tr class="failedodd"><td rowspan="1">cucmberTestNGTestRunner.AdPortal_CreateCampaign_002_TestRunner</td><td><a href="#m3">feature</a></td><td rowspan="1">1584729044702</td><td rowspan="1">2455</td></tr><tr class="failedeven"><td rowspan="1">cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner</td><td><a href="#m4">feature</a></td><td rowspan="1">1584729027714</td><td rowspan="1">14464</td></tr><tr><th colspan="4">Test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner</td><td><a href="#m5">feature</a></td><td rowspan="1">1584729047168</td><td rowspan="1">0</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">cucmberTestNGTestRunner.AdPortal_NewCustomerDashboardView_001_TestRunner</td><td><a href="#m6">feature</a></td><td rowspan="1">1584728995676</td><td rowspan="1">24630</td></tr><tr class="passedodd"><td rowspan="1">cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner</td><td><a href="#m7">feature</a></td><td rowspan="1">1584729020332</td><td rowspan="1">7364</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>AdPortal UAT login  feature</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner#setUpClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">cucumber.runtime.CucumberException: Couldn&apos;t load plugin class: com.cucumber.listener.ExtentCucumberFormatter
+	at cucumber.runtime.formatter.PluginFactory.loadClass(PluginFactory.java:175)
+	at cucumber.runtime.formatter.PluginFactory.pluginClass(PluginFactory.java:165)
+	at cucumber.runtime.formatter.PluginFactory.getPluginClass(PluginFactory.java:226)
+	at cucumber.runtime.formatter.PluginFactory.isFormatterName(PluginFactory.java:195)
+	at cucumber.runtime.RuntimeOptionsFactory.addPlugins(RuntimeOptionsFactory.java:90)
+	at cucumber.runtime.RuntimeOptionsFactory.buildArgsFromOptions(RuntimeOptionsFactory.java:37)
+	at cucumber.runtime.RuntimeOptionsFactory.create(RuntimeOptionsFactory.java:24)
+	at cucumber.api.testng.TestNGCucumberRunner.&lt;init&gt;(TestNGCucumberRunner.java:37)
+	at cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner.setUpClass(Adportal_LogIn_001_TestRunner.java:32)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+Caused by: java.lang.ClassNotFoundException: com.cucumber.listener.ExtentCucumberFormatter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at cucumber.runtime.formatter.PluginFactory.loadClass(PluginFactory.java:173)
+	... 34 more
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner#testDownClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner.testDownClass(Adportal_LogIn_001_TestRunner.java:43)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>AdPortal UAT Create Campaign feature</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.149)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;SR-C02ZM0XQLVDQ&apos;, ip: &apos;fe80:0:0:0:1cae:d9e6:ed67:546c%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;13.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/4_/d9d08_0n2_q...}, goog:chromeOptions: {debuggerAddress: localhost:56615}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 8a4fd8a08234ed86440e47bf540d2a3d
+	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
+	at cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner.feature(AdPortal_CreateCampaign_001_TestRunner.java:32)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.149)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;SR-C02ZM0XQLVDQ&apos;, ip: &apos;fe80:0:0:0:1cae:d9e6:ed67:546c%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;13.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/4_/d9d08_0n2_q...}, goog:chromeOptions: {debuggerAddress: localhost:56615}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 8a4fd8a08234ed86440e47bf540d2a3d
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:837)
+	at adPortalstepdefinitions.AdPortal_CreateCampaign_001_StepDefinition.user_is_on_logIn_page(AdPortal_CreateCampaign_001_StepDefinition.java:37)
+	at ✽.Given User is on AdPortal UAT SignUp page and clicks log in(/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_CreateCampaign_001.feature:4)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">cucmberTestNGTestRunner.AdPortal_CreateCampaign_002_TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>AdPortal UAT Create Campaign feature</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.149)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;SR-C02ZM0XQLVDQ&apos;, ip: &apos;fe80:0:0:0:1cae:d9e6:ed67:546c%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;13.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/4_/d9d08_0n2_q...}, goog:chromeOptions: {debuggerAddress: localhost:56678}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: be8eefb5aa95b7b47be5d8359612d77d
+	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
+	at cucmberTestNGTestRunner.AdPortal_CreateCampaign_002_TestRunner.feature(AdPortal_CreateCampaign_002_TestRunner.java:30)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.149)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;SR-C02ZM0XQLVDQ&apos;, ip: &apos;fe80:0:0:0:1cae:d9e6:ed67:546c%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;13.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/4_/d9d08_0n2_q...}, goog:chromeOptions: {debuggerAddress: localhost:56678}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: be8eefb5aa95b7b47be5d8359612d77d
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:837)
+	at adPortalstepdefinitions.AdPortal_CreateCampaign_002_StepDefinition.user_is_on_logIn_page(AdPortal_CreateCampaign_002_StepDefinition.java:33)
+	at ✽.Given User is on AdPortal UAT SignUp page and clicks Log in(/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_CreateCampaign_002.feature:4)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>AdPortal UAT login  feature</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">cucumber.runtime.CucumberException: java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
+	at cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner.feature(AdPortal_LogIn_002_TestRunner.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+Caused by: java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at adPortalstepdefinitions.AdPortal_LogIn_002_StepDefinition.enter_UserName_and_Password(AdPortal_LogIn_002_StepDefinition.java:46)
+	at ✽.When User enters Existing Email and password and clicks Log in Button(/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_LogIn_002.feature:5)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner#feature</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: java.lang.NullPointerException
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+Caused by: java.lang.NullPointerException
+	at cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner.features(Adportal_LogIn_001_TestRunner.java:40)
+	... 25 more
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">cucmberTestNGTestRunner.AdPortal_NewCustomerDashboardView_001_TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>New customer dashboard view feature</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>SSO LogIN SignUP AdportalUAT</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

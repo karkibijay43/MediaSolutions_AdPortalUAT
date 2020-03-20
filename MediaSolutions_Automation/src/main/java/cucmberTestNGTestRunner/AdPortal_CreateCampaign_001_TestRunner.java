@@ -14,8 +14,8 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		glue= {"adPortalstepdefinitions"},
 		plugin = { "pretty", "json:target/cucumber-reports/AdPortal_CreateCampaign_001_Report.json" },
 		monochrome = true,
-		dryRun = false,
-tags= {""}
+		dryRun = false
+
 	
 		
  )

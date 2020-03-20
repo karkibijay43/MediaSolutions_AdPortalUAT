@@ -228,7 +228,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	 * reachNextButton.click();
 	 */
 
-	@Then("^User should be able to create a campaign ofor selected Dates$")
+	@Then("^User should be able to create a campaign for selected Dates$")
 	public void Schedule_Campaign() {
 		WebElement StartCalenderArrow = driver.findElement(By.xpath(
 				"//div[@id='schedule-date-budget-wrapper']//div[1]//div[1]//app-date-picker[1]//div[1]//span[1]//i[2]"));

@@ -1,6 +1,6 @@
 package adPortalEnums;
 
-public enum Browsers {
+public enum DriverTtype {
 
 	CHROME,
 	FIREFOX,

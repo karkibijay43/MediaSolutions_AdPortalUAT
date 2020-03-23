@@ -3,15 +3,14 @@ package adportalPageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class SignUpPage {
 	
 
- public  WebDriver driver;
+   WebDriver driver;
 
 	 By txtBox_FirstName = By.id("firstName");
 	 By txtBox_LastName = By.id("lastName");
@@ -24,19 +23,19 @@ public class SignUpPage {
 	 By txtBox_ConfirmPassword = By.id("confirm-password");
 	 By WebElement_checkBox = By.id("terms-condition_span");
 	 By WebElement_nextStep = By.className("spp-btn");
-	  By signuplogInLink = By.xpath("//a[@class='login-link']");
-
-	
-
-
-	
-
-	
+	 By signuplogInLink = By.xpath("//a[@class='login-link']");
+	 String SignUpURL = "https://adportal-uat.brandcdnstage.com/sign-up-1";
 	
 	 public SignUpPage (WebDriver driver) {
 		 this.driver = driver;
 	 }
 	 
+	  public void navigateTo_SignUpPage () {
+		  driver.get(SignUpURL);
+	  }
+	 public  void click_SignuplogInLink() {
+			driver.findElement(signuplogInLink).click();
+		}
 	 public void  enter_FirstName (String firstname) {
 			driver.findElement(txtBox_FirstName).sendKeys(firstname);
 		}
@@ -74,7 +73,6 @@ public class SignUpPage {
 		}
 		
       	public void click_nextStep() {
-			
 			System.out.println("clicking on Next Step button");
 			WebElement nextStep = driver.findElement(WebElement_nextStep);
 			if(nextStep.isDisplayed()||nextStep.isEnabled())
@@ -82,10 +80,13 @@ public class SignUpPage {
 			else System.out.println("Element not found");	
 		}
 	 
-      	 public  void click_SignuplogInLink() {
-			driver.findElement(signuplogInLink).click();
-		}
-      	
+      	 
+      	public void explicitly_Wait_ForLogInLink() { 
+   		  WebDriverWait wait = new WebDriverWait(driver, 30);
+   	  wait.until(ExpectedConditions.presenceOfElementLocated(signuplogInLink)); 
+   	  }
+
+		
       	
 } 
 
@@ -98,45 +99,4 @@ public class SignUpPage {
 		
 		
 		
-		/*@FindBy(how = How.ID, using = "firstName")
-		public static WebElement txtBox_FirstName;
 		
-		@FindBy(how = How.ID, using = "lastName") 
-		public static WebElement txtBox_LastName;
-		
-		@FindBy(how = How.XPATH, using = "#[@id=\\\"businessName\\\"]") 
-		public static  WebElement txtBox_BusinessName;
-		
-		@FindBy(how = How.XPATH, using = "//*[@id=\\\"zipCode\\\"]") 
-		public static WebElement txtBox_ZipCode;
-		
-		@FindBy(how = How.XPATH, using = "//*[@id=\\\"businessPhone\\\"]") 
-		public static WebElement txtBox_PhoneNumber;
-		
-		@FindBy(how = How.ID, using = "email") 
-		public static WebElement txtBox_Email;
-		
-		@FindAll(@FindBy(how = How.ID, using = "confirm-email"))
-		public static WebElement txtBox_confirmEmail;	
-		
-		@FindBy(how = How.ID, using = "password") 
-		public static WebElement txtBox_Password;
-		
-		@FindBy(how = How.ID, using = "confirm-password") 
-		public static WebElement txtBox_ConfirmPassword;
-		
-		@FindBy(how = How.CLASS_NAME, using = "is-term-accepted-label") 
-		public static WebElement checkBox;
-		
-		@FindBy(how = How.CLASS_NAME, using = "spp-btn") 
-		private static WebElement nextStep;*/
-		
-		
-		
-
-		
-		
-		
-		
-
-	

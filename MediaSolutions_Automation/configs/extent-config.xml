@@ -14,7 +14,7 @@
     <documentTitle>Adportal Cucumber Framework</documentTitle>
     
     <!-- report name - displayed at top-nav -->
-    <reportName>Adportal Cucumber Report</reportName>
+    <reportName>Adportal Regression Test Report</reportName>
     
     <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
     <dateFormat>yyyy-MM-dd</dateFormat>

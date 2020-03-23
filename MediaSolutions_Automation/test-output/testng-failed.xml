@@ -1,31 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="SignUpURL" value="https://adportal-uat.brandcdnstage.com/sign-up-1"/>
-  <parameter name="browserType" value="chrome"/>
-  <test thread-count="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner">
-        <methods>
-          <include name="testDownClass"/>
-          <include name="feature"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner -->
-      <class name="cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner">
-        <methods>
-          <include name="testDownClass"/>
-          <include name="feature" invocation-numbers="0"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner -->
-      <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner">
-        <methods>
-          <include name="feature" invocation-numbers="0"/>
-          <include name="setUpClass"/>
-          <include name="testDownClass"/>
-        </methods>
-      </class> <!-- cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner -->
       <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_002_TestRunner">
         <methods>
           <include name="feature" invocation-numbers="0"/>
@@ -34,5 +11,5 @@
         </methods>
       </class> <!-- cucmberTestNGTestRunner.AdPortal_CreateCampaign_002_TestRunner -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

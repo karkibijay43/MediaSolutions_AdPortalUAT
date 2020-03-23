@@ -7,3 +7,4 @@ Then User should land on Request Dashboard page
 Then User should be able to Get started with the campaign
 Then User enters the address on the address field and selects the distance and clicks Next
 Then User should be able to schedule a campaign
+Then User should be able to review campaign

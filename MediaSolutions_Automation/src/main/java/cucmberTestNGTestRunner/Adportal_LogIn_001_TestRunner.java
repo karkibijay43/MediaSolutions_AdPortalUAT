@@ -5,8 +5,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import adPortalManagers.FileReaderManager;
 import cucumber.api.CucumberOptions;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
@@ -15,17 +15,18 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_LogIn_001.feature", 
 		glue = {
 				"adPortalstepdefinitions" }, 
-		plugin = {"json:target/cucumber-reports/AdPortal_LogIn_001_Report.json",
-				"com.cucumber.listener.ExtentCucumberFormatter:ExtentReportFolder/ExtentReport.html"
+		plugin = {"pretty", "html:target/cucumber-reports",
+				"json:target/cucumber-reports/AdPortal_LogIn_001_Report.json",
+				//"com.cucumber.listener.ExtentCucumberFormatter:ExtentReportFolder/ExtentReport.html"
 				}, 
 						monochrome = true
 
 )
 
-public class Adportal_LogIn_001_TestRunner{
+public class Adportal_LogIn_001_TestRunner  {
 
 	
-	  private TestNGCucumberRunner testNGCucumberRunner;
+	  static TestNGCucumberRunner testNGCucumberRunner;
 	  
 	  @BeforeClass(alwaysRun = true) 
 	  public void setUpClass() {
@@ -41,6 +42,8 @@ public class Adportal_LogIn_001_TestRunner{
 	  
 	  @AfterClass(alwaysRun = true) public void testDownClass() {
 	  testNGCucumberRunner.finish(); }
+	
+	  }
 	 
 
-}
+

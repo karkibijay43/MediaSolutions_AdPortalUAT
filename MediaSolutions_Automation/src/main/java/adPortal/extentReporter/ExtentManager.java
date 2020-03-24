@@ -1,4 +1,5 @@
 package adPortal.extentReporter;
+
 import java.io.File;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -6,11 +7,11 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class ExtentReporter {
-    private static ExtentReports extent;
+public class ExtentManager {
+	private static ExtentReports extent;
     private static String reportFileName = "Test-Automaton-Report"+".html";
     private static String fileSeperator = System.getProperty("file.separator");
-    private static String reportFilepath = System.getProperty("testReports.ReportsOutput");
+    private static String reportFilepath = System.getProperty("user.dir") +fileSeperator+ "TestReport";
     private static String reportFileLocation =  reportFilepath +fileSeperator+ reportFileName;
   
  
@@ -60,3 +61,4 @@ public class ExtentReporter {
     }
  
 }
+

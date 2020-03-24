@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+ <listeners>
+		<listener class-name="adPortal.extentReporter.TestListener" />
+	</listeners> 
   <test thread-count="5" name="Test">
     <classes>
-      <class name="cucmberTestNGTestRunner.AdPortal_NewCustomerDashboardView_001_TestRunner"/>
+    <!--   <class name="cucmberTestNGTestRunner.AdPortal_NewCustomerDashboardView_001_TestRunner"/> -->
       <class name="cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner"/>
-      <class name="cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner"/>
+     <!--  <class name="cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner"/>
       <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner"/>
-      <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_002_TestRunner"/>
+      <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_002_TestRunner"/>  -->
       <class name="cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner"/>
      <!--  <class name="adPortalTestBase.TestBase"/> -->
     </classes>

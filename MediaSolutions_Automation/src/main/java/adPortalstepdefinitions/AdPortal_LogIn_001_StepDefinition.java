@@ -3,6 +3,7 @@ package adPortalstepdefinitions;
 import java.io.File;
 import java.io.IOException;
 import org.apache.commons.io.FileUtils;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -30,7 +31,9 @@ public class AdPortal_LogIn_001_StepDefinition {
 	RequestDashBoardPage requestDashBoardPage;
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
-
+	
+	
+@Test
 	@Given("^User is on AdPortal UAT SignUp Page and clicks Log in link$")
 	public void user_is_on_AdPortal_UAT_SignUp_page() {
 
@@ -49,7 +52,7 @@ public class AdPortal_LogIn_001_StepDefinition {
 		LogInLink.click();
 
 	}
-
+@Test
 	@When("^User enters username and password and clicks log in$")
 	public void enter_UserName_and_Password() {
 		LogInPage loginPage = new LogInPage(driver);
@@ -57,7 +60,7 @@ public class AdPortal_LogIn_001_StepDefinition {
 		loginPage.enter_LogInPassword("testpwd@MS1");
 		loginPage.clickLogIn();
 	}
-
+@Test
 	@Then("^User lands on request dashboard page$")
 
 	public void requestDashboard_verification() {
@@ -74,11 +77,13 @@ public class AdPortal_LogIn_001_StepDefinition {
 		catch (IOException e) {
 			System.out.println(e.getMessage());
 
-		}
+			 	
+			 }
+		driver.close();
 	}
 
-	{
-		 driver.close();
-	}
+	
+		
+	
 
 }

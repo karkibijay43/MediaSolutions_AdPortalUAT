@@ -17,7 +17,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 				"adPortalstepdefinitions" }, 
 		plugin = {"pretty", "html:target/cucumber-reports",
 				"json:target/cucumber-reports/AdPortal_LogIn_001_Report.json",
-				//"com.cucumber.listener.ExtentCucumberFormatter:ExtentReportFolder/ExtentReport.html"
+				//"com.cucumber.listener.ExtentCucumberFormatter"
 				}, 
 						monochrome = true
 
@@ -30,16 +30,24 @@ public class Adportal_LogIn_001_TestRunner  {
 	  
 	  @BeforeClass(alwaysRun = true) 
 	  public void setUpClass() {
-	  testNGCucumberRunner = new TestNGCucumberRunner(this.getClass()); }
+	  testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+	  }
 	  
 	  @Test(groups = "cucumber", description = "Runs cucmber Features",
 	  dataProvider = "features") public void feature(CucumberFeatureWrapper
 	  cucumberFeature) {
 	  testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature()); }
 	  
+	
 	  @DataProvider public Object[][] features() { return
 	  testNGCucumberRunner.provideFeatures(); }
-	  
+	 
+	/*
+	 * @DataProvider (name="adportalfeatures") public Object[][] features() {
+	 * if(testNGCucumberRunner == null){ testNGCucumberRunner = new
+	 * TestNGCucumberRunner(this.getClass()); } return
+	 * testNGCucumberRunner.provideFeatures(); }
+	 */
 	  @AfterClass(alwaysRun = true) public void testDownClass() {
 	  testNGCucumberRunner.finish(); }
 	

@@ -1,4 +1,7 @@
+@cucumberHooks
 Feature: New customer dashboard view feature
+
+@DashBoardView
 Scenario: Dashboard view and fucntionality from new customer
 
 Given A new User is on AdPortal UAT SignUP page

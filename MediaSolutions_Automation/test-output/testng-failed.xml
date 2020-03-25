@@ -6,7 +6,7 @@
       <class name="cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner">
         <methods>
           <include name="testDownClass"/>
-          <include name="feature" invocation-numbers="0"/>
+          <include name="feature"/>
           <include name="setUpClass"/>
         </methods>
       </class> <!-- cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner -->

@@ -17,15 +17,16 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProvider.ConfigFileReader;
 
+
 public class AdPortal_CreateCampaign_001_StepDefinition {
 	WebDriver driver;
 	ConfigFileReader configFileReader;
 	JavascriptExecutor executor;
+	PageObjectManager pageObjectManager;
 	LogInPage logInPage;
 	SignUpPage signUpPage;
 	RequestDashBoardPage requestDashBoardPage;
 	ReachPage reachPage;
-	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
 
 	@Given("^User is on AdPortal UAT SignUp page and clicks log in$")
@@ -40,10 +41,8 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		signUpPage.navigateTo_SignUpPage();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
-		WebDriverWait logInLink = new WebDriverWait(driver, 30);
-		logInLink.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@class='login-link']")));
-		WebElement LogInLink = driver.findElement(By.xpath("//a[@class='login-link']"));
-		LogInLink.click();
+		signUpPage.explicitly_Wait_ForLogInLink();
+		
 	}
 
 	@When("^User enters Email and Password and clicks LogIn$")
@@ -52,8 +51,12 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		logInPage.enter_LogInEmail("MSolutionsTestEmail@charter.com");
 		logInPage.enter_LogInPassword("testpwd@MS1");
 		logInPage.clickLogIn();
-		WebDriverWait newRequest = new WebDriverWait(driver, 30);
-		newRequest.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='new-request-btn']")));
+		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
+		/*
+		 * WebDriverWait newRequest = new WebDriverWait(driver, 30);
+		 * newRequest.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+		 * "//button[@id='new-request-btn']")));
+		 */
 
 	}
 

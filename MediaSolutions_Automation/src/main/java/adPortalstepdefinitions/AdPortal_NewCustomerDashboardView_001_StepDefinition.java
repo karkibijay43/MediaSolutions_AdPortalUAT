@@ -6,21 +6,19 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import adPortalFramework.helper.WaitForWebElement;
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.RequestDashBoardPage;
 import adportalPageObjects.SignUpPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
 public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 	WebDriver driver;
 
 	LogInPage loginPage = new LogInPage(driver);
 	SignUpPage signUpPage = new SignUpPage(driver);
 	RequestDashBoardPage requestDashBoardPage = new RequestDashBoardPage(driver);
-	WaitForWebElement waitForElement = new WaitForWebElement(driver);
+
 
 	@Given("^A new User is on AdPortal UAT SignUP page$")
 	public void user_is_on_SignUp_page() {
@@ -121,6 +119,7 @@ public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 		requestDashBoardPage.explicitly_Wait_For_GetStartedButton();
 		requestDashBoardPage.click_GetStarted();
 		requestDashBoardPage.dashBoardPage_Title_verification();
+		driver.close();
 		/*
 		 * WebDriverWait wait = new WebDriverWait(driver,25);
 		 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.

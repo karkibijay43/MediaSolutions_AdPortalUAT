@@ -1,9 +1,15 @@
 package adPortalstepdefinitions;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,6 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import adPortalManagers.PageObjectManager;
+
 import adPortalManagers.WebDriverManager;
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.ReachPage;
@@ -32,6 +39,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
 	
+	
 
 	@Given("^User is on AdPortal UAT SignUp page and clicks Log in$")
 	public void user_is_on_AdportalUAT_SignUP_page() {
@@ -44,39 +52,25 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		signUpPage.navigateTo_SignUpPage();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
-		WebDriverWait logInLink = new WebDriverWait(driver, 30);
-		logInLink.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@class='login-link']")));
-		WebElement LogInLink = driver.findElement(By.xpath("//a[@class='login-link']"));
-		LogInLink.click();
-		/*
-		 * System.setProperty("webdriver.chrome.driver",
-		 * "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/chromedriver"
-		 * ); driver = new ChromeDriver();
-		 * driver.manage().timeouts().implicitlyWait(4000, TimeUnit.SECONDS); String
-		 * SignUpURL = "https://adportal-uat.brandcdnstage.com/sign-up-1";
-		 * driver.navigate().to(SignUpURL); driver.manage().window().maximize();
-		 * 
-		 * SignUpPage signUpPage = new SignUpPage(driver);
-		 * signUpPage.click_SignuplogInLink();
-		 * 
-		 */
-		/*
-		 * WebElement LogInLink = driver.findElement(By.className("login-link"));
-		 * LogInLink.click();
-		 */
+		signUpPage.explicitly_Wait_ForLogInLink();
+		
 		 
 	}
 
 	@When("^User enters Existing Email and Password and clicks LogIn$")
 	public void enter_UserName_and_Password() {
-		LogInPage logInPage = new LogInPage(driver);
-		
+		requestDashBoardPage = new RequestDashBoardPage(driver);
+		logInPage = new LogInPage(driver);
 		logInPage.enter_LogInEmail("MSolutionsTestEmail@charter.com");
 		logInPage.enter_LogInPassword("testpwd@MS1");
 		logInPage.clickLogIn();
-		WebDriverWait newRequest = new WebDriverWait(driver, 30);
-		newRequest.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='new-request-btn']")));
-
+		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
+		
+		/*
+		 * WebDriverWait newRequest = new WebDriverWait(driver, 30);
+		 * newRequest.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+		 * "//button[@id='new-request-btn']")));
+		 */
 	}
 
 	@Then("^User should land on Request Dashboard page with Campaign drafts$")
@@ -143,6 +137,8 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	}
 @Then("^User should be able to review their campaign Details$")
 public void review_campaign_details () {
+	
+	
 	WebDriverWait waitForBudgetReview = new WebDriverWait(driver, 40);
 	waitForBudgetReview.until(ExpectedConditions.presenceOfElementLocated(By.className("mapboxgl-canvas")));
 	reachPage = pageObjectManager.getReachPage();

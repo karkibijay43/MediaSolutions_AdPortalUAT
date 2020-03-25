@@ -84,6 +84,8 @@ public class SignUpPage {
       	public void explicitly_Wait_ForLogInLink() { 
    		  WebDriverWait wait = new WebDriverWait(driver, 30);
    	  wait.until(ExpectedConditions.presenceOfElementLocated(signuplogInLink)); 
+   	WebElement logIn = driver.findElement(signuplogInLink);
+   	logIn.click();
    	  }
 
 		

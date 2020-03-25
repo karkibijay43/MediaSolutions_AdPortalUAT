@@ -55,7 +55,7 @@ public class AdPortal_LogIn_002_StepDefinition {
 
 	public void requestDashboard_verification() {
 		requestDashBoardPage.dashBoardPage_Title_verification();
-		driver.close();
+		
 
 	}
 

@@ -11,7 +11,7 @@ public class ExtentManager {
 	private static ExtentReports extent;
     private static String reportFileName = "Test-Automaton-Report"+".html";
     private static String fileSeperator = System.getProperty("file.separator");
-    private static String reportFilepath = System.getProperty("user.dir") +fileSeperator+ "TestReport";
+    private static String reportFilepath = System.getProperty("user.dir") +fileSeperator+ "AdPortalRegressionTestReport";
     private static String reportFileLocation =  reportFilepath +fileSeperator+ reportFileName;
   
  
@@ -37,8 +37,8 @@ public class ExtentManager {
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
         //Set environment details
-		extent.setSystemInfo("OS", "Windows");
-		extent.setSystemInfo("AUT", "QA");
+		extent.setSystemInfo("OS", "MAC");
+		extent.setSystemInfo("AUTOMATION", "ADPORTAL");
  
         return extent;
     }

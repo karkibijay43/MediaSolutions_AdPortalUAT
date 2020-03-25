@@ -1,4 +1,7 @@
+@cucumberHooks
 Feature: AdPortal UAT Create Campaign feature
+
+@CreateCampaignUserInPut
 Scenario: Create a campaign using your Valid AdPortal UAT logIn Email and Password
 
 Given User is on AdPortal UAT SignUp page and clicks Log in

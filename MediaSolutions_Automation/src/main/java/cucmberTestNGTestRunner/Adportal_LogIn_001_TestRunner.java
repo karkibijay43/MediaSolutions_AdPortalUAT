@@ -42,12 +42,8 @@ public class Adportal_LogIn_001_TestRunner  {
 	  @DataProvider public Object[][] features() { return
 	  testNGCucumberRunner.provideFeatures(); }
 	 
-	/*
-	 * @DataProvider (name="adportalfeatures") public Object[][] features() {
-	 * if(testNGCucumberRunner == null){ testNGCucumberRunner = new
-	 * TestNGCucumberRunner(this.getClass()); } return
-	 * testNGCucumberRunner.provideFeatures(); }
-	 */
+
+	
 	  @AfterClass(alwaysRun = true) public void testDownClass() {
 	  testNGCucumberRunner.finish(); }
 	

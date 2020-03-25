@@ -229,7 +229,7 @@ public class ReachPage {
 			  
 			  String date = dates.getText();
 			 
-			  if (date.equalsIgnoreCase("30")) { 
+			  if (date.equalsIgnoreCase("6")) { 
 				  dates.click(); 
 				  break;
 			  
@@ -247,7 +247,7 @@ public class ReachPage {
 
 				String date = dates.getText();
 
-				if (date.equalsIgnoreCase("5")) {
+				if (date.equalsIgnoreCase("12")) {
 					dates.click();
 					break;
 

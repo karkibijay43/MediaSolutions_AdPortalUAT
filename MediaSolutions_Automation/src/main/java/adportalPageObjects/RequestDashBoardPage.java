@@ -2,6 +2,7 @@ package adportalPageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -51,9 +52,19 @@ public class RequestDashBoardPage {
 
 	}
 
-	public void explicitly_Wait_For_GetStartedButton() {
+	public void explicitly_Wait_For_ContinueButton() {
 		WebDriverWait wait = new WebDriverWait(driver, 25);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Get Started')]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(button_Continue));
+		WebElement continueButton = driver.findElement(button_Continue);
+				
+		continueButton.click();
+		
 	}
 
-}
+	public void explicitly_Wait_For_GetStartedButton() {
+		WebDriverWait wait = new WebDriverWait(driver, 25);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(button_GetStarted));
+		WebElement getStartedButton = driver.findElement(button_GetStarted);
+					getStartedButton.click();
+	}
+	}

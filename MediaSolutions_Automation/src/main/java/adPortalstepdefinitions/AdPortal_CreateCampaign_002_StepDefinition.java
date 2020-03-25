@@ -22,6 +22,7 @@ import adPortalManagers.WebDriverManager;
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.ReachPage;
 import adportalPageObjects.RequestDashBoardPage;
+import adportalPageObjects.SchedulePage;
 import adportalPageObjects.SignUpPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -38,7 +39,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	ReachPage reachPage;
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
-	
+	SchedulePage schedulePage;
 	
 
 	@Given("^User is on AdPortal UAT SignUp page and clicks Log in$")
@@ -65,18 +66,13 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		logInPage.enter_LogInPassword("testpwd@MS1");
 		logInPage.clickLogIn();
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
-		
-		/*
-		 * WebDriverWait newRequest = new WebDriverWait(driver, 30);
-		 * newRequest.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
-		 * "//button[@id='new-request-btn']")));
-		 */
+	
 	}
 
 	@Then("^User should land on Request Dashboard page with Campaign drafts$")
 
 	public void requestDashboard_verification() {
-		RequestDashBoardPage requestDashBoardPage = new RequestDashBoardPage(driver);
+		 requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
 		requestDashBoardPage.request_DashBoard_Verification();
 		
 	}
@@ -119,7 +115,17 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		//reachPage.click_HeaderTtile();
 		reachPage.click_DropDownAroow();
 		reachPage.UserInPut_Distance();
+		
+		
+		/*
+		 * public boolean retryingFindClick(By by) { boolean result = false; int
+		 * attempts = 0; while(attempts < 2) { try { driver.findElement(by).click();
+		 * result = true; break; } catch(StaleElementException e) { } attempts++; }
+		 * return result;
+		 */
+	
 		reachPage.click_ReachPage2NextButton();
+		reachPage.click_Audience_Male();
 		reachPage.click_ReachPage3NextButton();
 	}
 		
@@ -128,21 +134,29 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 
 	@Then("^User should be able to create a campaign for selected Dates$")
 	public void Schedule_Campaign() {
-		ReachPage reachPage = new ReachPage (driver);
-		reachPage.click_startCalednderArrow();
-		reachPage.click_stopCalenderArrow();
-		reachPage.enter_Budget();
-		reachPage.click_SchedulePage1NextButton();
+		SchedulePage schedulePage = new SchedulePage (driver);
+		schedulePage.click_startCalednderArrow();
+		schedulePage.click_stopCalenderArrow();
+		schedulePage.enter_Budget();
+		schedulePage.click_SchedulePage1NextButton();
 		
 	}
 @Then("^User should be able to review their campaign Details$")
 public void review_campaign_details () {
+	WebDriverWait waitForBudgetReview = new WebDriverWait(driver, 50);
+	waitForBudgetReview.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body//app-section-heading-description//div[3]")));
+
+	  File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE); try {
+	  FileUtils.copyFile(src, new File(
+	  "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/ReviewYourCampaign.png")); 
+	  }
+	  catch (IOException e) { System.out.println(e.getMessage());
+	  
+	  }
 	
 	
-	WebDriverWait waitForBudgetReview = new WebDriverWait(driver, 40);
-	waitForBudgetReview.until(ExpectedConditions.presenceOfElementLocated(By.className("mapboxgl-canvas")));
-	reachPage = pageObjectManager.getReachPage();
-	reachPage.verify_BudgetAmount();
+	schedulePage = pageObjectManager.getSchedulePage();
+	schedulePage.verify_BudgetAmount();
 }
 }
 

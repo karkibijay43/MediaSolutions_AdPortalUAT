@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner">
+      <class name="cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner">
         <methods>
           <include name="testDownClass"/>
-          <include name="feature"/>
+          <include name="feature" invocation-numbers="0"/>
           <include name="setUpClass"/>
         </methods>
-      </class> <!-- cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner -->
+      </class> <!-- cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

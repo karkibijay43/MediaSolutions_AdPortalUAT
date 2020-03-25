@@ -11,6 +11,7 @@ import adPortalManagers.WebDriverManager;
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.ReachPage;
 import adportalPageObjects.RequestDashBoardPage;
+import adportalPageObjects.SchedulePage;
 import adportalPageObjects.SignUpPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -51,6 +52,7 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		logInPage.enter_LogInEmail("MSolutionsTestEmail@charter.com");
 		logInPage.enter_LogInPassword("testpwd@MS1");
 		logInPage.clickLogIn();
+		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
 		/*
 		 * WebDriverWait newRequest = new WebDriverWait(driver, 30);
@@ -116,20 +118,16 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 
 	@Then("^User should be able to schedule a campaign")
 	public void Schedule_Campaign() {
-		reachPage = pageObjectManager.getReachPage();
-		reachPage.click_startCalednderArrow();
-		reachPage.click_stopCalenderArrow();
-		reachPage.enter_Budget();
-		reachPage.click_SchedulePage1NextButton();
-
+		SchedulePage schedulePage = new SchedulePage (driver);
+		schedulePage.click_startCalednderArrow();
+		schedulePage.click_stopCalenderArrow();
+		schedulePage.enter_Budget();
+		schedulePage.click_SchedulePage1NextButton();
 	}
 	
 	@Then("^User should be abel to review their campaign$")
 	public void review_campaign () {
-		WebDriverWait waitForBudgetReview = new WebDriverWait(driver, 40);
-		waitForBudgetReview.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("body.white-background:nth-child(2) div.main app-order.ng-star-inserted:nth-child(2) div.order-comp:nth-child(1) div.main-section div.row-materialize.header-row-all:nth-child(2) div.row-materialize.s9.card-section section.section-container app-schedule-display.ng-star-inserted:nth-child(2) div.ng-animate-disabled div.card-item-position div.tv-commerical-question-card div.card.card-client.ng-star-inserted div.card-content.ng-star-inserted div.review-schedule.container-fluid.p-0.text-left.ng-star-inserted div.row.m-0.mb-4.pb-2 div.col.p-0.pr-3 app-commercial-schedule-overview:nth-child(2) div.ng-star-inserted div.d-flex.your-schedule-section > div.schedule-cost.d-flex.align-items-center")));
-		reachPage = pageObjectManager.getReachPage();
-		reachPage.verify_BudgetAmount();
+		
 	}
 
 }

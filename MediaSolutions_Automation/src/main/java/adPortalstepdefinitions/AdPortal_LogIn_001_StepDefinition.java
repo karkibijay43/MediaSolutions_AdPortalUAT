@@ -1,25 +1,13 @@
 package adPortalstepdefinitions;
 
-import java.io.File;
 import java.io.IOException;
-import org.apache.commons.io.FileUtils;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import adPortalUtilities.AdPortalScreenShots;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.ExtentReports;
-
-
 import adPortalManagers.PageObjectManager;
 import adPortalManagers.WebDriverManager;
-
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.RequestDashBoardPage;
 import adportalPageObjects.SignUpPage;
@@ -39,8 +27,9 @@ public class AdPortal_LogIn_001_StepDefinition {
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
 	 ExtentReports extent; 
+	// AdPortalScreenShots adPortalScreenShots;
 	
-@Test
+
 	@Given("^User is on AdPortal UAT SignUp Page and clicks Log in link$")
 	public void user_is_on_AdPortal_UAT_SignUp_page() {
 
@@ -58,35 +47,29 @@ public class AdPortal_LogIn_001_StepDefinition {
 		
 
 	}
-@Test
+
 	@When("^User enters username and password and clicks log in$")
 	public void enter_UserName_and_Password() throws IOException {
 		loginPage = new LogInPage(driver);
-		loginPage.enter_LogInEmail("MSolutionsTestEmail@charter.com");
+		loginPage.enter_LogInEmail("MSTestEmail@charter.com");
 		loginPage.enter_LogInPassword("testpwd@MS1");
 		loginPage.clickLogIn();
 	     
 	}
-@Test
+
 	@Then("^User lands on request dashboard page$")
 
 	public void requestDashboard_verification() {
+	//adPortalScreenShots = new AdPortalScreenShots(driver);
 		requestDashBoardPage = new RequestDashBoardPage(driver);
-		requestDashBoardPage.dashBoardPage_Title_verification();
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
+		requestDashBoardPage.dashBoardPage_Title_verification();
+		 //adPortalScreenShots.takeScreenshot();
 		
-		/*
-		 * File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE); try {
-		 * 
-		 * FileUtils.copyFile(src, new File(
-		 * "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/LogInScreenShots2.png"
-		 * )); }
-		 * 
-		 * catch (IOException e) { System.out.println(e.getMessage());
-		 * 
-		 * 
-		 * }
-		 */
+		  
+		  
+		  }
+		 
 			
 }
-}
+

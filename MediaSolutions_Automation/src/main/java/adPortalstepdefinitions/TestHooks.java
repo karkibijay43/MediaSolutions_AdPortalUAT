@@ -1,23 +1,18 @@
 package adPortalstepdefinitions;
 
-import java.io.File;
-import java.io.IOException;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import com.cucumber.listener.Reporter;
-import com.google.common.io.Files;
+
+import adPortalUtilities.AdPortalScreenShots;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
 
 public class TestHooks {
 	WebDriver driver;
+	AdPortalScreenShots adPortalScreenShots;
+	
 	@Before
 	public void beforeScenario(Scenario scenario) {		
 		System.out.println("Started execution for the scenario : " + scenario.getName());
@@ -68,15 +63,16 @@ public class TestHooks {
 		
 	}
 	@After ()
-	public void AfterScenario(Scenario scenario) {
+	public void afterScenario(Scenario scenario) {
 		System.out.println("Completed execution for the scenario :" + scenario.getName());
 	}
 	
+
 	
-	/*
-	 * @AfterStep () public void getscreenshot(WebDriver driver) throws Exception {
-	 * File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE); File
-	 * dest = new File(("user.dir")+"screenshot" + ".png"); FileUtils.copyFile(scr,
-	 * dest); }
-	 */
+	  @After ("@AdPortalLogInDefault")
+	  public void screenShotTaker (Scenario scenario) {
+		  adPortalScreenShots = new AdPortalScreenShots(driver);
+		  adPortalScreenShots.takeScreenshot();
+	 
 	}
+}

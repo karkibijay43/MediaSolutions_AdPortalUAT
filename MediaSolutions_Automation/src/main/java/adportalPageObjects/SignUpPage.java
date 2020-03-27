@@ -49,7 +49,7 @@ public class SignUpPage {
 		}
 		
 		public   void enter_ZipCode(String zipCode) {
-			driver.findElement(txtBox_ZipCode).sendKeys(String.valueOf(zipCode));
+			driver.findElement(txtBox_ZipCode).sendKeys(zipCode);
 		}
 		public   void enter_PhoneNumber (String phoneNumber) {
 			driver.findElement(txtBox_PhoneNumber).sendKeys(phoneNumber);

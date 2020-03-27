@@ -10,6 +10,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ReachPage {
 	WebDriver driver;
@@ -34,15 +36,24 @@ public class ReachPage {
 	By miles_40 = By.xpath("//span[contains(text(),'40 miles')]");
 	By reachPage2_NextButton1 = By.xpath("//*[@id=\"card-item-wrapper\"]/div/div[2]/div[2]/div[3]/div/span");
 	By reachPage2_NextButton2 = By.xpath("//span[contains(text(),'Next')]");
-	By reachPage3_NextButton = /*
-								 * By.xpath("//*[@id=\"card-item-wrapper\"]/div/div[2]/div[2]/div[3]/div/span");
-								 */By.className("spp-btn");
+	By reachPage3_NextButton = By.className("spp-btn");
 	By age18_14_Label = By.xpath("//label[contains(text(),'18 - 49')]");
 	By audience_Male = By.xpath("//span[contains(text(),'Male')]");
 	By audice_Female = By.xpath("//span[contains(text(),'Female')]");
 
+	public void explicitly_Wait_For_ReachPageNextButton() {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(reachPage_NextButton));
+	}
+
 	public void click_ReachPageNextButton() {
 		driver.findElement(reachPage_NextButton).click();
+
+	}
+
+	public void explicitly_Wait_For_RaiseAwarenessButton() {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(button_RaiseAwareness));
 	}
 
 	public void select_RaiseAwareness() {
@@ -59,12 +70,17 @@ public class ReachPage {
 
 	}
 
+	public void explicitly_Wait_For_AddressEntry() {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(txtBox_AddressField));
+	}
+
 	public void enter_Address(String address) {
 
 		driver.findElement(txtBox_AddressField).clear();
 		driver.findElement(txtBox_AddressField).sendKeys(address);
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -75,7 +91,6 @@ public class ReachPage {
 
 	public void UserInPut_Address() {
 		driver.findElement(txtBox_AddressField).clear();
-		// driver.findElement(txtBox_AddressField).sendKeys(address);
 		String EnterAddress;
 		EnterAddress = JOptionPane.showInputDialog(null, "Enter your Address");
 		driver.findElement(txtBox_AddressField).sendKeys(EnterAddress);
@@ -86,7 +101,7 @@ public class ReachPage {
 			e.printStackTrace();
 		}
 		driver.findElement(txtBox_AddressField).sendKeys(Keys.ARROW_DOWN);
-		driver.findElement(txtBox_AddressField).sendKeys(Keys.ENTER);
+		// driver.findElement(txtBox_AddressField).sendKeys(Keys.ENTER);
 
 	}
 
@@ -167,23 +182,36 @@ public class ReachPage {
 
 	public void click_ReachPage2NextButton() {
 		System.out.println("clicking on Next Button");
-		WebElement reachPage2NextButton = driver.findElement(reachPage2_NextButton2);
-		driver.findElement(reachPage2_NextButton2).click();
-		if (reachPage2NextButton.isEnabled()) {
-			reachPage2NextButton.click();
-		} else {
-
-			System.out.println("Next button is not enabled");
-		}
-
-		try {
-			reachPage2NextButton.click();
-
-		} catch (StaleElementReferenceException e) {
-			driver.findElement(reachPage2_NextButton2).click();
-		}
-
+		// WebElement reachPage2NextButton = driver.findElement(reachPage2_NextButton2);
 		// driver.findElement(reachPage2_NextButton2).click();
+		{
+			int count = 0;
+			boolean clicked = false;
+			while (count < 4 && !clicked) {
+				try {
+					WebElement reachPage2NextButton = driver.findElement(reachPage2_NextButton2);
+					reachPage2NextButton.click();
+					clicked = true;
+				} catch (StaleElementReferenceException e) {
+					e.toString();
+					System.out.println("Trying to recover from a stale element :" + e.getMessage());
+					count = count + 1;
+				}
+			}
+		}
+
+		/*
+		 * if (reachPage2NextButton.isEnabled()) { reachPage2NextButton.click(); } else
+		 * {
+		 * 
+		 * System.out.println("Next button is not enabled"); }
+		 * 
+		 * try { reachPage2NextButton.click();
+		 * 
+		 * } catch (StaleElementReferenceException e) {
+		 * driver.findElement(reachPage2_NextButton2).click(); }
+		 */
+
 	}
 
 	public void uncheck_Check_Age18_49Button() {
@@ -191,29 +219,27 @@ public class ReachPage {
 		driver.findElement(age18_14_Label).click();
 
 	}
-	public void click_Audience_Male () {
+
+	public void click_Audience_Male() {
 		driver.findElement(audience_Male).click();
 		driver.findElement(audience_Male).click();
 	}
 
 	public void click_ReachPage3NextButton() {
 		System.out.println("clicking on Next Button again");
-		WebElement reachPage3NextButton = driver.findElement(reachPage3_NextButton);
-		if (reachPage3NextButton.isEnabled()) {
-			reachPage3NextButton.click();
-		} else {
-
-			System.out.println("Next button is not enabled");
-		}
-
-		try {
-			reachPage3NextButton.click();
-
-		} catch (StaleElementReferenceException e) {
-			driver.findElement(reachPage3_NextButton).click();
-		}
-
-		// driver.findElement(reachPage3_NextButton).click();
+		/*
+		 * WebElement reachPage3NextButton = driver.findElement(reachPage3_NextButton);
+		 * if (reachPage3NextButton.isEnabled()) { reachPage3NextButton.click(); } else
+		 * {
+		 * 
+		 * System.out.println("Next button is not enabled"); }
+		 * 
+		 * try { reachPage3NextButton.click();
+		 * 
+		 * } catch (StaleElementReferenceException e) {
+		 * driver.findElement(reachPage3_NextButton).click(); }
+		 */
+		driver.findElement(reachPage3_NextButton).click();
 	}
 
 	public void click_ReachPage3NextButton_JSExecutor() {

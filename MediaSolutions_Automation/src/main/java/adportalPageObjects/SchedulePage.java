@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SchedulePage {
 	WebDriver driver;
@@ -23,7 +25,7 @@ public class SchedulePage {
 	By SchedulePage1_NextButton = By.className("spp-btn");
 	By review_CamapaignTitle = By.className("header large ng-star-inserted");
 	By yourBudget_Amount =By.cssSelector("body.white-background:nth-child(2) div.main app-order.ng-star-inserted:nth-child(2) div.order-comp:nth-child(1) div.main-section div.row-materialize.header-row-all:nth-child(2) div.row-materialize.s9.card-section section.section-container app-schedule-display.ng-star-inserted:nth-child(2) div.ng-animate-disabled div.card-item-position div.tv-commerical-question-card div.card.card-client.ng-star-inserted div.card-content.ng-star-inserted div.review-schedule.container-fluid.p-0.text-left.ng-star-inserted div.row.m-0.mb-4.pb-2 div.col.p-0.pr-3 app-commercial-schedule-overview:nth-child(2) div.ng-star-inserted div.d-flex.your-schedule-section > div.schedule-cost.d-flex.align-items-center");
-	
+	By reviewPage_NextButton = By.xpath("//span[contains(text(),'Next')]");
 	
 	public void click_startCalednderArrow () {
 		driver.findElement(startAiring_CalenderArrow).click();
@@ -61,7 +63,13 @@ public class SchedulePage {
 	
 	}
 	}
-	public void enter_Budget () {
+	public void enter_Budget (String budget ) {
+		driver.findElement(budgetAmount).clear();
+		driver.findElement(budgetAmount).sendKeys(budget);
+		
+		
+	}
+	public void enter_Budget_UserInput () {
 		driver.findElement(budgetAmount).clear();
 		//driver.findElement(budgetAmount).sendKeys(budget);
 		int Amount;
@@ -87,10 +95,15 @@ public class SchedulePage {
 	String budgetValue = 	driver.findElement(yourBudget_Amount).getText();
 		System.out.println("your Budget amount is :" + budgetValue);
 	}	
+		public void explicitly_Wait_For_ReviewPageNextButton () {
+			 WebDriverWait wait = new WebDriverWait(driver, 30);
+			  wait.until(ExpectedConditions.presenceOfElementLocated(reviewPage_NextButton)); 
+		}
 		
-		
+	public void click_ReviewPage_NextButton () {
+		driver.findElement(reviewPage_NextButton).click();
 	
 	
 	}
 	
-
+}

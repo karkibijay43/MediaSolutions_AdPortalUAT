@@ -16,11 +16,9 @@ import cucumber.api.testng.TestNGCucumberRunner;
 			glue = {
 					"adPortalstepdefinitions",
 					 }
-					,tags = {"@AdPortalLogInDefault,@AdPortalLogInUserInPut"
-							
-		/*
-		 * + "@SSULogIn," + "@CreateCampaignDefault," + "@DashBoardView",@CreateCampaignUserInPut
-		 */
+					,tags = {"@AdPortalLogInDefault,@SSULogIn," 
+					// + "@CreateCampaignDefault," + "@DashBoardView",@CreateCampaignUserInPut
+		 
 							},
 			//plugin = {"pretty", "html:target/cucumber-reports","json:target/cucumber-reports/AdPortal_LogIn_001_Report.json",
 					//"com.cucumber.listener.ExtentCucumberFormatter},

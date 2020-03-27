@@ -7,6 +7,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.server.handler.CaptureScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -18,6 +19,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.model.Log;
+import com.aventstack.extentreports.model.Test;
 
 public class TestListener  implements ITestListener {
 	
@@ -45,9 +47,10 @@ public class TestListener  implements ITestListener {
 
 	
 	  public void onTestFailure(ITestResult result) {
-	  System.out.println("*** Test execution " + result.getMethod().getMethodName()
-	  + " failed..."); ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
+	  System.out.println("*** Test execution " + result.getMethod().getMethodName() + " failed..."); 
+	  ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
 	  }
+	 
 
 	 
 	public void onTestSkipped(ITestResult result) {
@@ -58,5 +61,7 @@ public class TestListener  implements ITestListener {
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		System.out.println("*** Test failed but within percentage % " + result.getMethod().getMethodName());
 	}
+	
+	
 
 	}

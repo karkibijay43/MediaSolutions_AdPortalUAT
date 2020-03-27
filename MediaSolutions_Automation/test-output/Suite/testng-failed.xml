@@ -8,7 +8,7 @@
     <classes>
       <class name="cucmberTestNGTestRunner.RegressionTestRunner">
         <methods>
-          <include name="feature" invocation-numbers="0"/>
+          <include name="feature" invocation-numbers="0 1"/>
           <include name="setUpClass"/>
           <include name="testDownClass"/>
         </methods>

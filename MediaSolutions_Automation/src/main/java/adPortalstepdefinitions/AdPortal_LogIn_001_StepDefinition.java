@@ -4,7 +4,6 @@ import java.io.IOException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import adPortalUtilities.AdPortalScreenShots;
-import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import adPortalManagers.PageObjectManager;
 import adPortalManagers.WebDriverManager;
@@ -27,7 +26,7 @@ public class AdPortal_LogIn_001_StepDefinition {
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
 	 ExtentReports extent; 
-	// AdPortalScreenShots adPortalScreenShots;
+	AdPortalScreenShots adPortalScreenShots;
 	
 
 	@Given("^User is on AdPortal UAT SignUp Page and clicks Log in link$")

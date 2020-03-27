@@ -19,7 +19,10 @@ import cucumber.api.testng.TestNGCucumberRunner;
 				"json:target/cucumber-reports/AdPortal_LogIn_001_Report.json",
 				//"com.cucumber.listener.ExtentCucumberFormatter"
 				}, 
-						monochrome = true
+				tags = {"@AdPortalLogInDefault"
+		},
+				
+					monochrome = true
 
 )
 

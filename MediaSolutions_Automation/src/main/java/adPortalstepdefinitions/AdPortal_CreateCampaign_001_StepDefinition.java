@@ -1,13 +1,16 @@
 package adPortalstepdefinitions;
 
-import org.openqa.selenium.By;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import com.aventstack.extentreports.ExtentReports;
 import adPortalManagers.PageObjectManager;
 import adPortalManagers.WebDriverManager;
+import adPortalUtilities.AdPortalScreenShots;
+import adportalPageObjects.CommercialPage;
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.ReachPage;
 import adportalPageObjects.RequestDashBoardPage;
@@ -18,21 +21,23 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProvider.ConfigFileReader;
 
-
 public class AdPortal_CreateCampaign_001_StepDefinition {
 	WebDriver driver;
 	ConfigFileReader configFileReader;
 	JavascriptExecutor executor;
-	PageObjectManager pageObjectManager;
 	LogInPage logInPage;
 	SignUpPage signUpPage;
-	RequestDashBoardPage requestDashBoardPage;
 	ReachPage reachPage;
+	RequestDashBoardPage requestDashBoardPage;
+	SchedulePage schedulePage;
+	CommercialPage commercialPage;
+	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
+	ExtentReports extent;
+	AdPortalScreenShots adPortalScreenShots;
 
 	@Given("^User is on AdPortal UAT SignUp page and clicks log in$")
 	public void user_is_on_logIn_page() {
-
 		webDriverManager = new WebDriverManager();
 		driver = webDriverManager.getDriver();
 		configFileReader = new ConfigFileReader();
@@ -43,29 +48,24 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
-		
+
 	}
 
 	@When("^User enters Email and Password and clicks LogIn$")
 	public void enter_UserName_and_Password() {
-		 logInPage = pageObjectManager.getLogInPage();
-		logInPage.enter_LogInEmail("MSolutionsTestEmail@charter.com");
+		logInPage = pageObjectManager.getLogInPage();
+		logInPage.enter_LogInEmail("MSTestEmail@charter.com");
 		logInPage.enter_LogInPassword("testpwd@MS1");
 		logInPage.clickLogIn();
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
-		/*
-		 * WebDriverWait newRequest = new WebDriverWait(driver, 30);
-		 * newRequest.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
-		 * "//button[@id='new-request-btn']")));
-		 */
 
 	}
 
 	@Then("^User should land on Request Dashboard page$")
 
 	public void requestDashboard_verification() {
-		 requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
+		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
 		requestDashBoardPage.request_DashBoard_Verification();
 
 	}
@@ -77,42 +77,31 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		// the camapign details
 
 		reachPage = pageObjectManager.getReachPage();
-		 requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//datatable-row-wrapper[1]//datatable-body-row[1]//div[2]//datatable-body-cell[6]//div[1]//button[1]")));
-
+		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
+		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
 		requestDashBoardPage.click_Continue();
-		WebDriverWait waitForNextButton = new WebDriverWait(driver, 30);
-		waitForNextButton.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(),'Next')]")));
-
+		reachPage.explicitly_Wait_For_ReachPageNextButton();
 		reachPage.click_ReachPageNextButton();
-
-		WebDriverWait waitForRaiseAwareNessButton = new WebDriverWait(driver, 30);
-		waitForRaiseAwareNessButton.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
-				"/html[1]/body[1]/app-root[1]/div[1]/app-order[1]/div[1]/div[2]/div[1]/div[1]/section[1]/app-goals[1]/app-card-item[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/app-goals-card[1]/div[2]/button[1]")));
+		reachPage.explicitly_Wait_For_RaiseAwarenessButton();
 		reachPage.select_RaiseAwareness();
 		reachPage.click_ReachPage1NextButton();
 
 	}
 
 	@Then("^User enters the address on the address field and selects the distance and clicks Next$")
-	public void enter_Address_and_Distance() throws InterruptedException
-
-	{
+	public void enter_Address_and_Distance() throws InterruptedException {
 
 		reachPage = pageObjectManager.getReachPage();
-		WebDriverWait waitForAddressEntry = new WebDriverWait(driver, 10);
-		waitForAddressEntry.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='Enter a location']")));
+		reachPage.explicitly_Wait_For_AddressEntry();
 		reachPage.enter_Address("Austin");
 		reachPage.click_HeaderTtile();
 		reachPage.click_DropDownAroow();
-		//reachPage.enter_Distance();
+		// reachPage.enter_Distance();
 		reachPage.clickDistance_JSExecutor();
 		reachPage.click_DropDownAroow();
 		reachPage.click_ReachPage2NextButton();
 		reachPage.click_ReachPage3NextButton();
-		//reachPage.click_ReachPage3NextButton_JSExecutor();
-
+		// reachPage.click_ReachPage3NextButton_JSExecutor();
 
 	}
 
@@ -121,13 +110,48 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		SchedulePage schedulePage = new SchedulePage (driver);
 		schedulePage.click_startCalednderArrow();
 		schedulePage.click_stopCalenderArrow();
-		schedulePage.enter_Budget();
+		schedulePage.enter_Budget("1000");
 		schedulePage.click_SchedulePage1NextButton();
-	}
-	
-	@Then("^User should be abel to review their campaign$")
-	public void review_campaign () {
-		
+		  try {
+			  Thread.sleep(20000); 
+			  } 
+		  catch (InterruptedException e) {
+		  System.out.println("The Review campaign couldn't load"); e.printStackTrace();
+		  }  
+	    
 	}
 
+	@Then("^User should be able to review campaign$")
+	public void review_campaign() {
+		schedulePage = new SchedulePage(driver);
+		schedulePage.explicitly_Wait_For_ReviewPageNextButton();
+		adPortalScreenShots = new AdPortalScreenShots(driver);
+		adPortalScreenShots.takeScreenShotCreateCampaignDefault();
+		schedulePage.click_ReviewPage_NextButton();
+
+	}
+
+	@Then("^User should be able to name their campaign and upload commercial$")
+	public void name_campaign_UploadCommercial() throws AWTException, InterruptedException {
+		commercialPage = pageObjectManager.getCommercialPage();
+		commercialPage.enter_CampaignName_Or_Continue_With_Commercial("TestCampaign");
+		commercialPage.enter_Things_To_KnowAbout1("Test1");
+		commercialPage.enter_Things_To_KnowAbout2("Test2");
+		commercialPage.enter_Things_To_KnowAbout3("Test3");
+		commercialPage.enter_Commercial_TagLine("Tagline");
+		commercialPage.click_commercial_UploadBox();
+		
+		
+	        
+		/*
+		 * Robot robot; robot = new Robot(); robot.keyPress(KeyEvent.VK_DOWN); try {
+		 * Thread.sleep(1000); } catch (InterruptedException e) {
+		 * System.out.println("Pressed on Down Arrow Key"); e.printStackTrace(); }
+		 * robot.keyRelease(KeyEvent.VK_DOWN); try { Thread.sleep(1000); } catch
+		 * (InterruptedException e) { System.out.println("Pressed on Down Arrow Key");
+		 * e.printStackTrace(); }
+		 * 
+		 * robot.keyPress(KeyEvent.VK_DOWN); robot.keyPress(KeyEvent.VK_RIGHT);
+		 */
+	}
 }

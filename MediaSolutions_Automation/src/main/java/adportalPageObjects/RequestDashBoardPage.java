@@ -55,9 +55,6 @@ public class RequestDashBoardPage {
 	public void explicitly_Wait_For_ContinueButton() {
 		WebDriverWait wait = new WebDriverWait(driver, 25);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(button_Continue));
-		WebElement continueButton = driver.findElement(button_Continue);
-				
-		continueButton.click();
 		
 	}
 

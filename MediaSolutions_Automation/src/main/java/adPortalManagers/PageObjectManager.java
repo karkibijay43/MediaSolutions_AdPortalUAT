@@ -2,6 +2,7 @@ package adPortalManagers;
 
 import org.openqa.selenium.WebDriver;
 
+import adportalPageObjects.CommercialPage;
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.ReachPage;
 import adportalPageObjects.RequestDashBoardPage;
@@ -17,6 +18,7 @@ public class PageObjectManager {
 	private ReachPage reachPage;
 	private SchedulePage schedulePage;
 	private RequestDashBoardPage requestDashBoardPage;
+	private CommercialPage commercialPage;
 	
 	
 	public PageObjectManager(WebDriver driver) {
@@ -39,7 +41,11 @@ public class PageObjectManager {
 		return (requestDashBoardPage == null) ? requestDashBoardPage = new RequestDashBoardPage(driver) : requestDashBoardPage; 
 		}
 	 
-	
+	 public CommercialPage getCommercialPage() {
+			return (commercialPage == null) ? commercialPage = new CommercialPage(driver) : commercialPage; 
+			}
+		 
+		
 	 
 }
 

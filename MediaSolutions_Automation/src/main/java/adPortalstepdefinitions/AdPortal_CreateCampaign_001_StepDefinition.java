@@ -1,10 +1,7 @@
 package adPortalstepdefinitions;
 
 import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.ExtentReports;
 import adPortalManagers.PageObjectManager;
@@ -138,20 +135,9 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		commercialPage.enter_Things_To_KnowAbout1("Test1");
 		commercialPage.enter_Things_To_KnowAbout2("Test2");
 		commercialPage.enter_Things_To_KnowAbout3("Test3");
-		commercialPage.enter_Commercial_TagLine("Tagline");
+		commercialPage.enter_Commercial_TagLine("");
 		commercialPage.click_commercial_UploadBox();
 		
 		
-	        
-		/*
-		 * Robot robot; robot = new Robot(); robot.keyPress(KeyEvent.VK_DOWN); try {
-		 * Thread.sleep(1000); } catch (InterruptedException e) {
-		 * System.out.println("Pressed on Down Arrow Key"); e.printStackTrace(); }
-		 * robot.keyRelease(KeyEvent.VK_DOWN); try { Thread.sleep(1000); } catch
-		 * (InterruptedException e) { System.out.println("Pressed on Down Arrow Key");
-		 * e.printStackTrace(); }
-		 * 
-		 * robot.keyPress(KeyEvent.VK_DOWN); robot.keyPress(KeyEvent.VK_RIGHT);
-		 */
 	}
 }

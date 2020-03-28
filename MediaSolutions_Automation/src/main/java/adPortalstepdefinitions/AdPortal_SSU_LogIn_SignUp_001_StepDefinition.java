@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.aventstack.extentreports.ExtentReports;
+//import com.aventstack.extentreports.ExtentReports;
 
 import adPortalManagers.PageObjectManager;
 import adPortalManagers.WebDriverManager;
@@ -31,7 +31,7 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 	RequestDashBoardPage requestDashBoardPage;
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
-	ExtentReports extent;
+	//ExtentReports extent;
 	AdPortalScreenShots adPortalScreenShots;
 
 	@Given("^User is on AdPortal UAT sign up page$")
@@ -88,6 +88,6 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 		requestDashBoardPage.explicitly_Wait_For_GetStartedButton();
 		//requestDashBoardPage.request_DashBoard_Verification();
 		adPortalScreenShots.takeScreenShotSSU_SignUp();
-		//driver.close();
+		driver.close();
 	}
 }

@@ -4,7 +4,7 @@ import java.io.IOException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import adPortalUtilities.AdPortalScreenShots;
-import com.aventstack.extentreports.ExtentReports;
+//import com.aventstack.extentreports.ExtentReports;
 import adPortalManagers.PageObjectManager;
 import adPortalManagers.WebDriverManager;
 import adportalPageObjects.LogInPage;
@@ -25,7 +25,7 @@ public class AdPortal_LogIn_001_StepDefinition {
 	RequestDashBoardPage requestDashBoardPage;
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
-	 ExtentReports extent; 
+	 //ExtentReports extent; 
 	AdPortalScreenShots adPortalScreenShots;
 	
 
@@ -42,9 +42,6 @@ public class AdPortal_LogIn_001_StepDefinition {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
-		
-		
-
 	}
 
 	@When("^User enters username and password and clicks log in$")
@@ -59,11 +56,12 @@ public class AdPortal_LogIn_001_StepDefinition {
 	@Then("^User lands on request dashboard page$")
 
 	public void requestDashboard_verification() {
-	//adPortalScreenShots = new AdPortalScreenShots(driver);
+		adPortalScreenShots = new AdPortalScreenShots(driver);
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
 		requestDashBoardPage.dashBoardPage_Title_verification();
-		 //adPortalScreenShots.takeScreenshot();
+		 adPortalScreenShots.takeScreenShotLoginTest();
+		 driver.close();
 		
 		  
 		  

@@ -68,35 +68,58 @@ public class CommercialPage {
 	public void enter_Things_To_KnowAbout3(String text3) {
 		driver.findElement(txtBox_Things_To_KnowAbout3).sendKeys(text3);
 		}
-	public void enter_Commercial_TagLine(String text) {
-		driver.findElement(txtBox_commercial_TagLine).sendKeys(text);
+	public void enter_Commercial_TagLine(String text4) {
+		driver.findElement(txtBox_commercial_TagLine).sendKeys(text4);
 		}
 	public void click_commercial_UploadBox() throws AWTException, InterruptedException {
 		WebElement uploadBox = driver.findElement(commercial_Upload_Box);
 		uploadBox.click();
 		
-		Thread.sleep(4000);
+		  Robot robot;
+		 robot = new Robot(); 
+		robot.keyPress(KeyEvent.VK_META);
+		robot.keyPress(KeyEvent.VK_TAB);
+	    robot.keyRelease(KeyEvent.VK_META);
+		robot.keyRelease(KeyEvent.VK_TAB);
 		
-		  Robot robot; 
-		  robot = new Robot(); 
-		  robot.keyPress(KeyEvent.VK_A);
-		  robot.keyPress(KeyEvent.VK_DOWN); 
-		  try {
-		  Thread.sleep(1000); 
-		  } 
-		  catch (InterruptedException e) {
-		  System.out.println("Pressed on Down Arrow Key"); 
-		  e.printStackTrace(); }
-		  robot.keyRelease(KeyEvent.VK_DOWN); 
-		  try { Thread.sleep(1000); } catch
-		  (InterruptedException e) 
-		  { System.out.println("Pressed on Down Arrow Key");
-		  e.printStackTrace(); 
-		  }
+		  robot.keyPress(KeyEvent.VK_DOWN);
+		  robot.keyRelease(KeyEvent.VK_DOWN);
+		  robot.setAutoDelay(1000);
 		  
-		  robot.keyPress(KeyEvent.VK_DOWN); 
+		  robot.keyPress(KeyEvent.VK_DOWN);
+		  robot.keyRelease(KeyEvent.VK_DOWN);
+		  robot.setAutoDelay(1000);
+		  
+		  robot.keyPress(KeyEvent.VK_DOWN);
+		  robot.keyRelease(KeyEvent.VK_DOWN); 
+		  robot.setAutoDelay(1000);
+		   
+		  robot.keyPress(KeyEvent.VK_DOWN);
+		  robot.keyRelease(KeyEvent.VK_DOWN); 
+		  robot.setAutoDelay(1000);
+		  
+		  robot.keyPress(KeyEvent.VK_DOWN);
+		  robot.keyRelease(KeyEvent.VK_DOWN); 
+		  robot.setAutoDelay(1000);
+		  
 		  robot.keyPress(KeyEvent.VK_RIGHT);
-		 
+		  robot.keyRelease(KeyEvent.VK_RIGHT);
+		  robot.setAutoDelay(1000);
+		  
+		  robot.keyPress(KeyEvent.VK_DOWN);
+		  robot.keyRelease(KeyEvent.VK_DOWN); 
+		  robot.setAutoDelay(1000);
+		  
+		  robot.keyPress(KeyEvent.VK_RIGHT);
+		  robot.keyRelease(KeyEvent.VK_RIGHT);
+		  robot.setAutoDelay(1000);
+		  
+		  robot.keyPress(KeyEvent.VK_DOWN);
+		  robot.keyRelease(KeyEvent.VK_DOWN); 
+		  robot.setAutoDelay(1000);
+		  
+		  robot.keyPress(KeyEvent.VK_ENTER);
+		  robot.keyRelease(KeyEvent.VK_ENTER);
 		
 		//driver.findElement(commercial_Upload_Box).sendKeys("/Users/p2815492/Desktop/AdPortalUAT_Automation_Ad_samples/Volcano_HD_30.mp4");
 		  //StringSelection ss = new StringSelection("/Users/p2815492/Desktop/AdPortalUAT_Automation_Ad_samples/Volcano_HD_30.mp4");

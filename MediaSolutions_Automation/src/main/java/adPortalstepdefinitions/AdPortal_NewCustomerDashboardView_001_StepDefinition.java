@@ -7,7 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.aventstack.extentreports.ExtentReports;
+//import com.aventstack.extentreports.ExtentReports;
 
 import adPortalManagers.PageObjectManager;
 import adPortalManagers.WebDriverManager;
@@ -30,7 +30,7 @@ public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 	RequestDashBoardPage requestDashBoardPage;
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
-	 ExtentReports extent; 
+	// ExtentReports extent; 
 	AdPortalScreenShots adPortalScreenShots;
 	
 

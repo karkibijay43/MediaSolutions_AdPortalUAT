@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import adPortal.extentReporter.TestListener;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
@@ -16,8 +17,8 @@ import cucumber.api.testng.TestNGCucumberRunner;
 			glue = {
 					"adPortalstepdefinitions",
 					 }
-					,tags = {"@AdPortalLogInDefault,@SSULogIn," 
-					// + "@CreateCampaignDefault," + "@DashBoardView",@CreateCampaignUserInPut
+					,tags = {"@AdPortalLogInDefault,@SSULogIn,@CreateCampaignDefault, @DashBoardView"
+					//  "@DashBoardView",@CreateCampaignUserInPut
 		 
 							},
 			//plugin = {"pretty", "html:target/cucumber-reports","json:target/cucumber-reports/AdPortal_LogIn_001_Report.json",
@@ -27,7 +28,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 	)
 
  
-		public class RegressionTestRunner {
+		public class RegressionTestRunner extends TestListener  {
 		
 		  static TestNGCucumberRunner testNGCucumberRunner;
 		  

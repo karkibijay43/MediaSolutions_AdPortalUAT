@@ -26,25 +26,33 @@ public class AdPortalScreenShots {
 		this.driver = driver;
 	}
 
-	public void takeScreenShot() {
-
-		try {
-			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/AdportalRegressioin.png"));
-			System.out.println("Screenshot Taken!!!!");
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
+	
+	  public void takeScreenShot() {
+	  
+	  try { source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	  FileUtils.copyFile(source, new File(
+			  "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdportalRegressioin.png"
+	  )); System.out.println("Screenshot Taken!!!!");
+	  
+	  } catch (IOException e) { e.printStackTrace(); } }
+	 
+	/*
+	 * public void takeScreenShot(String test) {
+	 * 
+	 * try { source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	 * FileUtils.copyFile(source, new File(
+	 * "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/"
+	 * +test+".png")); System.out.println("Screenshot Taken!!!!");
+	 * 
+	 * } catch (IOException e) { e.printStackTrace(); } }
+	 */
+	
 	public void takeScreenShotLoginTest() {
 
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/AdPortalLoginTest.png"));
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortalLoginTest.png"));
 			System.out.println("Screenshot Taken!!!!");
 
 		} catch (IOException e) {
@@ -57,7 +65,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/SSU_SignUp.png"));
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/SSU_SignUp.png"));
 			System.out.println("Screenshot Taken!!!!");
 
 		} catch (IOException e) {
@@ -70,7 +78,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/NewDashBoardView.png"));
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/NewDashBoardView.png"));
 			System.out.println("Screenshot Taken!!!!");
 
 		} catch (IOException e) {
@@ -83,7 +91,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/DefaultCampaignTop.png"));
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot//DefaultCampaignTop.png"));
 			System.out.println("Screenshot Taken for the top section of the page!!!!");
 
 		} catch (IOException e) {
@@ -96,26 +104,14 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/DefaultCampaignBottom.png"));
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/DefaultCampaignBottom.png"));
 			System.out.println("Screenshot Taken for Bottom section of the page!!!!");
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
 
-		// Shutterbug.shootPage(driver,
-		// ScrollStrategy.WHOLE_PAGE,true).save("/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/ShutterBugCampaignDefault.png");
-
-		/*
-		 * Screenshot screenshot; screenshot = new
-		 * AShot().shootingStrategy(ShootingStrategies.viewportPasting(100)).
-		 * takeScreenshot(driver);
-		 * 
-		 * try { ImageIO.write(screenshot.getImage(), "jpg", new File(
-		 * "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/AshotCampaignDefault.png"
-		 * )); } catch (IOException e1) {
-		 * System.out.println("whole Page SscreenShot taken"); e1.printStackTrace(); }
-		 */
+		
 	}
 
 	public void takeScreenShotCreateCampaignUserInPut() {
@@ -123,7 +119,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots/CreateCampaignUserInPut.png"));
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/CreateCampaignUserInPut.png"));
 			System.out.println("Screenshot Taken!!!!");
 
 		} catch (IOException e) {

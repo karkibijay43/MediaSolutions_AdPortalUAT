@@ -15,7 +15,8 @@ import dataProvider.ConfigFileReader;
 public class LogInPage {
 
 	ConfigFileReader configFileReader;
-	WebDriver driver;
+	//WebDriver driver;
+	public WebDriver driver;
 	JavascriptExecutor executor;
 
 	By txtBox_LogInEmail = By.cssSelector("#email");

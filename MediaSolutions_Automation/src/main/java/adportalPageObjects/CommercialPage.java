@@ -14,8 +14,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommercialPage {
-	WebDriver driver;
-
+	//WebDriver driver;
+	public WebDriver driver;
 	public CommercialPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -29,6 +29,8 @@ public class CommercialPage {
 	By txtBox_commercial_TagLine = By.id("commercialTagline");
 	By commercial_Upload_Box = By.xpath("//body/app-root/div[@id='tv-main']/app-order/div/div/div/div/section/app-creative-business-description/app-card-item[@id='creative-upload-logo']/div[@id='card-item-wrapper']/div/div/div/div/div/div/div/div/app-upload-creatives/div/div/label/div[1]");			
 	//By.id("//span[contains(text(),'Drop file here or click to upload')]");
+	By image_Rights_CheckBox = By.xpath("//label[contains(text(),'I hold all rights to the images and videos I am up')]");
+	By CommericialPage1_NextButton = By.xpath("commercialPage");
 	
 	public void explicitly_Wait_For_campaignNname_AlertBox() {
 		WebDriverWait wait = new WebDriverWait(driver, 25);
@@ -41,9 +43,9 @@ public class CommercialPage {
 	try {
 	if (driver.findElement(campaignName_AlertBox).isDisplayed()) {  
 			  driver.findElement(campaignName_AlertBox).sendKeys(campaignName);
-			  driver.findElement(campaignName_AlertBox).sendKeys(campaignName);	
+			  //driver.findElement(campaignName_AlertBox).sendKeys(campaignName);	
 			 // driver.findElement(campaignName_AlertBox).click();
-			  driver.findElement(click_Next_Alert).click();
+			 // driver.findElement(click_Next_Alert).click();
 			  
 	}
 		  else
@@ -59,17 +61,17 @@ public class CommercialPage {
 	
 	}
 
-	public void enter_Things_To_KnowAbout1(String text1) {
-		driver.findElement(txtBox_Things_To_KnowAbout1).sendKeys(text1);
+	public void enter_Things_To_KnowAbout1(String text) {
+		driver.findElement(txtBox_Things_To_KnowAbout1).sendKeys(text);
 		}
-	public void enter_Things_To_KnowAbout2(String text2) {
-		driver.findElement(txtBox_Things_To_KnowAbout2).sendKeys(text2);
+	public void enter_Things_To_KnowAbout2(String text) {
+		driver.findElement(txtBox_Things_To_KnowAbout2).sendKeys(text);
 		}
-	public void enter_Things_To_KnowAbout3(String text3) {
-		driver.findElement(txtBox_Things_To_KnowAbout3).sendKeys(text3);
+	public void enter_Things_To_KnowAbout3(String text) {
+		driver.findElement(txtBox_Things_To_KnowAbout3).sendKeys(text);
 		}
-	public void enter_Commercial_TagLine(String text4) {
-		driver.findElement(txtBox_commercial_TagLine).sendKeys(text4);
+	public void enter_Commercial_TagLine(String text) {
+		driver.findElement(txtBox_commercial_TagLine).sendKeys(text);
 		}
 	public void click_commercial_UploadBox() throws AWTException, InterruptedException {
 		WebElement uploadBox = driver.findElement(commercial_Upload_Box);
@@ -127,5 +129,12 @@ public class CommercialPage {
 	        
 	        
 	}
+ public void click_ImageRights_CheckBox (){
+	 driver.findElement(image_Rights_CheckBox).click();
+ }
+ 
+public void click_CommericialPage1_NextButton () {
+	driver.findElement(CommericialPage1_NextButton);
 	
+}
 }

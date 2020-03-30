@@ -1,35 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="75890" started-at="2020-03-28T14:04:44 MDT" finished-at="2020-03-28T14:05:59 MDT">
+  <suite name="Suite" duration-ms="39222" started-at="2020-03-30T15:32:35 MDT" finished-at="2020-03-30T15:33:14 MDT">
     <groups>
       <group name="cucumber">
-        <method signature="AdPortal_CreateCampaign_001_TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner@4ba2ca36]" name="feature" class="cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner"/>
+        <method signature="AdPortal_SSU_LogIn_SignUp_001_TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner@1e802ef9]" name="feature" class="cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner"/>
+        <method signature="Adportal_LogIn_001_TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner@2b6faea6]" name="feature" class="cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="75890" started-at="2020-03-28T14:04:44 MDT" finished-at="2020-03-28T14:05:59 MDT">
-      <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner@4ba2ca36]" name="setUpClass" is-config="true" duration-ms="174" started-at="2020-03-28T14:04:44 MDT" finished-at="2020-03-28T14:04:44 MDT">
+    <test name="AdPortal Regression Test" duration-ms="39222" started-at="2020-03-30T15:32:35 MDT" finished-at="2020-03-30T15:33:14 MDT">
+      <class name="cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner@1e802ef9]" name="setUpClass" is-config="true" duration-ms="144" started-at="2020-03-30T15:32:35 MDT" finished-at="2020-03-30T15:32:35 MDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner@4ba2ca36]" name="feature" duration-ms="75630" started-at="2020-03-28T14:04:44 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-03-28T14:05:59 MDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner@1e802ef9]" name="feature" duration-ms="26347" started-at="2020-03-30T15:32:35 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-03-30T15:33:01 MDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[AdPortal UAT Create Campaign feature]]>
+                <![CDATA[SSO LogIN SignUP AdportalUAT]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="testDownClass()[pri:0, instance:cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner@4ba2ca36]" name="testDownClass" is-config="true" duration-ms="6" started-at="2020-03-28T14:05:59 MDT" finished-at="2020-03-28T14:05:59 MDT">
+        <test-method status="PASS" signature="testDownClass()[pri:0, instance:cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner@1e802ef9]" name="testDownClass" is-config="true" duration-ms="216" started-at="2020-03-30T15:33:01 MDT" finished-at="2020-03-30T15:33:01 MDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDownClass -->
-      </class> <!-- cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner -->
+      <class name="cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner@2b6faea6]" name="setUpClass" is-config="true" duration-ms="11" started-at="2020-03-30T15:33:01 MDT" finished-at="2020-03-30T15:33:01 MDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner@2b6faea6]" name="feature" duration-ms="12389" started-at="2020-03-30T15:33:01 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-03-30T15:33:14 MDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[AdPortal UAT login  feature]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="testDownClass()[pri:0, instance:cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner@2b6faea6]" name="testDownClass" is-config="true" duration-ms="45" started-at="2020-03-30T15:33:14 MDT" finished-at="2020-03-30T15:33:14 MDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDownClass -->
+      </class> <!-- cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner -->
+    </test> <!-- AdPortal Regression Test -->
+  </suite> <!-- Suite -->
 </testng-results>

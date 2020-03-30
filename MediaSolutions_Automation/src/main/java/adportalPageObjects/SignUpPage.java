@@ -7,10 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+
+
 public class SignUpPage {
 	
-
-   WebDriver driver;
+	//WebDriver driver;
+  public WebDriver driver;
 
 	 By txtBox_FirstName = By.id("firstName");
 	 By txtBox_LastName = By.id("lastName");

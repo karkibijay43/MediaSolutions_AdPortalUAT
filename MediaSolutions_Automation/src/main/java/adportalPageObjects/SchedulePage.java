@@ -12,8 +12,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SchedulePage {
-	WebDriver driver;
-	 
+	//WebDriver driver;
+	public WebDriver driver; 
 		public SchedulePage (WebDriver driver) {
 			 this.driver = driver;
 		 }

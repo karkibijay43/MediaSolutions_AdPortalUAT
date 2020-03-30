@@ -14,22 +14,21 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ReachPage {
-	WebDriver driver;
+	//WebDriver driver;
+	public WebDriver driver;
 
 	public ReachPage(WebDriver driver) {
 		this.driver = driver;
 	}
 
 	By reachPage_NextButton = By.xpath("//div[@class='spp-btn']");
-	By button_RaiseAwareness = By.xpath(
-			"/html[1]/body[1]/app-root[1]/div[1]/app-order[1]/div[1]/div[2]/div[1]/div[1]/section[1]/app-goals[1]/app-card-item[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/app-goals-card[1]/div[2]/button[1]");
+	By button_RaiseAwareness = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/app-order[1]/div[1]/div[2]/div[1]/div[1]/section[1]/app-goals[1]/app-card-item[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/app-goals-card[1]/div[2]/button[1]");
 	By button_PromoteYourEvent = By.xpath("//button[@class='ap-btn-large d-none d-sm-flex']");
 	By reachPage1_NextButton = By.xpath("//span[contains(text(),'Next')]");
 	By txtBox_AddressField = By.xpath("//input[@placeholder='Enter a location']");
 	By headerTitle = By.xpath("//div[@class='header large ng-star-inserted']");
 	By distanceArrowdropdown = By.xpath("//span[@class='ng-arrow-wrapper']");
-	By miles_2 = By.xpath(
-			"//div[@class='ng-option ng-option-selected ng-star-inserted ng-option-marked']//span[@class='ng-option-label ng-star-inserted'][contains(text(),'2 miles')]");
+	By miles_2 = By.xpath("//div[@class='ng-option ng-option-selected ng-star-inserted ng-option-marked']//span[@class='ng-option-label ng-star-inserted'][contains(text(),'2 miles')]");
 	By defaultDistance_50 = By.xpath("//span[contains(text(),'50 miles')]");
 	By miles_20 = By.xpath("//span[contains(text(),'20 miles')]");
 	By miles_30 = By.xpath("//span[contains(text(),'30 miles')]");

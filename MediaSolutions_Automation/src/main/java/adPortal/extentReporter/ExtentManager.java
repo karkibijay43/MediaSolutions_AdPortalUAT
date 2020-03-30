@@ -1,19 +1,35 @@
 package adPortal.extentReporter;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import adPortalManagers.WebDriverManager;
 
-public class ExtentManager {
+
+
+public class ExtentManager extends WebDriverManager{
 	private static ExtentReports extent;
     private static String reportFileName = "Test-Automaton-Report"+".html";
     private static String fileSeperator = System.getProperty("file.separator");
     private static String reportFilepath = System.getProperty("user.dir") +fileSeperator+ "AdPortalRegressionTestReport";
     private static String reportFileLocation =  reportFilepath +fileSeperator+ reportFileName;
-  
+    public static String reportLocation = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/AdPortalRegressionTestReport/NewReport";
+
+	/*
+	 * public static ExtentTest scenarioDef; public static ExtentTest features;
+	 * public static WebDriver driver;
+	 * 
+	 * public ExtentManager (WebDriver driver) { ExtentManager.driver= driver; }
+	 */
  
     public static ExtentReports getInstance() {
         if (extent == null)
@@ -59,6 +75,23 @@ public class ExtentManager {
         }
 		return reportFileLocation;
     }
+    
+	
+	/*
+	 * public void ExtentReportScreenshot() throws IOException {
+	 * 
+	 * File scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	 * Files.copy(scr.toPath(), new File(reportLocation +
+	 * "screenshot.png").toPath());
+	 * scenarioDef.fail("details").addScreenCaptureFromPath(reportLocation +
+	 * "screenshot.png"); }
+	 */
+
+    public void FlushReport(){
+        extent.flush();
+    }
+
+
  
 }
 

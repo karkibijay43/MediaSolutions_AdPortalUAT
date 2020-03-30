@@ -32,6 +32,7 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 	WebDriverManager webDriverManager;
 	ExtentReports extent;
 	AdPortalScreenShots adPortalScreenShots;
+	
 
 	@Given("^User is on AdPortal UAT SignUp page and clicks log in$")
 	public void user_is_on_logIn_page() {
@@ -76,7 +77,9 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		reachPage = pageObjectManager.getReachPage();
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
-		requestDashBoardPage.click_Continue();
+		requestDashBoardPage.continue_Draft();
+		//requestDashBoardPage.get_Started_Or_ContinueCamapaign();
+		//requestDashBoardPage.click_Continue();
 		reachPage.explicitly_Wait_For_ReachPageNextButton();
 		reachPage.click_ReachPageNextButton();
 		reachPage.explicitly_Wait_For_RaiseAwarenessButton();
@@ -135,9 +138,10 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		commercialPage.enter_Things_To_KnowAbout1("Test1");
 		commercialPage.enter_Things_To_KnowAbout2("Test2");
 		commercialPage.enter_Things_To_KnowAbout3("Test3");
-		commercialPage.enter_Commercial_TagLine("");
+		commercialPage.enter_Commercial_TagLine("TestCommercial_TagLine");
 		commercialPage.click_commercial_UploadBox();
-		
-		
+		commercialPage.click_ImageRights_CheckBox();
+		commercialPage.click_commercialPage_NextButton();
+		       
 	}
 }

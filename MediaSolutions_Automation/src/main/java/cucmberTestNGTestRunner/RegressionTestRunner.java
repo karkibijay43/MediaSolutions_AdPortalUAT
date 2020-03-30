@@ -14,15 +14,16 @@ import cucumber.api.testng.TestNGCucumberRunner;
 @CucumberOptions(
 
 			features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures", 
-			glue = {
-					"adPortalstepdefinitions",
-					 }
-					,tags = {"@AdPortalLogInDefault,@SSULogIn,@CreateCampaignDefault, @DashBoardView"
-					//  "@DashBoardView",@CreateCampaignUserInPut
-		 
-							},
-			//plugin = {"pretty", "html:target/cucumber-reports","json:target/cucumber-reports/AdPortal_LogIn_001_Report.json",
-					//"com.cucumber.listener.ExtentCucumberFormatter},
+			glue = {"adPortalstepdefinitions" },
+			plugin = {//"com.cucumber.listener.ExtentCucumberFormatter:AdPortalRegressionTestReport/RegressionSuite_Test_Report.html"
+					"com.cucumber.listener.ExtentCucumberFormatter:/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Adportal Automation Test Report/RegressionSuite_Test_Report.html"
+			},
+			
+					tags = {"@AdPortalLogInDefault,@SSULogIn,@DashBoardView,@CreateCampaignDefault"
+					//  "@DashBoardView",@CreateCampaignUserInPut,
+					},
+							
+						
 							monochrome = true
 
 	)
@@ -46,12 +47,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		  @DataProvider public Object[][] features() { return
 		  testNGCucumberRunner.provideFeatures(); }
 		 
-		/*
-		 * @DataProvider (name="adportalfeatures") public Object[][] features() {
-		 * if(testNGCucumberRunner == null){ testNGCucumberRunner = new
-		 * TestNGCucumberRunner(this.getClass()); } return
-		 * testNGCucumberRunner.provideFeatures(); }
-		 */
+	
 		  @AfterClass(alwaysRun = true) public void testDownClass() {
 		  testNGCucumberRunner.finish(); }
 		

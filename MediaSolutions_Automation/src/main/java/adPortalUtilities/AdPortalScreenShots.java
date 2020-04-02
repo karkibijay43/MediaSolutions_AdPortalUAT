@@ -86,12 +86,12 @@ public class AdPortalScreenShots {
 		}
 	}
 
-	public void takeScreenShotCreateCampaignDefault() {
+	public void takeScreenShotCreateCampaignDefault_RewviewPage() {
 
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot//DefaultCampaignTop.png"));
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot//DefaultCampaign_Top.png"));
 			System.out.println("Screenshot Taken for the top section of the page!!!!");
 
 		} catch (IOException e) {
@@ -104,7 +104,35 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/DefaultCampaignBottom.png"));
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/DefaultCampaign_Bottom.png"));
+			System.out.println("Screenshot Taken for Bottom section of the page!!!!");
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
+		
+	}
+	
+	public void takeScreenShotCreateCampaignDefault_RewviewOrderPage() {
+
+		try {
+			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(source, new File(
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot//ReviewYourOrder_Top.png"));
+			System.out.println("Screenshot Taken for the top section of the page!!!!");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+
+		try {
+			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(source, new File(
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/ReviewYourOrder_Bottom.png"));
 			System.out.println("Screenshot Taken for Bottom section of the page!!!!");
 		} catch (IOException e) {
 
@@ -125,6 +153,33 @@ public class AdPortalScreenShots {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+
+	public void takeScreenShotCreateCampaignDefault_CheckOutPage() {
+		try {
+			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(source, new File(
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot//CheckOutPage_Bottom.png"));
+			System.out.println("Screenshot Taken for the top section of the page!!!!");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+
+		try {
+			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(source, new File(
+					 "/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/CheckOutPage_Bottom.png"));
+			System.out.println("Screenshot Taken for Bottom section of the page!!!!");
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		
 	}
 
 }

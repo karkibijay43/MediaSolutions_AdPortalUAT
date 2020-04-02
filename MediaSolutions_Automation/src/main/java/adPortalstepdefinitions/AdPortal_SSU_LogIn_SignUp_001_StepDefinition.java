@@ -67,9 +67,7 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 
 	public void read_Accept_licenseAgreement() {
 		signUpPage = pageObjectManager.getSignUpPage();
-		//SignUpPage signUpPage = new SignUpPage(driver);
 		signUpPage.click_CheckBox();
-
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
 		driver.close();
@@ -79,15 +77,13 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 
 	@Then("^User should be able to create log in credentiasls for Adportal UAT$")
 	public void next_step_LogIn() {
-
-		adPortalScreenShots = new AdPortalScreenShots(driver);
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		SignUpPage signUpPage = new SignUpPage(driver);
-
 		signUpPage.click_nextStep();
 		requestDashBoardPage.explicitly_Wait_For_GetStartedButton();
 		//requestDashBoardPage.request_DashBoard_Verification();
+		adPortalScreenShots = new AdPortalScreenShots(driver);
 		adPortalScreenShots.takeScreenShotSSU_SignUp();
-		driver.close();
+		driver.quit();
 	}
 }

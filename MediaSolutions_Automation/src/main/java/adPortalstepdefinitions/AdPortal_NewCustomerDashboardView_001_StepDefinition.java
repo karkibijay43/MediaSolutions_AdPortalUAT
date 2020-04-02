@@ -46,6 +46,7 @@ public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
+		signUpPage.click_Login();
 	}
 	
 	@When("^User enters all required fields$")

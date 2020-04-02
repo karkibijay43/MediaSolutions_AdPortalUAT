@@ -19,16 +19,20 @@ public class LogInPage {
 	public WebDriver driver;
 	JavascriptExecutor executor;
 
-	By txtBox_LogInEmail = By.cssSelector("#email");
+	By txtBox_LogInEmail = By.id("email");
 	By txtBox_LogInPassword = By.id("password");
-	By clickLogIn = By.xpath("//input[@class='spp-btn']");
-
+	By clickLogIn = By.xpath("//*[@id=\"tv-main\"]/app-adportal-login/app-login-signup-reset/div[2]/div/div/form/button");
+	String LogInURL = "https://adportal-uat.brandcdnstage.com/login";
+	
 	public LogInPage(WebDriver driver) {
 		this.executor = (JavascriptExecutor) this.driver;
 		this.driver = driver;
 		configFileReader = new ConfigFileReader();
 	}
-
+	
+	public void navigateTo_LogInPage() {
+		driver.get(LogInURL);
+	}
 	public void enter_LogInEmail(String email) {
 		driver.findElement(txtBox_LogInEmail).clear();
 		driver.findElement(txtBox_LogInEmail).sendKeys(email);

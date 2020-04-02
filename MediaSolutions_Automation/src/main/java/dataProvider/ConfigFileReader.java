@@ -57,6 +57,14 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("SignUpURL not specified in the Configuration.properties file.");
 	}
+	
+	public String getLoginURL() {
+		String LogInURL = properties.getProperty("LogInURL");
+		if (LogInURL != null)
+			return LogInURL;
+		else
+			throw new RuntimeException("SignUpURL not specified in the Configuration.properties file.");
+	}
 
 	public DriverTtype getBrowser() {
 		String browserName = properties.getProperty("browser");

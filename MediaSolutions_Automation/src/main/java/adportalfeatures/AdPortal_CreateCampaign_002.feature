@@ -11,3 +11,4 @@ Then User should be able to Get started or continue with the campaign
 Then User enters the address on the address field and selects the distance in miles and clicks Next
 Then User should be able to create a campaign for selected Dates
 Then User should be able to review their campaign Details
+Then User should be able to name campaign and upload commercial

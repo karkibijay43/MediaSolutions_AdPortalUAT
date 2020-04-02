@@ -6,6 +6,7 @@ import adportalPageObjects.CommercialPage;
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.ReachPage;
 import adportalPageObjects.RequestDashBoardPage;
+import adportalPageObjects.ReviewOrderPage;
 import adportalPageObjects.SchedulePage;
 import adportalPageObjects.SignUpPage;
 
@@ -19,6 +20,7 @@ public class PageObjectManager {
 	private SchedulePage schedulePage;
 	private RequestDashBoardPage requestDashBoardPage;
 	private CommercialPage commercialPage;
+	private ReviewOrderPage reviewOrderPage;
 	
 	
 	public PageObjectManager(WebDriver driver) {
@@ -45,7 +47,10 @@ public class PageObjectManager {
 			return (commercialPage == null) ? commercialPage = new CommercialPage(driver) : commercialPage; 
 			}
 		 
-		
+	 public ReviewOrderPage getReviewOrderPage() {
+			return (reviewOrderPage == null) ? reviewOrderPage = new ReviewOrderPage(driver) : reviewOrderPage; 
+			}
+		 
 	 
 }
 

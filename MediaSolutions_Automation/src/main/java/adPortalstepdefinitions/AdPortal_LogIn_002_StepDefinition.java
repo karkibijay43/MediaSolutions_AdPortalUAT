@@ -31,9 +31,7 @@ public class AdPortal_LogIn_002_StepDefinition {
 	RequestDashBoardPage requestDashBoardPage;
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
-	// ExtentReports extent; 
 	AdPortalScreenShots adPortalScreenShots;
-	
 
 	@Given("^User is on AdPortal UAT SignUp Page and clicks LogIn link$")
 	public void user_is_on_logIn_page() throws InterruptedException {
@@ -48,6 +46,7 @@ public class AdPortal_LogIn_002_StepDefinition {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
+		signUpPage.click_Login();
 
 	}
 
@@ -64,8 +63,12 @@ public class AdPortal_LogIn_002_StepDefinition {
 	@Then("^User lands on Request Dashboard page$")
 
 	public void requestDashboard_verification() {
+		adPortalScreenShots = new AdPortalScreenShots(driver);
 		requestDashBoardPage = new RequestDashBoardPage(driver);
+		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
 		requestDashBoardPage.dashBoardPage_Title_verification();
+		adPortalScreenShots.takeScreenShotLoginTest();
+		driver.quit();
 
 	}
 

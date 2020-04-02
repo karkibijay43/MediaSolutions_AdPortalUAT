@@ -2,6 +2,7 @@ package adPortalstepdefinitions;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -9,14 +10,22 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 
+import adPortalManagers.WebDriverManager;
 import adPortalUtilities.AdPortalScreenShots;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
-public class TestHooks {
+public class TestHooks 
+//extends WebDriverManager
+{
 	WebDriver driver;
 	AdPortalScreenShots adPortalScreenShots;
+	
+//	public TestHooks() {
+//		this.driver = super.getDriver();
+//	}
+
 
 	@Before
 	public void beforeScenario(Scenario scenario) {
@@ -81,21 +90,20 @@ public class TestHooks {
 	public void afterScenario(Scenario scenario) throws IOException {
 		System.out.println("Completed execution for the scenario :" + scenario.getName());
 		System.out.println(scenario.getName() + " Status - " + scenario.getStatus());
-		
-		  
-		/*
-		 * try { byte[] screenshot =
-		 * ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES); File
-		 * screenshot_with_scenario_name = ((TakesScreenshot)
-		 * driver).getScreenshotAs(OutputType.FILE);
-		 * FileUtils.copyFile(screenshot_with_scenario_name, new File(
-		 * "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots"
-		 * + scenario.getName() + ".png")); System.out.println(scenario.getName());
-		 * scenario.embed(screenshot, "image/png"); } catch (WebDriverException
-		 * somePlatformsDontSupportScreenshots) {
-		 * System.err.println(somePlatformsDontSupportScreenshots.getMessage()); }
-		 */
-
+	
+/*
+		try {
+			byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+			File screenshot_with_scenario_name = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(screenshot_with_scenario_name,
+					new File("/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots"
+							+ scenario.getName() + ".png"));
+			System.out.println(scenario.getName());
+			scenario.embed(screenshot, "image/png");
+		} catch (WebDriverException somePlatformsDontSupportScreenshots) {
+			System.err.println(somePlatformsDontSupportScreenshots.getMessage());
+		}
+*/
 	}
 
 	/*@After("@AdPortalLogInDefault")

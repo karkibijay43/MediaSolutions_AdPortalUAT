@@ -1,5 +1,6 @@
 package adPortalstepdefinitions;
 
+import java.awt.AWTException;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -21,6 +22,7 @@ import adPortalManagers.PageObjectManager;
 
 import adPortalManagers.WebDriverManager;
 import adPortalUtilities.AdPortalScreenShots;
+import adportalPageObjects.CommercialPage;
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.ReachPage;
 import adportalPageObjects.RequestDashBoardPage;
@@ -42,7 +44,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	RequestDashBoardPage requestDashBoardPage;
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
-	//ExtentReports extent;
+	CommercialPage commercialPage;
 	AdPortalScreenShots adPortalScreenShots;
 
 	@Given("^User is on AdPortal UAT SignUp page and clicks Log in$")
@@ -57,6 +59,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
+		signUpPage.click_Login();
 
 	}
 
@@ -119,13 +122,38 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	@Then("^User should be able to review their campaign Details$")
 	public void review_campaign_details() {
 		schedulePage = new SchedulePage(driver);
+		schedulePage.explicitly_Wait_For_ReviewPageNextButton();
+		adPortalScreenShots = new AdPortalScreenShots(driver);
+		adPortalScreenShots.takeScreenShotCreateCampaignDefault_RewviewPage();
+		schedulePage.click_SchedulePage2_NextButton();
+	}
 
-		WebDriverWait waitForBudgetReview = new WebDriverWait(driver, 60);
-		waitForBudgetReview.until(ExpectedConditions
-				.presenceOfElementLocated(By.xpath("//button[@id='placeorder']")));
-		adPortalScreenShots.takeScreenShotCreateCampaignDefault();
-
-		schedulePage = pageObjectManager.getSchedulePage();
-		schedulePage.verify_BudgetAmount();
+	@Then("^User should be able to name campaign and upload commercial$")
+	public void name_campaign_UploadCommercial() throws AWTException, InterruptedException {
+		commercialPage = pageObjectManager.getCommercialPage();
+		schedulePage.enter_CampaignName_Or_Continue_With_Commercial("TestCampaign");
+		commercialPage.enter_Things_To_KnowAbout1("Test1");
+		commercialPage.enter_Things_To_KnowAbout2("Test2");
+		commercialPage.enter_Things_To_KnowAbout3("Test3");
+		commercialPage.enter_Commercial_TagLine("TestCommercial_TagLine");
+		commercialPage.click_commercial_UploadBox();
+		commercialPage.click_ImageRights_CheckBox();
+		commercialPage.click_CommericialPage1_NextButton();
+		commercialPage.enter_primary_Call_To_Action("Give us a call");
+		commercialPage.enter_Street_Address("6501 S Fiddlers Green cir");
+		commercialPage.enter_Apartment("007");
+		commercialPage.enter_City("Greenwood Village");
+		commercialPage.select_State("CO");
+		commercialPage.enter_Zip_Code("80111");
+		commercialPage.enter_PhoneNumber("1234567890");
+		commercialPage.enter_Website_URL("Adportal.com");
+		commercialPage.enter_Email_Address("MSTestEmail@charter.com");
+		commercialPage.enter_Other_Way_To_Contact("MSolutionsTestemail@charter.com");
+		commercialPage.enter_Other_Message_For_Audience("This is a test camppaign");
+		commercialPage.click_commercialPage2_NextButton();
+		commercialPage.select_Voice_Preference();
+		commercialPage.select_Music_Preference();
+		commercialPage.enter_Special_Instructions("Media solutions test campaign");
+		commercialPage.click_CommercialPage3_NextButton();
 	}
 }

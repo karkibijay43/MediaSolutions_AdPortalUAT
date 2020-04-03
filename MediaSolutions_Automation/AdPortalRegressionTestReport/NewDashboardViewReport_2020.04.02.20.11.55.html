@@ -4,7 +4,7 @@
 
 
 <head>
-	<meta charset='UTF-8' /> 
+	<meta charset='utf-8' /> 
 	<meta name='description' content='' />
 	<meta name='robots' content='noodp, noydir' />
 	<meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -15,18 +15,13 @@
 
 		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
 	
-	<title>Adportal Cucumber Framework</title>
+	<title>ExtentReports</title>
 
 	<style type='text/css'>
-			
-      
-        
-      
-    
 	</style>
 </head>
 
-	<body class='extent standard default hide-overflow '>
+	<body class='extent standard default hide-overflow bdd-report'>
 		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
 			<span><i class='material-icons'>desktop_windows</i></span>
 		</div>
@@ -43,7 +38,7 @@
 		</ul>
 
 		<!-- report name -->
-		<span class='report-name'>Adportal Regression Test Report</span>
+		<span class='report-name'>ExtentReports</span>
 		
 		<!-- report headline -->
 		<span class='report-headline'></span>
@@ -52,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Mar 30, 2020 03:24:10 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Apr 2, 2020 08:11:55 PM</span>
 				</a>
 			</li>
 			<li>
@@ -78,6 +73,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -90,7 +86,8 @@
 					<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>cucumber</a></li>
+					<li><a href='#'>@cucumberHooks</a></li>
+					<li><a href='#'>@DashBoardView</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -131,149 +128,119 @@
 
 <div id='test-view-charts' class='subview-full'>
 	<div id='charts-row' class='row nm-v nm-h'>
-		<div class='col s12 m6 l6 np-h'>
+		<div class='col s12 m4 l4 np-h'>
 			<div class='card-panel nm-v'>
-				<div class='left panel-name'>Tests</div>
+				<div class='left panel-name'>Features</div>
 				<div class='chart-box'>
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
 				</div>
 			</div>
 		</div>
 		
-		<div class='col s12 m6 l6 np-h'>
+		<div class='col s12 m4 l4 np-h'>
 			<div class='card-panel nm-v'>
-				<div class='left panel-name'>Steps</div>
+				<div class='left panel-name'>Scenarios</div>
 				<div class='chart-box'>
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
 				</div>
 			</div>
 		</div>
 		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='80%'><span class='strong'>4</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='20%'>1</span> others
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
 	<div class='subview-left left'>
 		
 		<div class='view-summary'>
-			<h5>Tests</h5>
+			<h5>Features</h5>
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active has-leaf skip' status='skip' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Suite</span>
-						<span class='test-time'>Mar 30, 2020 03:24:11 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>New customer dashboard view feature</span>
+						<span class='test-time'>Apr 2, 2020 08:11:55 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Mar 30, 2020 03:24:11 PM</span>
-	<span class='label end-time'>Mar 30, 2020 03:24:50 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 39s+613ms</span>
-</div>
-	<ul class='collapsible node-list' data-collapsible='accordion'>
-		
-				<li class='node level-1  pass' status='pass' test-id='2'>
-					<div class='collapsible-header'>
-						<h5 class='node-name'>AdPortal Regression Test</h5>
-						<span class="node-time label grey lighten-1 white-text">Mar 30, 2020 03:24:50 PM</span>
-						<span class='node-duration label grey lighten-1 white-text'>0h 0m 39s+579ms</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-						<div class='collapsible-body'>
-								<div class='node-steps'>
-									<table class='bordered table-results'>
-										<thead>
-											<tr>
-												<th>Status</th>
-												<th>Timestamp</th>
-												<th>Details</th>
-											</tr>
-										</thead>
-										<tbody>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>3:24:50 PM</td>
-													<td class='step-details'>Passed</td>
-												</tr>
-										</tbody>
-									</table>
-								</div>
-						</div>
-						<ul class='collapsible node-list' data-collapsible='accordion'>
-				<li class='node level-2 leaf pass' status='pass' test-id='3'>
-					<div class='collapsible-header'>
-						<h5 class='node-name'>feature</h5>
-						<span class="node-time label grey lighten-1 white-text">Mar 30, 2020 03:24:38 PM</span>
-						<span class='node-duration label grey lighten-1 white-text'>0h 0m 26s+750ms</span>
-						<span class='test-status right pass'>pass</span>
-								<span class='category label white-text'>cucumber</span>
-					</div>
-						<div class='collapsible-body'>
-								<div class='node-steps'>
-									<table class='bordered table-results'>
-										<thead>
-											<tr>
-												<th>Status</th>
-												<th>Timestamp</th>
-												<th>Details</th>
-											</tr>
-										</thead>
-										<tbody>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>3:24:38 PM</td>
-													<td class='step-details'>Passed</td>
-												</tr>
-										</tbody>
-									</table>
-								</div>
-						</div>
-				</li>
-				<li class='node level-2 leaf pass' status='pass' test-id='10'>
-					<div class='collapsible-header'>
-						<h5 class='node-name'>feature</h5>
-						<span class="node-time label grey lighten-1 white-text">Mar 30, 2020 03:24:50 PM</span>
-						<span class='node-duration label grey lighten-1 white-text'>0h 0m 12s+395ms</span>
-						<span class='test-status right pass'>pass</span>
-								<span class='category label white-text'>cucumber</span>
-					</div>
-						<div class='collapsible-body'>
-								<div class='node-steps'>
-									<table class='bordered table-results'>
-										<thead>
-											<tr>
-												<th>Status</th>
-												<th>Timestamp</th>
-												<th>Details</th>
-											</tr>
-										</thead>
-										<tbody>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>3:24:50 PM</td>
-													<td class='step-details'>Passed</td>
-												</tr>
-										</tbody>
-									</table>
-								</div>
-						</div>
-				</li>
-						</ul>
-				</li>
+<div class='scenario node' test-id='2' status='skip'>
+	<div class='category-list'>
+		<span class='category label white-text'>@DashBoardView</span>
+	</div>
+	<span class='duration right label'>0h 0m 17s+297ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Dashboard view from new customer</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given A new User is on AdPortal UAT SignUP page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='4' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When User enters all required fields</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='5' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User accepts licesne agreement and clicks Next Step</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='6' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User should be able to see blank dashboard page wtih no campaigns</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='7' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User will be taken to the Reach page</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
 	</ul>
+</div>
 					</div>
 				</li>
 			</ul>
@@ -328,16 +295,16 @@
 				
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>cucumber</span>
+						<span class='category-name'>@cucumberHooks</span>
 						<span class='category-status right'>
-							<span class='label pass'>2</span>
+							<span class='label others'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 2</span>
 							
 							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
 						</div>
 					
 						<div class='category-tests'>
@@ -351,14 +318,43 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Mar 30, 2020 03:24:11 PM</td>
-										<td class='linked' test-id='3'>Suite.AdPortal Regression Test.feature</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td>Apr 2, 2020 08:11:55 PM</td>
+										<td class='linked' test-id='1'>New customer dashboard view feature</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@DashBoardView</span>
+						<span class='category-status right'>
+							<span class='label others'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
 									<tr>
-										<td>Mar 30, 2020 03:24:38 PM</td>
-										<td class='linked' test-id='10'>Suite.AdPortal Regression Test.feature</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Apr 2, 2020 08:11:55 PM</td>
+										<td class='linked' test-id='2'>New customer dashboard view feature.Dashboard view from new customer</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -385,32 +381,38 @@
 		<div class='row'>
 			<div class='col s2'>
 				<div class='card-panel r'>
-					Tests
-					<div class='panel-lead'>2</div>
+					Features
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>5</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Mar 30, 2020 03:24:10 PM</div>
+					<div class='panel-lead'>Apr 2, 2020 08:11:55 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Mar 30, 2020 03:24:50 PM</div>
+			 		<div class='panel-lead'>Apr 2, 2020 08:12:13 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 39s+838ms</div>
+					<div class='panel-lead'>0h 0m 18s+554ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -426,12 +428,21 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>cucumber</td>
-							<td>2</td>
+							<td>@cucumberHooks</td>
 							<td>0</td>
 							<td>0</td>
+							<td>1</td>
 							<td>
-									100%
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@DashBoardView</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>
+									0%
 							</td>
 						</tr>
 					</table>
@@ -447,31 +458,31 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 2,
+				passParent: 0,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 0,
-				exceptionsParent: 0,
+				skipParent: 1,
+				exceptionsParent: 1,
 				
-				passChild: 2,
+				passChild: 0,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
-				skipChild: 0,
+				skipChild: 1,
 				infoChild: 0,
-				exceptionsChild: 0,
+				exceptionsChild: 1,
 				
-				passGrandChild: 0,
+				passGrandChild: 4,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 0,
+				skipGrandChild: 1,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 0,
+				exceptionsGrandChild: 1,
 			};
 		</script>
 		
@@ -479,13 +490,6 @@
 		
 		
  		<script type='text/javascript'>
- 			
-      
-        $(document).ready(function() {
-        
-        });
-      
-    
  		</script>
 	</body>
 	

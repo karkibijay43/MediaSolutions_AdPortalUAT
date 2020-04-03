@@ -1,15 +1,8 @@
 package adPortalstepdefinitions;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 //import com.aventstack.extentreports.ExtentReports;
-
 import adPortalManagers.PageObjectManager;
 import adPortalManagers.WebDriverManager;
 import adPortalUtilities.AdPortalScreenShots;
@@ -35,14 +28,23 @@ public class AdPortal_LogIn_002_StepDefinition {
 
 	@Given("^User is on AdPortal UAT SignUp Page and clicks LogIn link$")
 	public void user_is_on_logIn_page() throws InterruptedException {
-
+		
 		webDriverManager = new WebDriverManager();
-		driver = webDriverManager.getDriver();
+		driver = WebDriverManager.getDriver();
 		configFileReader = new ConfigFileReader();
 		pageObjectManager = new PageObjectManager(driver);
-		configFileReader.getApplicationUrl();
+		// configFileReader.getLoginURL();
+		// configFileReader.getApplicationUrl();
+		//logInPage = pageObjectManager.getLogInPage();
+		//logInPage.navigateTo_LogInPage();
 		signUpPage = pageObjectManager.getSignUpPage();
 		signUpPage.navigateTo_SignUpPage();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			System.out.println("SignUp Page is still loading");
+			e.printStackTrace();
+		}
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
@@ -68,7 +70,7 @@ public class AdPortal_LogIn_002_StepDefinition {
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
 		requestDashBoardPage.dashBoardPage_Title_verification();
 		adPortalScreenShots.takeScreenShotLoginTest();
-		driver.quit();
+	
 
 	}
 

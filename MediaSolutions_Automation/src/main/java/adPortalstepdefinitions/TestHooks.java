@@ -2,7 +2,6 @@ package adPortalstepdefinitions;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -21,6 +20,7 @@ public class TestHooks
 {
 	WebDriver driver;
 	AdPortalScreenShots adPortalScreenShots;
+	WebDriverManager webDriverManager;
 	
 //	public TestHooks() {
 //		this.driver = super.getDriver();
@@ -90,47 +90,41 @@ public class TestHooks
 	public void afterScenario(Scenario scenario) throws IOException {
 		System.out.println("Completed execution for the scenario :" + scenario.getName());
 		System.out.println(scenario.getName() + " Status - " + scenario.getStatus());
-	
-/*
+		 webDriverManager = new WebDriverManager(); 
+		 driver = WebDriverManager.getDriver();
+
 		try {
 			byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			File screenshot_with_scenario_name = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(screenshot_with_scenario_name,
-					new File("/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShots"
-							+ scenario.getName() + ".png"));
+			new File("/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Test_Pass_Fail_ScreenShot/"+ scenario.getName() + ".png"));
 			System.out.println(scenario.getName());
 			scenario.embed(screenshot, "image/png");
 		} catch (WebDriverException somePlatformsDontSupportScreenshots) {
 			System.err.println(somePlatformsDontSupportScreenshots.getMessage());
 		}
-*/
-	}
-
-	/*@After("@AdPortalLogInDefault")
-	public void tearDown(Scenario scenario) throws IOException {
-		if (scenario.isFailed()) {
-			try {
-				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-				File screenshot_with_scenario_name = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(screenshot_with_scenario_name,
-						new File("/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShot"
-								+ scenario.getName() + ".png"));
-				System.out.println(scenario.getName());
-				scenario.embed(screenshot, "image/png");
-			} catch (WebDriverException somePlatformsDontSupportScreenshots) {
-				System.err.println(somePlatformsDontSupportScreenshots.getMessage());
-			}
-
-			driver.close();
-		}*/
 
 	}
 	/*
-	 * @After ("@AdPortalLogInDefault") public void screenShotTaker (Scenario
-	 * scenario) { adPortalScreenShots = new AdPortalScreenShots(driver);
-	 * adPortalScreenShots.takeScreenShot();
+	 * @After("@AdPortalLogInDefault") public void tearDown(Scenario scenario)
+	 * throws IOException { webDriverManager = new WebDriverManager(); driver =
+	 * WebDriverManager.getDriver();
 	 * 
-	 * }
+	 * if (scenario.isFailed()) { try { byte[] screenshot = ((TakesScreenshot)
+	 * driver).getScreenshotAs(OutputType.BYTES); File screenshot_with_scenario_name
+	 * = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	 * FileUtils.copyFile(screenshot_with_scenario_name, new File(
+	 * "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShot"
+	 * + scenario.getName() + ".png")); System.out.println(scenario.getName());
+	 * scenario.embed(screenshot, "image/png"); } catch (WebDriverException
+	 * somePlatformsDontSupportScreenshots) {
+	 * System.err.println(somePlatformsDontSupportScreenshots.getMessage()); }
+	 * 
+	 * 
+	 * } }
 	 */
+	
+}
+	
 
 

@@ -55,14 +55,19 @@ public class ReviewOrderPage {
 	public void select_Credit_Card_Expiration_Month() {
 		WebElement expiration_Month = driver.findElement(dropDown_Credit_Card_Expiration_Month);
 		expiration_Month.click();
-		expiration_Month.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
+		expiration_Month.sendKeys("J");
+	
+		//expiration_Month.sendKeys(Keys.ARROW_DOWN);
+		//expiration_Month.sendKeys(Keys.ARROW_DOWN);
+		expiration_Month.sendKeys(Keys.ENTER);
 			
 	}
 
 	public void select_Credit_Card_Expiration_Year() {
 		WebElement expiration_Year = driver.findElement(dropDown_Credit_Card_Expiration_Year);
 		expiration_Year.click();
-		expiration_Year.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER);
+		expiration_Year.sendKeys("2024");
+		expiration_Year.sendKeys(Keys.ENTER);
 	}
 
 	public void enter_Credit_Card_SecurtiyCode(String CVV) {

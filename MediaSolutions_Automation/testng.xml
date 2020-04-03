@@ -3,9 +3,9 @@
 <suite name="Suite">
 <parameter name="report.config" value="/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/configs/extent-config.xml" />
  <listeners>
-		 <!--  <listener class-name="adPortal.extentReporter.TestListener" />  -->
+		  <listener class-name="adPortal.extentReporter.TestListener" /> 
 		  
-	  <listener class-name="customExtentReporter.ExtentTestNgFormatter" /> 
+	  <!-- <listener class-name="customExtentReporter.ExtentTestNgFormatter" />  -->
 	</listeners> 
   <test thread-count="5" name="AdPortal Regression Test">
     <classes>
@@ -14,7 +14,7 @@
       <class name="cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner"/>
       <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner"/>
       <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_002_TestRunner"/> -->
-      <class name="cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner"/> 
+     <!--  <class name="cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner"/>  -->
       <class name="cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner"/> 
     <!-- <class name="cucmberTestNGTestRunner.RegressionTestRunner"/>  -->
     </classes>

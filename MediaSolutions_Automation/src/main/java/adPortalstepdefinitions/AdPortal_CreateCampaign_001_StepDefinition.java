@@ -38,7 +38,7 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 	@Given("^User is on AdPortal UAT SignUp page and clicks log in$")
 	public void user_is_on_logIn_page() {
 		webDriverManager = new WebDriverManager();
-		driver = webDriverManager.getDriver();
+		driver = WebDriverManager.getDriver();
 		configFileReader = new ConfigFileReader();
 		pageObjectManager = new PageObjectManager(driver);
 		// configFileReader.getLoginURL();
@@ -112,13 +112,11 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		reachPage.enter_Address("Austin");
 		reachPage.click_HeaderTtile();
 		reachPage.click_DropDownAroow();
-		// reachPage.enter_Distance();
 		reachPage.clickDistance_JSExecutor();
 		reachPage.click_DropDownAroow();
 		reachPage.click_ReachPage2NextButton();
 		reachPage.click_ReachPage3NextButton();
-		// reachPage.click_ReachPage3NextButton_JSExecutor();
-
+		
 	}
 
 	@Then("^User should be able to schedule a campaign")
@@ -195,9 +193,6 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		reviewOrderPage.select_dropDown_Billing_State("CO");
 		reviewOrderPage.enter_Billing_Phone_Number("1234567890");
 		adPortalScreenShots.takeScreenShotCreateCampaignDefault_CheckOutPage();
-		
-		
-		
-		
+			
 	}
 }

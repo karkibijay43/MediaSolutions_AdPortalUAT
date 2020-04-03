@@ -1,5 +1,5 @@
 @cucumberHooks
-Feature: AdPortal UAT login  feature
+Feature: AdPortal UAT login  
 
 @AdPortalLogInDefault
 Scenario: Log in with default username and password

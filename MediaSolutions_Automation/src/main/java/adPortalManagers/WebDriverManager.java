@@ -7,14 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
 import adPortalEnums.DriverTtype;
 import adPortalEnums.EnvironMentType;
 
 public class WebDriverManager {
 	
-	//public static WebDriver driver;
-	private WebDriver driver;
+	public static WebDriver driver;
+	//private WebDriver driver;
 	//protected WebDriver driver;
 	private static DriverTtype driverType;
 	private static EnvironMentType environmentType;
@@ -25,13 +24,13 @@ public class WebDriverManager {
 		environmentType = FileReaderManager.getInstance().getConfigReader().getEnvironment();
 	}
 
-	public WebDriver getDriver() {
+	public static  WebDriver getDriver() {
 		if (driver == null)
 			driver = createDriver();
 		return driver;
 	}
 
-	private WebDriver createDriver() {
+	private static WebDriver createDriver() {
 		switch (environmentType) {
 		case LOCAL:
 			driver = createLocalDriver();
@@ -43,11 +42,11 @@ public class WebDriverManager {
 		return driver;
 	}
 
-	private WebDriver createRemoteDriver() {
+	private static WebDriver createRemoteDriver() {
 		throw new RuntimeException("RemoteWebDriver is not yet implemented");
 	}
 
-	private WebDriver createLocalDriver() {
+	private static WebDriver createLocalDriver() {
 		switch (driverType) {
 		case FIREFOX:
 			driver = new FirefoxDriver();
@@ -72,8 +71,8 @@ public class WebDriverManager {
 		return driver;
 	}
 
-	public void closeDriver() {
+	public  void closeDriver() {
 		driver.close();
-		driver.quit();
+		//driver.quit();
 	}
 }

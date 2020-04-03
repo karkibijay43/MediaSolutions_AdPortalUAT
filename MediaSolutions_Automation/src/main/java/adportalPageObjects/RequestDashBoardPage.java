@@ -11,7 +11,7 @@ public class RequestDashBoardPage {
 	// WebDriver driver;
 	public WebDriver driver;
 
-	By button_GetStarted = By.xpath("//span[contains(text(),'Get Started')]");
+	By button_GetStarted = By.className("spp-btn-large ng-star-inserted");
 	By button_Continue = By.xpath(
 			"//datatable-row-wrapper[1]//datatable-body-row[1]//div[2]//datatable-body-cell[6]//div[1]//button[1]");
 	By continue_Draft = By.xpath(
@@ -43,8 +43,21 @@ public class RequestDashBoardPage {
 
 	}
 
+	public void explicitly_Wait_For_GetStartedButton() {
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(button_GetStarted));
+		WebElement getStartedButton = driver.findElement(button_GetStarted);
+		 getStartedButton.click();
+	}
+
 	public void click_GetStarted() {
 		driver.findElement(button_GetStarted).click();
+	}
+
+	public void explicitly_Wait_For_ContinueButton() {
+		WebDriverWait wait = new WebDriverWait(driver, 25);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(button_Continue));
+
 	}
 
 	public void click_Continue() {
@@ -77,16 +90,4 @@ public class RequestDashBoardPage {
 
 	}
 
-	public void explicitly_Wait_For_ContinueButton() {
-		WebDriverWait wait = new WebDriverWait(driver, 25);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(button_Continue));
-
-	}
-
-	public void explicitly_Wait_For_GetStartedButton() {
-		WebDriverWait wait = new WebDriverWait(driver, 25);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(button_GetStarted));
-		WebElement getStartedButton = driver.findElement(button_GetStarted);
-		getStartedButton.click();
-	}
 }

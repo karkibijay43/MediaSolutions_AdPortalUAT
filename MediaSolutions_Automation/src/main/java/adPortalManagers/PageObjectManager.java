@@ -1,7 +1,6 @@
 package adPortalManagers;
 
 import org.openqa.selenium.WebDriver;
-
 import adportalPageObjects.CommercialPage;
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.ReachPage;

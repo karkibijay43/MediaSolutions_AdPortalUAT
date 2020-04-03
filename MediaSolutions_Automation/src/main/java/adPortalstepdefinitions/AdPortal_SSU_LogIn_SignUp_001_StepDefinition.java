@@ -2,15 +2,9 @@ package adPortalstepdefinitions;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 //import com.aventstack.extentreports.ExtentReports;
-
 import adPortalManagers.PageObjectManager;
 import adPortalManagers.WebDriverManager;
 import adPortalUtilities.AdPortalScreenShots;
@@ -37,7 +31,7 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 	@Given("^User is on AdPortal UAT sign up page$")
 	public void user_is_on_SignUp_page() throws Throwable {
 		webDriverManager = new WebDriverManager();
-		driver = webDriverManager.getDriver();
+		driver = WebDriverManager.getDriver();
 		driver.manage().timeouts().implicitlyWait(4000, TimeUnit.SECONDS);
 		configFileReader = new ConfigFileReader();
 		pageObjectManager = new PageObjectManager(driver);
@@ -76,14 +70,16 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 	}
 
 	@Then("^User should be able to create log in credentiasls for Adportal UAT$")
-	public void next_step_LogIn() {
+	public void next_step_LogIn() throws InterruptedException {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		SignUpPage signUpPage = new SignUpPage(driver);
 		signUpPage.click_nextStep();
-		requestDashBoardPage.explicitly_Wait_For_GetStartedButton();
-		//requestDashBoardPage.request_DashBoard_Verification();
+		Thread.sleep(17000);
+		//requestDashBoardPage.explicitly_Wait_For_GetStartedButton();
+		//requestDashBoardPage.click_GetStarted();
+		requestDashBoardPage.request_DashBoard_Verification();
 		adPortalScreenShots = new AdPortalScreenShots(driver);
 		adPortalScreenShots.takeScreenShotSSU_SignUp();
-		driver.quit();
+	
 	}
 }

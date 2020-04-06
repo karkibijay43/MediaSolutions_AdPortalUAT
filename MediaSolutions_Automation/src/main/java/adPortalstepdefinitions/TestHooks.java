@@ -85,6 +85,15 @@ public class TestHooks
 		System.out.println("=========================================");
 
 	}
+	
+	@Before("@FAQLink")
+	public void faq_Link_Functionality(Scenario scenario) {
+
+		System.out.println("=========================================");
+		System.out.println("Executing before FAQ_Link_Functionality");
+		System.out.println("=========================================");
+
+	}
 
 	@After()
 	public void afterScenario(Scenario scenario) throws IOException {
@@ -92,6 +101,7 @@ public class TestHooks
 		System.out.println(scenario.getName() + " Status - " + scenario.getStatus());
 		 webDriverManager = new WebDriverManager(); 
 		 driver = WebDriverManager.getDriver();
+		 //if (scenario.isFailed()) 
 
 		try {
 			byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
@@ -105,24 +115,9 @@ public class TestHooks
 		}
 
 	}
-	/*
-	 * @After("@AdPortalLogInDefault") public void tearDown(Scenario scenario)
-	 * throws IOException { webDriverManager = new WebDriverManager(); driver =
-	 * WebDriverManager.getDriver();
-	 * 
-	 * if (scenario.isFailed()) { try { byte[] screenshot = ((TakesScreenshot)
-	 * driver).getScreenshotAs(OutputType.BYTES); File screenshot_with_scenario_name
-	 * = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-	 * FileUtils.copyFile(screenshot_with_scenario_name, new File(
-	 * "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/target/ScreenShot"
-	 * + scenario.getName() + ".png")); System.out.println(scenario.getName());
-	 * scenario.embed(screenshot, "image/png"); } catch (WebDriverException
-	 * somePlatformsDontSupportScreenshots) {
-	 * System.err.println(somePlatformsDontSupportScreenshots.getMessage()); }
-	 * 
-	 * 
-	 * } }
-	 */
+	
+	
+	
 	
 }
 	

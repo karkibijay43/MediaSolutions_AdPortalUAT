@@ -2,7 +2,7 @@
 Feature: AdPortal UAT Create Campaign feature
 
 @CreateCampaignUserInPut
-Scenario: Create a campaign using your Valid AdPortal UAT logIn Email and Password
+Scenario: Create a campaign with User Based Input using your Valid AdPortal UAT logIn Email and Password 
 
 Given User is on AdPortal UAT SignUp page and clicks Log in
 When User enters Existing Email and Password and clicks LogIn

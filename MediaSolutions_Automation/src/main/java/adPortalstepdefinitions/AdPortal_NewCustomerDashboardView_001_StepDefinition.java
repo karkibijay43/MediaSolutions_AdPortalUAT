@@ -21,7 +21,7 @@ public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 	WebDriver driver;
 	ConfigFileReader configFileReader;
 	JavascriptExecutor executor;
-	LogInPage loginPage;
+	LogInPage logInPage;
 	SignUpPage signUpPage;
 	RequestDashBoardPage requestDashBoardPage;
 	PageObjectManager pageObjectManager;
@@ -56,7 +56,7 @@ public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 
 	}
 
-	@Then("^User accepts licesne agreement and clicks Next Step$")
+	@Then("^User accepts license agreement and clicks Next Step$")
 
 	public void read_Accept_licenseAgreement() throws InterruptedException {
 		SignUpPage signUpPage = new SignUpPage(driver);

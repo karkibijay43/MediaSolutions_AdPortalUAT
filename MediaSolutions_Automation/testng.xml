@@ -9,14 +9,14 @@
 	</listeners> 
   <test thread-count="5" name="AdPortal Regression Test">
     <classes>
-  <!--  <class name="cucmberTestNGTestRunner.AdPortal_NewCustomerDashboardView_001_TestRunner"/>
-      
+   <!-- <class name="cucmberTestNGTestRunner.AdPortal_NewCustomerDashboardView_001_TestRunner"/>
       <class name="cucmberTestNGTestRunner.AdPortal_LogIn_002_TestRunner"/>
       <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_001_TestRunner"/>
-      <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_002_TestRunner"/> -->
-     <!--  <class name="cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner"/>  -->
-      <class name="cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner"/> 
-    <!-- <class name="cucmberTestNGTestRunner.RegressionTestRunner"/>  -->
+      <class name="cucmberTestNGTestRunner.AdPortal_CreateCampaign_002_TestRunner"/> 
+       <class name="cucmberTestNGTestRunner.AdPortal_SSU_LogIn_SignUp_001_TestRunner"/> 
+      <class name=" AdPortal_NewUser_FAQ_link_Functionality_TestRunner"/>
+      <class name="cucmberTestNGTestRunner.Adportal_LogIn_001_TestRunner"/>  -->
+    <class name="cucmberTestNGTestRunner.RegressionTestRunner"/>  
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

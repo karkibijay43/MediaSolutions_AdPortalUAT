@@ -1,5 +1,5 @@
 @cucumberHooks
-Feature: SSO LogIN SignUP AdportalUAT
+Feature: SSO LogIn SignUP AdportalUAT
 
 @SSULogIn
 Scenario: SignUP with UserEmail and password

@@ -19,7 +19,7 @@ public class AdPortal_LogIn_002_StepDefinition {
 	WebDriver driver;
 	ConfigFileReader configFileReader;
 	JavascriptExecutor executor;
-	LogInPage loginPage;
+	LogInPage logInPage;
 	SignUpPage signUpPage;
 	RequestDashBoardPage requestDashBoardPage;
 	PageObjectManager pageObjectManager;

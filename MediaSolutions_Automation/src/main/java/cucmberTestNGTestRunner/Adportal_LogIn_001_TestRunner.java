@@ -13,6 +13,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.cucumber.listener.ExtentProperties;
+import com.cucumber.listener.Reporter;
 
 import adPortalManagers.WebDriverManager;
 import cucumber.api.CucumberOptions;

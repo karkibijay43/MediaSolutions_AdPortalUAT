@@ -1,68 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="167600" started-at="2020-04-02T20:22:06 MDT" finished-at="2020-04-02T20:24:54 MDT">
+  <suite name="Default suite" duration-ms="17636" started-at="2020-04-06T16:38:26 MDT" finished-at="2020-04-06T16:38:44 MDT">
     <groups>
       <group name="cucumber">
-        <method signature="RegressionTestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" class="cucmberTestNGTestRunner.RegressionTestRunner"/>
+        <method signature="AdPortal_NewUser_FAQ_link_Functionality_TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.AdPortal_NewUser_FAQ_link_Functionality_TestRunner@4ba2ca36]" name="feature" class="cucmberTestNGTestRunner.AdPortal_NewUser_FAQ_link_Functionality_TestRunner"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="167600" started-at="2020-04-02T20:22:06 MDT" finished-at="2020-04-02T20:24:54 MDT">
-      <class name="cucmberTestNGTestRunner.RegressionTestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="setUpClass" is-config="true" duration-ms="168" started-at="2020-04-02T20:22:06 MDT" finished-at="2020-04-02T20:22:07 MDT">
+    <test name="Default test" duration-ms="17636" started-at="2020-04-06T16:38:26 MDT" finished-at="2020-04-06T16:38:44 MDT">
+      <class name="cucmberTestNGTestRunner.AdPortal_NewUser_FAQ_link_Functionality_TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:cucmberTestNGTestRunner.AdPortal_NewUser_FAQ_link_Functionality_TestRunner@4ba2ca36]" name="setUpClass" is-config="true" duration-ms="153" started-at="2020-04-06T16:38:26 MDT" finished-at="2020-04-06T16:38:26 MDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="117754" started-at="2020-04-02T20:22:07 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-02T20:24:04 MDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.AdPortal_NewUser_FAQ_link_Functionality_TestRunner@4ba2ca36]" name="feature" duration-ms="17243" started-at="2020-04-06T16:38:26 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-06T16:38:44 MDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[AdPortal UAT Create Campaign feature]]>
+                <![CDATA[AdPortal UAT new user FAQ link functionlaity]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="7286" started-at="2020-04-02T20:24:04 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-02T20:24:12 MDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[AdPortal UAT login]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="20573" started-at="2020-04-02T20:24:12 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-02T20:24:32 MDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[New customer dashboard view feature]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="21460" started-at="2020-04-02T20:24:32 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-02T20:24:54 MDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[SSO LogIN SignUP AdportalUAT]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="testDownClass()[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="testDownClass" is-config="true" duration-ms="273" started-at="2020-04-02T20:24:54 MDT" finished-at="2020-04-02T20:24:54 MDT">
+        <test-method status="PASS" signature="testDownClass()[pri:0, instance:cucmberTestNGTestRunner.AdPortal_NewUser_FAQ_link_Functionality_TestRunner@4ba2ca36]" name="testDownClass" is-config="true" duration-ms="172" started-at="2020-04-06T16:38:44 MDT" finished-at="2020-04-06T16:38:44 MDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDownClass -->
-      </class> <!-- cucmberTestNGTestRunner.RegressionTestRunner -->
+      </class> <!-- cucmberTestNGTestRunner.AdPortal_NewUser_FAQ_link_Functionality_TestRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

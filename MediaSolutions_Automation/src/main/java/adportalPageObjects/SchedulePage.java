@@ -138,7 +138,7 @@ public class SchedulePage extends CommercialPage {
 				driver.findElement(txtBox_campaignName_AlertBox).clear();
 				driver.findElement(txtBox_campaignName_AlertBox).sendKeys(campaignName);
 
-				// driver.findElement(click_Next_Alert).click();
+				 //driver.findElement(click_Next_Alert).click();
 
 			} else {
 

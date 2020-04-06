@@ -22,7 +22,7 @@ public class AdPortal_LogIn_001_StepDefinition {
 	WebDriver driver;
 	ConfigFileReader configFileReader;
 	JavascriptExecutor executor;
-	LogInPage loginPage;
+	LogInPage logInPage;
 	SignUpPage signUpPage;
 	RequestDashBoardPage requestDashBoardPage;
 	PageObjectManager pageObjectManager;
@@ -75,10 +75,10 @@ public class AdPortal_LogIn_001_StepDefinition {
 	@When("^User enters username and password and clicks log in$")
 @Test
 	public void enter_UserName_and_Password() throws IOException {
-		loginPage = new LogInPage(driver);
-		loginPage.enter_LogInEmail("MSTestEmail@charter.com");
-		loginPage.enter_LogInPassword("testpwd@MS1");
-		loginPage.clickLogIn();
+		logInPage = new LogInPage(driver);
+		logInPage.enter_LogInEmail("MSTestEmail@charter.com");
+		logInPage.enter_LogInPassword("testpwd@MS1");
+		logInPage.clickLogIn();
 	     
 	}
 

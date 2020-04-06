@@ -92,8 +92,7 @@ public class TestListener implements ITestListener {
 			}
 
 			File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			targetLocation = reportsPath + fileSeperator + testClassName + fileSeperator + screenShotName;// define
-																											// location
+			targetLocation = reportsPath + fileSeperator + testClassName + fileSeperator + screenShotName;
 			File targetFile = new File(targetLocation);
 			ExtentTestManager.getTest().log(Status.INFO,
 					"Screen shot file location - " + screenshotFile.getAbsolutePath());
@@ -118,13 +117,5 @@ public class TestListener implements ITestListener {
 		}
 		ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
 	}
-
-	/*
-	 * public void onTestFailure(ITestResult result) {
-	 * System.out.println("*** Test execution " + result.getMethod().getMethodName()
-	 * + " failed..."); ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
-	 * 
-	 * }
-	 */
 
 }

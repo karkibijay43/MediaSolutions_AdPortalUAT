@@ -34,8 +34,6 @@ public class SignUpPage {
 		driver.get(SignUpURL);
 	}
 
-	
-
 	public void click_SignuplogInLink() {
 		driver.findElement(signuplogInLink).click();
 	}

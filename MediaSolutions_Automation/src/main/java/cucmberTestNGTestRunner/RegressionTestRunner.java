@@ -10,6 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.cucumber.listener.ExtentProperties;
+import com.cucumber.listener.Reporter;
 
 import adPortal.extentReporter.TestListener;
 import adPortalManagers.WebDriverManager;
@@ -27,7 +28,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 						/// (James.A.Harris@charter.com )/Quality Assurance/Automation Testing
 						/// Repo/Adportal Automation Test Report/RegressionSuite_Test_Report.html" }
 		},
-		tags = { "@AdPortalLogInDefault,@SSULogIn,@DashBoardView,@CreateCampaignDefault"
+		tags = { "@AdPortalLogInDefault,@SSULogIn,@DashBoardView,@CreateCampaignDefault,@FAQLink"
 		
 		},
 
@@ -63,6 +64,10 @@ public class RegressionTestRunner extends TestListener {
 
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() {
+		/*
+		 * Reporter.setSystemInfo("OS", "MAC"); Reporter.setSystemInfo("AUTOMATION",
+		 * "ADPORTAL"); Reporter.assignAuthor("Bijay");
+		 */
 		testNGCucumberRunner.finish();
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();

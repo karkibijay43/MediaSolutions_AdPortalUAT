@@ -94,7 +94,15 @@ public class TestHooks
 		System.out.println("=========================================");
 
 	}
+	@Before("@ReachIntroPage")
+	public void reach_Intro_Page (Scenario scenario) {
 
+		System.out.println("=========================================");
+		System.out.println("Executing before Reach_Intro_Page");
+		System.out.println("=========================================");
+
+	}
+	
 	@After()
 	public void afterScenario(Scenario scenario) throws IOException {
 		System.out.println("Completed execution for the scenario :" + scenario.getName());

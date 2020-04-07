@@ -50,8 +50,8 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 		signUpPage.enter_BusinessName("Spectrum Reach");
 		signUpPage.enter_ZipCode("80111");
 		signUpPage.enter_PhoneNumber("1234567890");
-		signUpPage.enter_Email("SpectrumReachTestEmail@charter.com");
-		signUpPage.enter_ConfirmEmail("SpectrumReachTestEmail@charter.com");
+		signUpPage.enter_Email("QATestEmail@charter.com");
+		signUpPage.enter_ConfirmEmail("QATestEmail@charter.com");
 		signUpPage.enter_Password("testpwd@MS1");
 		signUpPage.eneter_ConfirmPassword("testpwd@MS1");
 
@@ -77,7 +77,7 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 		Thread.sleep(17000);
 		//requestDashBoardPage.explicitly_Wait_For_GetStartedButton();
 		//requestDashBoardPage.click_GetStarted();
-		requestDashBoardPage.request_DashBoard_Verification();
+		requestDashBoardPage.new_Request_DashBoard_Verification();
 		adPortalScreenShots = new AdPortalScreenShots(driver);
 		adPortalScreenShots.takeScreenShotSSU_SignUp();
 	

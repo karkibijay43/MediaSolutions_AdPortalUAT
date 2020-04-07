@@ -3,9 +3,6 @@ package adPortalstepdefinitions;
 import java.io.IOException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
-
-//import com.aventstack.extentreports.ExtentReports;
 import adPortalManagers.PageObjectManager;
 import adPortalManagers.WebDriverManager;
 import adPortalUtilities.AdPortalScreenShots;
@@ -17,7 +14,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-
 public class AdPortal_LogIn_001_StepDefinition {
 	WebDriver driver;
 	ConfigFileReader configFileReader;
@@ -28,10 +24,9 @@ public class AdPortal_LogIn_001_StepDefinition {
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
 	AdPortalScreenShots adPortalScreenShots;
-	
 
 	@Given("^User is on AdPortal UAT SignUp Page and clicks Log in link$")
-@Test
+
 	public void user_is_on_AdPortal_UAT_SignUp_page() {
 		webDriverManager = new WebDriverManager();
 		driver = WebDriverManager.getDriver();
@@ -39,8 +34,8 @@ public class AdPortal_LogIn_001_StepDefinition {
 		pageObjectManager = new PageObjectManager(driver);
 		// configFileReader.getLoginURL();
 		// configFileReader.getApplicationUrl();
-		//logInPage = pageObjectManager.getLogInPage();
-		//logInPage.navigateTo_LogInPage();
+		// logInPage = pageObjectManager.getLogInPage();
+		// logInPage.navigateTo_LogInPage();
 		signUpPage = pageObjectManager.getSignUpPage();
 		signUpPage.navigateTo_SignUpPage();
 		try {
@@ -53,45 +48,26 @@ public class AdPortal_LogIn_001_StepDefinition {
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
 		signUpPage.click_Login();
-		 
-		
-		/*
-		 * signUpPage = pageObjectManager.getSignUpPage();
-		 * signUpPage.explicitly_Wait_ForLogInLink(); signUpPage.click_Login();
-		 */
 
-		/*
-		 * webDriverManager = new WebDriverManager(); driver =
-		 * webDriverManager.getDriver(); configFileReader = new ConfigFileReader();
-		 * pageObjectManager = new PageObjectManager(driver);
-		 * configFileReader.getApplicationUrl(); signUpPage =
-		 * pageObjectManager.getSignUpPage(); signUpPage.navigateTo_SignUpPage();
-		 * JavascriptExecutor js = (JavascriptExecutor) driver;
-		 * js.executeScript("window.scrollBy(0,100)");
-		 * signUpPage.explicitly_Wait_ForLogInLink(); signUpPage.click_Login();
-		 */
 	}
 
 	@When("^User enters username and password and clicks log in$")
-@Test
+
 	public void enter_UserName_and_Password() throws IOException {
 		logInPage = new LogInPage(driver);
 		logInPage.enter_LogInEmail("MSTestEmail@charter.com");
 		logInPage.enter_LogInPassword("testpwd@MS1");
 		logInPage.clickLogIn();
-	     
+
 	}
 
 	@Then("^User lands on request dashboard page$")
-@Test
+
 	public void requestDashboard_verification() {
 		adPortalScreenShots = new AdPortalScreenShots(driver);
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
-		requestDashBoardPage.dashBoardPage_Title_verification();
-		// adPortalScreenShots.takeScreenShotLoginTest(); 
-		  }
-		 
-			
-}
+		requestDashBoardPage.request_DashBoardPage_With_Drafts_verification();
+	}
 
+}

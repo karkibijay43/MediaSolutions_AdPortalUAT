@@ -17,8 +17,9 @@ public class ReachPage {
 	public ReachPage(WebDriver driver) {
 		this.driver = driver;
 	}
-
+	By reach_Intro_Page_Title = By.xpath("//div[contains(text(),'Reach the customers you need.')]");
 	By reachPage_NextButton = By.xpath("//*[@id=\"card-item-wrapper\"]/div/div[2]/div[2]/div/div/span"); // ("//div[@class='spp-btn']");
+	By get_Text_From_ReachPage1_= By.xpath("//div[contains(text(),'What do you want to achieve?')]");
 	By button_RaiseAwareness = By.xpath(
 			"/html[1]/body[1]/app-root[1]/div[1]/app-order[1]/div[1]/div[2]/div[1]/div[1]/section[1]/app-goals[1]/app-card-item[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/app-goals-card[1]/div[2]/button[1]");
 	By button_PromoteYourEvent = By.xpath("//button[@class='ap-btn-large d-none d-sm-flex']");
@@ -38,7 +39,20 @@ public class ReachPage {
 	By age18_14_Label = By.xpath("//label[contains(text(),'18 - 49')]");
 	By audience_Male = By.xpath("//span[contains(text(),'Male')]");
 	By audice_Female = By.xpath("//span[contains(text(),'Female')]");
+	
+	
+	public void verify_Reach_Intro_Page_Title() {
+		String expectedTitle = "SPP - Creative Requests";
+		String actualTitle = driver.getTitle();
+		System.out.println("The Title of the reach intro page is :" + " " + actualTitle);
 
+		if (expectedTitle.equalsIgnoreCase(actualTitle)) {
+			System.out.println("You have landed on the Reach intro page");
+		} else {
+			System.out.println("This is not an intro page");
+		}
+	}	
+	
 	public void explicitly_Wait_For_ReachPageNextButton() {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(reachPage_NextButton));
@@ -48,6 +62,11 @@ public class ReachPage {
 		driver.findElement(reachPage_NextButton).click();
 
 	}
+	
+	public void get_Text_From_ReachPage1() {
+		String text = driver.findElement(get_Text_From_ReachPage1_).getText();
+		System.out.println("The text of title is :" + text);
+		}
 
 	public void explicitly_Wait_For_RaiseAwarenessButton() {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -108,7 +127,7 @@ public class ReachPage {
 
 	}
 
-	public void click_DropDownAroow() {
+	public void click_DropDownArrow() {
 		driver.findElement(distanceArrowdropdown).click();
 
 	}

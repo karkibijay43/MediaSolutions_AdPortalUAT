@@ -68,7 +68,7 @@ public class AdPortal_LogIn_002_StepDefinition {
 		adPortalScreenShots = new AdPortalScreenShots(driver);
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
-		requestDashBoardPage.dashBoardPage_Title_verification();
+		requestDashBoardPage.request_DashBoardPage_With_Drafts_verification();
 		adPortalScreenShots.takeScreenShotLoginTest();
 	
 

@@ -76,11 +76,11 @@ public class RequestDashBoardPage {
 	public void click_Continue() {
 		driver.findElement(button_Continue).click();
 	}
-
-	public void dashBoardPage_Title_verification() {
+	//This is to verify Request Dashboard with Drafts
+	public void request_DashBoardPage_With_Drafts_verification() {
 		String expectedTitle = "SPP - Creative Requests";
 		String actualTitle = driver.getTitle();
-		System.out.println("The Title this page is:" + " " + actualTitle);
+		System.out.println("The Title of Request DashBoard page is:" + " " + actualTitle);
 
 		if (expectedTitle.equalsIgnoreCase(actualTitle)) {
 			System.out.println("You have landed on the Request DashBoard page");
@@ -88,17 +88,17 @@ public class RequestDashBoardPage {
 			System.out.println("Please revisit LogIn page and enter valid credentials");
 		}
 	}
-
-	public void request_DashBoard_Verification() {
+	//This is to verify New request DashBoard "Welcome to your campaign and commercial dashboard.
+	public void new_Request_DashBoard_Verification() {
 		driver.navigate().refresh();
 		String expectedTitle = "Spectrum Reach Ad Portal";
 		String actualTitle = driver.getTitle();
 		System.out.println("The Title this page is:" + " " + actualTitle);
 
 		if (expectedTitle.equalsIgnoreCase(actualTitle)) {
-			System.out.println("You have landed on the Request DashBoard Page");
+			System.out.println("Welcome to your campaign and commercial dashBoard Page");
 		} else {
-			System.out.println("Please revisit LogIn page and enter valid credentials");
+			System.out.println("Please revisit Sign up page to create new Log In credentials");
 		}
 
 	}

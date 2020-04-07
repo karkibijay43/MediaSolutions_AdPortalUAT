@@ -51,7 +51,7 @@ public class SchedulePage extends CommercialPage {
 
 			String date = dates.getText();
 
-			if (date.equalsIgnoreCase("13")) {
+			if (date.equalsIgnoreCase("20")) {
 				dates.click();
 				break;
 
@@ -70,7 +70,7 @@ public class SchedulePage extends CommercialPage {
 
 			String date = dates.getText();
 
-			if (date.equalsIgnoreCase("19")) {
+			if (date.equalsIgnoreCase("26")) {
 				dates.click();
 				break;
 
@@ -138,7 +138,7 @@ public class SchedulePage extends CommercialPage {
 				driver.findElement(txtBox_campaignName_AlertBox).clear();
 				driver.findElement(txtBox_campaignName_AlertBox).sendKeys(campaignName);
 
-				 //driver.findElement(click_Next_Alert).click();
+				 driver.findElement(click_Next_Alert).click();
 
 			} else {
 

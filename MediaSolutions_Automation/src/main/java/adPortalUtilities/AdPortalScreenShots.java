@@ -190,5 +190,19 @@ public class AdPortalScreenShots {
 		}
 
 	}
+	public void take_ScreenShot_ReachIntroPage() {
+
+		try {
+			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(source, new File(
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_ReachIntroPage_feature/Reach_1_of_3_Page_"
+							+ timeStamp + ".png"));
+			System.out.println("Screenshot Taken!!!!");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 
 }

@@ -11,6 +11,7 @@ import adportalPageObjects.CommercialPage;
 import adportalPageObjects.LogInPage;
 import adportalPageObjects.ReachPage;
 import adportalPageObjects.RequestDashBoardPage;
+import adportalPageObjects.ReviewOrderPage;
 import adportalPageObjects.SchedulePage;
 import adportalPageObjects.SignUpPage;
 import cucumber.api.java.en.Given;
@@ -30,6 +31,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
 	CommercialPage commercialPage;
+	ReviewOrderPage reviewOrderPage;
 	AdPortalScreenShots adPortalScreenShots;
 
 	@Given("^User is on AdPortal UAT SignUp page and clicks Log in$")
@@ -79,6 +81,8 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		logInPage.enter_LogInEmail("MSolutionsTestEmail@charter.com");
 		logInPage.enter_LogInPassword("testpwd@MS1");
 		logInPage.clickLogIn();
+		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
+		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
 
 	}
 
@@ -86,8 +90,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 
 	public void requestDashboard_verification() {
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
-		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
-		requestDashBoardPage.request_DashBoard_Verification();
+		requestDashBoardPage.request_DashBoardPage_With_Drafts_verification();
 
 	}
 
@@ -112,7 +115,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		reachPage.explicitly_Wait_For_AddressEntry();
 		reachPage.UserInPut_Address();
 		reachPage.click_HeaderTtile();
-		reachPage.click_DropDownAroow();
+		reachPage.click_DropDownArrow();
 		reachPage.UserInPut_Distance();
 		reachPage.click_ReachPage2NextButton();
 		reachPage.click_ReachPage3NextButton();
@@ -125,6 +128,12 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		schedulePage.click_stopCalenderArrow();
 		schedulePage.enter_Budget_UserInput();
 		schedulePage.click_SchedulePage1NextButton();
+		try {
+			Thread.sleep(30000);
+		} catch (InterruptedException e) {
+			System.out.println("The Review campaign couldn't load");
+			e.printStackTrace();
+		}
 
 	}
 
@@ -139,6 +148,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 
 	@Then("^User should be able to name campaign and upload commercial$")
 	public void name_campaign_UploadCommercial() throws AWTException, InterruptedException {
+		reviewOrderPage = pageObjectManager.getReviewOrderPage();
 		commercialPage = pageObjectManager.getCommercialPage();
 		schedulePage.enter_CampaignName_Or_Continue_With_Commercial("TestCampaign");
 		commercialPage.enter_Things_To_KnowAbout1("Test1");
@@ -164,5 +174,23 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		commercialPage.select_Music_Preference();
 		commercialPage.enter_Special_Instructions("Media solutions test campaign");
 		commercialPage.click_CommercialPage3_NextButton();
+		adPortalScreenShots.takeScreenShotCreateCampaignDefault_RewviewOrderPage();
+		reviewOrderPage.click_place_OrderButton();
+		reviewOrderPage.select_BusinessCategory("Advertising");
+		reviewOrderPage.enter_Credit_Card_FirstNAme("zztestspp");
+		reviewOrderPage.enter_Credit_Card_LastName("whatever");
+		reviewOrderPage.enter_Credit_Card_Number("1234567890123456");
+		reviewOrderPage.select_Credit_Card_Expiration_Month();
+		reviewOrderPage.select_Credit_Card_Expiration_Year();
+		reviewOrderPage.enter_Credit_Card_SecurtiyCode("7777");
+		reviewOrderPage.enter_Billing_Street_Address("6051 S Fiddlers Green cir");
+		reviewOrderPage.enter_Billing_Apt("007");
+		reviewOrderPage.enter_Billing_Zip_Code("80111");
+		reviewOrderPage.enter_Billing_City("Greenwood Village");
+		reviewOrderPage.select_dropDown_Billing_State("CO");
+		reviewOrderPage.enter_Billing_Phone_Number("1234567890");
+		adPortalScreenShots.takeScreenShotCreateCampaignDefault_CheckOutPage();
+			
 	}
-}
+	}
+

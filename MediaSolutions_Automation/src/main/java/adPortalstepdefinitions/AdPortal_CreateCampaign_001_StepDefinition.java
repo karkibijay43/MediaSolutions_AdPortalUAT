@@ -41,10 +41,6 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		driver = WebDriverManager.getDriver();
 		configFileReader = new ConfigFileReader();
 		pageObjectManager = new PageObjectManager(driver);
-		// configFileReader.getLoginURL();
-		// configFileReader.getApplicationUrl();
-		//logInPage = pageObjectManager.getLogInPage();
-		//logInPage.navigateTo_LogInPage();
 		signUpPage = pageObjectManager.getSignUpPage();
 		signUpPage.navigateTo_SignUpPage();
 		try {
@@ -57,12 +53,7 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
 		signUpPage.click_Login();
-		 
 		
-		/*
-		 * signUpPage = pageObjectManager.getSignUpPage();
-		 * signUpPage.explicitly_Wait_ForLogInLink(); signUpPage.click_Login();
-		 */
 	}
 
 	@When("^User enters Email and Password and clicks LogIn$")
@@ -80,7 +71,7 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 
 	public void requestDashboard_verification() {
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
-		requestDashBoardPage.request_DashBoard_Verification();
+		requestDashBoardPage.request_DashBoardPage_With_Drafts_verification();
 
 	}
 
@@ -94,8 +85,8 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
 		// requestDashBoardPage.continue_Draft();
-		// requestDashBoardPage.get_Started_Or_ContinueCamapaign();
-		requestDashBoardPage.click_Continue();
+		 requestDashBoardPage.get_Started_Or_ContinueCamapaign();
+		//requestDashBoardPage.click_Continue();
 		reachPage.explicitly_Wait_For_ReachPageNextButton();
 		reachPage.click_ReachPageNextButton();
 		reachPage.explicitly_Wait_For_RaiseAwarenessButton();
@@ -111,9 +102,9 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		reachPage.explicitly_Wait_For_AddressEntry();
 		reachPage.enter_Address("Austin");
 		reachPage.click_HeaderTtile();
-		reachPage.click_DropDownAroow();
+		reachPage.click_DropDownArrow();
 		reachPage.clickDistance_JSExecutor();
-		reachPage.click_DropDownAroow();
+		reachPage.click_DropDownArrow();
 		reachPage.click_ReachPage2NextButton();
 		reachPage.click_ReachPage3NextButton();
 		
@@ -146,7 +137,7 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 	}
 
 	@Then("^User should be able to name their campaign and upload commercial$")
-	public void name_campaign_UploadCommercial() throws AWTException, InterruptedException {
+	public void name_Campaign_UploadCommercial() throws AWTException, InterruptedException {
 		schedulePage = new SchedulePage(driver);
 		reviewOrderPage = pageObjectManager.getReviewOrderPage();
 		adPortalScreenShots = new AdPortalScreenShots(driver);

@@ -49,7 +49,6 @@ public class PageObjectManager {
 	 public ReviewOrderPage getReviewOrderPage() {
 			return (reviewOrderPage == null) ? reviewOrderPage = new ReviewOrderPage(driver) : reviewOrderPage; 
 			}
-		 
-	 
+	
 }
 

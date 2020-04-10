@@ -47,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Apr 6, 2020 04:30:48 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Apr 9, 2020 05:05:17 PM</span>
 				</a>
 			</li>
 			<li>
@@ -72,7 +72,7 @@
 					<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+											<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -86,7 +86,7 @@
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>@cucumberHooks</a></li>
-					<li><a href='#'>@FAQLink</a></li>
+					<li><a href='#'>@UploadYourCommercial</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -134,10 +134,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
 				</div>
 			</div>
 		</div>
@@ -149,10 +149,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
 				</div>
 			</div>
 		</div>
@@ -164,10 +164,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>4</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>8</span> others
 				</div>
 			</div>
 		</div>
@@ -181,53 +181,85 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf skip' status='skip' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>AdPortal UAT new user FAQ link functionlaity</span>
-						<span class='test-time'>Apr 6, 2020 04:30:48 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>AdPortal UAT</span>
+						<span class='test-time'>Apr 9, 2020 05:05:17 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenario node' test-id='2' status='pass'>
+<div class='scenario node' test-id='2' status='skip'>
 	<div class='category-list'>
-		<span class='category label white-text'>@FAQLink</span>
+		<span class='category label white-text'>@UploadYourCommercial</span>
 	</div>
-	<span class='duration right label'>0h 0m 24s+895ms</span>
+	<span class='duration right label'>0h 0m 0s+37ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">New User lands on dashboard and selects the FAQ links</span>
+		<span class="desc-text">Upload your own commercial</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='3' class='node when pass' status='pass'>
+		<li test-id='3' class='node given skip' status='skip'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given User is on AdPortal UAT SignUp page and clicks log in</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='4' class='node when skip' status='skip'>
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When I log in using newly created User Email and Password</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">When User enters Email and Password and clicks LogIn</span>
+				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='4' class='node then pass' status='pass'>
+		<li test-id='5' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then I should land on the Ad Portal New Dashboard</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">Then User should land on Request Dashboard page</span>
+				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='5' class='node then pass' status='pass'>
+		<li test-id='6' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then I should see the FAQ links</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">Then User should be able to Get started with the campaign</span>
+				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='6' class='node then pass' status='pass'>
+		<li test-id='7' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then When I select the links the links should open the relevant FAQ page in a new browser tab</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">Then User enters the address on the address field and selects the distance and clicks Next</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='8' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User should be able to schedule a campaign</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='9' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User should be able to review campaign</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='10' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User should be able to upload their own commercial</span>
+				<div class='pre'>undefined</div>
 			
 		</li>
 	</ul>
@@ -288,14 +320,14 @@
 					<div class='category-heading'>
 						<span class='category-name'>@cucumberHooks</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label others'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
 							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
 						</div>
 					
 						<div class='category-tests'>
@@ -309,9 +341,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 6, 2020 04:30:48 PM</td>
-										<td class='linked' test-id='1'>AdPortal UAT new user FAQ link functionlaity</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td>Apr 9, 2020 05:05:17 PM</td>
+										<td class='linked' test-id='1'>AdPortal UAT</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -320,16 +352,16 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@FAQLink</span>
+						<span class='category-name'>@UploadYourCommercial</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label others'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
 							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
 						</div>
 					
 						<div class='category-tests'>
@@ -343,9 +375,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 6, 2020 04:30:48 PM</td>
-										<td class='linked' test-id='2'>AdPortal UAT new user FAQ link functionlaity.New User lands on dashboard and selects the FAQ links</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td>Apr 9, 2020 05:05:17 PM</td>
+										<td class='linked' test-id='2'>AdPortal UAT.Upload your own commercial</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -385,25 +417,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>4</div>
+					<div class='panel-lead'>8</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Apr 6, 2020 04:30:48 PM</div>
+					<div class='panel-lead'>Apr 9, 2020 05:05:17 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Apr 6, 2020 04:31:14 PM</div>
+			 		<div class='panel-lead'>Apr 9, 2020 05:05:17 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 26s+85ms</div>
+					<div class='panel-lead'>0h 0m 0s+94ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -420,20 +452,20 @@
 						</tr>
 						<tr>
 							<td>@cucumberHooks</td>
+							<td>0</td>
+							<td>0</td>
 							<td>1</td>
-							<td>0</td>
-							<td>0</td>
 							<td>
-									100%
+									0%
 							</td>
 						</tr>
 						<tr>
-							<td>@FAQLink</td>
+							<td>@UploadYourCommercial</td>
+							<td>0</td>
+							<td>0</td>
 							<td>1</td>
-							<td>0</td>
-							<td>0</td>
 							<td>
-									100%
+									0%
 							</td>
 						</tr>
 					</table>
@@ -449,31 +481,31 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
+				passParent: 0,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 0,
-				exceptionsParent: 0,
+				skipParent: 1,
+				exceptionsParent: 1,
 				
-				passChild: 1,
+				passChild: 0,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
-				skipChild: 0,
+				skipChild: 1,
 				infoChild: 0,
-				exceptionsChild: 0,
+				exceptionsChild: 1,
 				
-				passGrandChild: 4,
+				passGrandChild: 0,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 0,
+				skipGrandChild: 8,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 0,
+				exceptionsGrandChild: 8,
 			};
 		</script>
 		

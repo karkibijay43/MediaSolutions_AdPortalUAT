@@ -103,6 +103,15 @@ public class TestHooks
 
 	}
 	
+	@Before("@UploadYourCommercial")
+	public void upload_Your_Commercial (Scenario scenario) {
+
+		System.out.println("=========================================");
+		System.out.println("Executing before upload_Your_Commercial");
+		System.out.println("=========================================");
+
+	}
+	
 	@After()
 	public void afterScenario(Scenario scenario) throws IOException {
 		System.out.println("Completed execution for the scenario :" + scenario.getName());

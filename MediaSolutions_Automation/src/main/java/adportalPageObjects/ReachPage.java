@@ -253,7 +253,23 @@ public class ReachPage {
 		 * } catch (StaleElementReferenceException e) {
 		 * driver.findElement(reachPage3_NextButton).click(); }
 		 */
-		driver.findElement(reachPage3_NextButton).click();
+		// driver.findElement(reachPage2_NextButton2).click();
+				{
+					int count = 0;
+					boolean clicked = false;
+					while (count < 4 && !clicked) {
+						try {
+							WebElement reachPage3NextButton = driver.findElement(reachPage3_NextButton);
+							reachPage3NextButton.click();
+							clicked = true;
+						} catch (StaleElementReferenceException e) {
+							e.toString();
+							System.out.println("Trying to recover from a stale element :" + e.getMessage());
+							count = count + 1;
+						}
+					}
+				}
+		//driver.findElement(reachPage3_NextButton).click();
 	}
 
 	public void click_ReachPage3NextButton_JSExecutor() {

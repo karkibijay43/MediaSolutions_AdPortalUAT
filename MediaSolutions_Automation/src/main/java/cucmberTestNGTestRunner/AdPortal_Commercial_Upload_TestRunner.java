@@ -8,28 +8,27 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.cucumber.listener.ExtentProperties;
-import adPortal.extentReporter.TestListener;
 import adPortalManagers.WebDriverManager;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
-@CucumberOptions(
-
-		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures", 
-		glue = {
-				"adPortalstepdefinitions" }, plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
-
+@CucumberOptions
+(features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_Commercial_Upload.feature", 
+glue = {
+		"adPortalstepdefinitions"
 		}, 
-		tags = { "@AdPortalLogInDefault,@SSULogIn,@DashBoardView,@CreateCampaignDefault,@FAQLink,@ReachIntroPage"
+plugin = { 
+		"com.cucumber.listener.ExtentCucumberFormatter:",
+		"rerun:target/rerun.txt"
+	},
 
-		},
+		monochrome = true, 
+		dryRun = false
 
-		monochrome = true)
-
-public class RegressionTestRunner extends TestListener {
-
-	static TestNGCucumberRunner testNGCucumberRunner;
+)
+public class AdPortal_Commercial_Upload_TestRunner {
+	private TestNGCucumberRunner testNGCucumberRunner;
 	WebDriver driver;
 	WebDriverManager webDriverManager;
 
@@ -37,9 +36,8 @@ public class RegressionTestRunner extends TestListener {
 	public void setUpClass() {
 		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		extentProperties.setReportPath(
-				"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Adportal Automation Test Report/RegressionSuite_Test_Report"
-						+ timeStamp + ".html");
+		extentProperties
+				.setReportPath("AdPortalRegressionTestReport/Commercial_Upload_" + timeStamp + ".html");
 		testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 	}
 
@@ -55,14 +53,8 @@ public class RegressionTestRunner extends TestListener {
 
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() {
-		/*
-		 * Reporter.setSystemInfo("OS", "MAC"); Reporter.setSystemInfo("AUTOMATION",
-		 * "ADPORTAL"); Reporter.assignAuthor("Bijay");
-		 */
 		testNGCucumberRunner.finish();
-		webDriverManager = new WebDriverManager();
-		webDriverManager.closeDriver();
-
+		//webDriverManager = new WebDriverManager();
+		//webDriverManager.closeDriver();
 	}
-
 }

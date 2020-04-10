@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -24,13 +25,15 @@ public class CommercialPage {
 	}
 
 	By commercialPage_NextButton = By.xpath("//button[contains(text(),'Next')]");
+	By link_Click_Here = By.xpath("//u[contains(text(),'Click here')]");
+	By upload_Your_Own_Commercial_Box = By.xpath(
+			"//body/app-root/div/app-order/div/div/div/div/section/app-creative-upload-full-page/app-card-item/div/div/div/div/div/div/div/div/div/label/div[1]");
 	By txtBox_Things_To_KnowAbout1 = By.id("brandInfo0");
 	By txtBox_Things_To_KnowAbout2 = By.id("brandInfo1");
 	By txtBox_Things_To_KnowAbout3 = By.id("brandInfo2");
 	By txtBox_commercial_TagLine = By.id("commercialTagline");
 	By commercial_Upload_Box = By.xpath(
 			"//body/app-root/div[@id='tv-main']/app-order/div/div/div/div/section/app-creative-business-description/app-card-item[@id='creative-upload-logo']/div[@id='card-item-wrapper']/div/div/div/div/div/div/div/div/app-upload-creatives/div/div/label/div[1]");
-	// By.id("//span[contains(text(),'Drop file here or click to upload')]");
 	By image_Rights_CheckBox = By.cssSelector(
 			"body.white-background:nth-child(2) div.main app-order.ng-star-inserted:nth-child(2) div.order-comp:nth-child(1) div.main-section div.row-materialize.header-row-all:nth-child(2) div.row-materialize.s9.card-section section.section-container app-creative-business-description.ng-star-inserted:nth-child(2) div.ng-animate-disabled div.card-item-position div.tv-commerical-question-card div.card.card-client.ng-star-inserted div.card-content.ng-star-inserted div.creative-business-description div.text-left:nth-child(2) div.row.image-info-container.m-0:nth-child(3) div.col-sm-7.col-12.p-0.mr-5.mb-3 app-upload-creatives:nth-child(3) > label.ng-star-inserted:nth-child(3)");
 	By CommericialPage1_NextButton = By.className("spp-btn");
@@ -46,15 +49,90 @@ public class CommercialPage {
 	By txtBox_Other_Way_To_Contact = By.name("Other");
 	By txtBox_Other_Message_For_Audience = By.name("otherMessageforAudience");
 	By commercialPage2_NextButton = By.className("spp-btn");
-	By radioButton_Voice_Preference = By.xpath("//div[contains(text(),'No voice preference')]");
-	By dropDown_Music_Preference = By.xpath("//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/ng-select[@placeholder='No music preference']/div/div/div[3]");
-	By radioButton_No_Music_Preference = By.xpath("//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/ng-select[@placeholder='No music preference']/ng-dropdown-panel/div/div/div[1]/div[1]/div[3]/mat-checkbox[1]/label[1]/div[1]");
-	By radioButton_NoColor_Preference = By.xpath("//div[3]//div[1]//mat-radio-group[1]//mat-radio-button[1]//label[1]//div[1]//div[2]");	
+	By radioButton_No_Voice_Preference = By.xpath("//div[contains(text(),'No voice preference')]");
+	By radioButton_Male_Voice = By.xpath("//div[contains(text(),'Male Voice')]");
+	By radioButton_Female_Voice = By.xpath("//div[contains(text(),'Female Voice')]");
+	By dropDown_Music_Preference = By.xpath(
+			"//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/ng-select[@placeholder='No music preference']/div/div/div[3]");
+	By radioButton_No_Music_Preference = By.xpath(
+			"//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/ng-select[@placeholder='No music preference']/ng-dropdown-panel/div/div/div[1]/div[1]/div[3]/mat-checkbox[1]/label[1]/div[1]");
+	By radioButton_Easy_Listening_Music = By.xpath(
+			"//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/ng-select[@placeholder='No music preference']/ng-dropdown-panel/div/div/div[2]/div[1]/div[3]/mat-checkbox[1]/label[1]/div[1]");
+	By radioButton_Jazz_Music = By.xpath(
+			"//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/ng-select[@placeholder='No music preference']/ng-dropdown-panel/div/div/div[3]/div[1]/div[3]/mat-checkbox[1]/label[1]/div[1]");
+	By radioButton_No_Color_Preference = By.xpath("//div[contains(text(),'No color preference')]");
+	By radioButton_Choose_Specific_Colors = By.xpath("//div[contains(text(),'Choose specific colors')]");
+	By box_Color_Blues = By.xpath(
+			"//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/div/div[1]/div[1]/a[1]/label[1]/div[1]");
+	By box_Color_Greens = By.xpath(
+			"//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/div/div[2]/div[1]/a[1]/label[1]/div[1]");
+	By box_Color_Oranges = By.xpath(
+			"//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/div/div[6]/div[1]/a[1]/label[1]/div[1]");
+
 	By txtBox_Special_Instructions = By.name("specialInstructions");
 	By commercialPage3_NextButton = By.className("spp-btn");
 
 	public void click_commercialPage_NextButton() {
 		driver.findElement(commercialPage_NextButton).click();
+	}
+
+	public void click_Here_Link() {
+		driver.findElement(link_Click_Here).click();
+	}
+
+	public void upload_Your_Own_Commercial_Box() throws InterruptedException, AWTException {
+		WebElement ownCommercialUploadBox = driver.findElement(upload_Your_Own_Commercial_Box);
+		ownCommercialUploadBox.click();
+
+		Robot robot;
+		robot = new Robot();
+		robot.keyPress(KeyEvent.VK_META);
+		robot.keyPress(KeyEvent.VK_TAB);
+
+		robot.keyRelease(KeyEvent.VK_META);
+		robot.keyRelease(KeyEvent.VK_TAB);
+
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_RIGHT);
+		robot.keyRelease(KeyEvent.VK_RIGHT);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_RIGHT);
+		robot.keyRelease(KeyEvent.VK_RIGHT);
+		robot.setAutoDelay(1000);
+
+		/*
+		 * robot.keyPress(KeyEvent.VK_DOWN); robot.keyRelease(KeyEvent.VK_DOWN);
+		 * robot.setAutoDelay(1000);
+		 */
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		Thread.sleep(11000);
 	}
 
 	public void enter_Things_To_KnowAbout1(String text) {
@@ -125,6 +203,44 @@ public class CommercialPage {
 		 * robot.keyPress(KeyEvent.VK_DOWN); robot.keyRelease(KeyEvent.VK_DOWN);
 		 * robot.setAutoDelay(1000);
 		 */
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		Thread.sleep(11000);
+
+	}
+
+	public void commercial_Upload() throws AWTException, InterruptedException {
+		WebElement uploadBox = driver.findElement(commercial_Upload_Box);
+		uploadBox.click();
+
+		Robot robot;
+		robot = new Robot();
+
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_RIGHT);
+		robot.keyRelease(KeyEvent.VK_RIGHT);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_RIGHT);
+		robot.keyRelease(KeyEvent.VK_RIGHT);
+		robot.setAutoDelay(1000);
 
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
@@ -209,19 +325,94 @@ public class CommercialPage {
 		driver.findElement(commercialPage2_NextButton).click();
 	}
 
-	public void select_Voice_Preference() {
-		driver.findElement(radioButton_Voice_Preference).click();
+	public void select_No_Voice_Preference() {
+		driver.findElement(radioButton_No_Voice_Preference).click();
 	}
 
-	public void select_Music_Preference() {
+	public void select_Male_Voice_Preference() {
+		driver.findElement(radioButton_Male_Voice).click();
+	}
+
+	public void select_Female_Voice_Preference() {
+		driver.findElement(radioButton_Female_Voice).click();
+	}
+
+	public void select_No_Music_Preference() throws InterruptedException {
 		driver.findElement(dropDown_Music_Preference).click();
-		driver.findElement(radioButton_No_Music_Preference).click();
-		Actions action = new Actions(driver);   
+		{
+			int count = 0;
+			boolean clicked = false;
+			while (count < 4 && !clicked) {
+				try {
+					WebElement NoMusicPreference = driver.findElement(radioButton_No_Music_Preference);
+					NoMusicPreference.click();
+					clicked = true;
+				} catch (ElementClickInterceptedException e) {
+					driver.findElement(radioButton_No_Music_Preference).click();
+					e.toString();
+					System.out.println("Trying to click the element:" + e.getMessage());
+					count = count + 1;
+
+				}
+
+			}
+		}
+		driver.findElement(dropDown_Music_Preference).click();
+		// Actions action = new Actions(driver);
+		// action.sendKeys(Keys.SHIFT, Keys.TAB);
+
+	}
+
+	public void select_Easy_Listening_Music_Preference() {
+		driver.findElement(dropDown_Music_Preference).click();
+		{
+			int count = 0;
+			boolean clicked = false;
+			while (count < 4 && !clicked) {
+				try {
+					WebElement MusicPreference = driver.findElement(radioButton_Easy_Listening_Music);
+					MusicPreference.click();
+					clicked = true;
+				} catch (ElementClickInterceptedException e) {
+					driver.findElement(radioButton_Easy_Listening_Music).click();
+					e.toString();
+					System.out.println("Trying to click the element:" + e.getMessage());
+					count = count + 1;
+
+				}
+
+			}
+		}
+		driver.findElement(dropDown_Music_Preference).click();
+
+	}
+
+	public void select_Jazz_Music_Preference() {
+		driver.findElement(dropDown_Music_Preference).click();
+		driver.findElement(radioButton_Jazz_Music).click();
+		Actions action = new Actions(driver);
 		action.sendKeys(Keys.SHIFT, Keys.TAB);
 	}
-	
-	public void select_NoColor_Preference() {
-		driver.findElement(radioButton_NoColor_Preference).click();
+
+	public void select_No_Color_Preference() {
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(radioButton_No_Color_Preference)).click().perform();
+
+		/*
+		 * JavascriptExecutor js = (JavascriptExecutor) driver;
+		 * js.executeScript("arguments[0].click():",driver.findElement(
+		 * radioButton_No_Color_Preference));
+		 */
+
+	}
+
+	public void select_Color_Preference() {
+		driver.findElement(radioButton_Choose_Specific_Colors).click();
+		WebDriverWait Color_Box_Blue = new WebDriverWait(driver, 60);
+		Color_Box_Blue.until(ExpectedConditions.visibilityOfElementLocated(box_Color_Blues));
+		driver.findElement(box_Color_Blues).click();
+		driver.findElement(box_Color_Greens).click();
+		driver.findElement(box_Color_Oranges).click();
 	}
 
 	public void enter_Special_Instructions(String instructions) {

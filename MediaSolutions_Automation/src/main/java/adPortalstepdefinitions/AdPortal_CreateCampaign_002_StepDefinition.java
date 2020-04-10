@@ -42,8 +42,8 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		pageObjectManager = new PageObjectManager(driver);
 		// configFileReader.getLoginURL();
 		// configFileReader.getApplicationUrl();
-		//logInPage = pageObjectManager.getLogInPage();
-		//logInPage.navigateTo_LogInPage();
+		// logInPage = pageObjectManager.getLogInPage();
+		// logInPage.navigateTo_LogInPage();
 		signUpPage = pageObjectManager.getSignUpPage();
 		signUpPage.navigateTo_SignUpPage();
 		try {
@@ -56,8 +56,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
 		signUpPage.click_Login();
-		 
-		
+
 		/*
 		 * signUpPage = pageObjectManager.getSignUpPage();
 		 * signUpPage.explicitly_Wait_ForLogInLink(); signUpPage.click_Login();
@@ -78,7 +77,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	public void enter_UserName_and_Password() {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		logInPage = new LogInPage(driver);
-		logInPage.enter_LogInEmail("MSolutionsTestEmail@charter.com");
+		logInPage.enter_LogInEmail("MSTestEmail@charter.com");
 		logInPage.enter_LogInPassword("testpwd@MS1");
 		logInPage.clickLogIn();
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
@@ -118,7 +117,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		reachPage.click_DropDownArrow();
 		reachPage.UserInPut_Distance();
 		reachPage.click_ReachPage2NextButton();
-		reachPage.click_ReachPage3NextButton();
+		reachPage.click_ReachPage3NextButton_JSExecutor();
 	}
 
 	@Then("^User should be able to create a campaign for selected Dates$")
@@ -155,7 +154,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		commercialPage.enter_Things_To_KnowAbout2("Test2");
 		commercialPage.enter_Things_To_KnowAbout3("Test3");
 		commercialPage.enter_Commercial_TagLine("TestCommercial_TagLine");
-		commercialPage.click_commercial_UploadBox();
+		commercialPage.commercial_Upload();
 		commercialPage.click_ImageRights_CheckBox();
 		commercialPage.click_CommericialPage1_NextButton();
 		commercialPage.enter_primary_Call_To_Action("Give us a call");
@@ -170,8 +169,9 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		commercialPage.enter_Other_Way_To_Contact("MSolutionsTestemail@charter.com");
 		commercialPage.enter_Other_Message_For_Audience("This is a test camppaign");
 		commercialPage.click_commercialPage2_NextButton();
-		commercialPage.select_Voice_Preference();
-		commercialPage.select_Music_Preference();
+		commercialPage.select_Male_Voice_Preference();
+		commercialPage.select_Easy_Listening_Music_Preference();
+		commercialPage.select_Color_Preference();
 		commercialPage.enter_Special_Instructions("Media solutions test campaign");
 		commercialPage.click_CommercialPage3_NextButton();
 		adPortalScreenShots.takeScreenShotCreateCampaignDefault_RewviewOrderPage();
@@ -190,7 +190,6 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		reviewOrderPage.select_dropDown_Billing_State("CO");
 		reviewOrderPage.enter_Billing_Phone_Number("1234567890");
 		adPortalScreenShots.takeScreenShotCreateCampaignDefault_CheckOutPage();
-			
-	}
-	}
 
+	}
+}

@@ -26,9 +26,8 @@ public class AdPortal_LogIn_002_StepDefinition {
 	WebDriverManager webDriverManager;
 	AdPortalScreenShots adPortalScreenShots;
 
-	@Given("^User is on AdPortal UAT SignUp Page and clicks LogIn link$")
-	public void user_is_on_logIn_page() throws InterruptedException {
-		
+	@Given("^User is on AdPortal UAT sign up page and clicks Login$")
+	public void user_Is_On_LogIn_Page() throws InterruptedException {
 		webDriverManager = new WebDriverManager();
 		driver = WebDriverManager.getDriver();
 		configFileReader = new ConfigFileReader();
@@ -52,9 +51,8 @@ public class AdPortal_LogIn_002_StepDefinition {
 
 	}
 
-	@When("^User enters Existing Email and password and clicks Log in Button$")
-	public void enter_UserName_and_Password() {
-
+	@When("^User enters desired email and password and clicks log in button$")
+	public void enter_UserName_And_Password() {
 		LogInPage logInPage = new LogInPage(driver);
 		logInPage.userInPut_LogInEmail();
 		logInPage.userInPut_LogInPassword();
@@ -62,16 +60,14 @@ public class AdPortal_LogIn_002_StepDefinition {
 
 	}
 
-	@Then("^User lands on Request Dashboard page$")
+	@Then("^User lands on request dashboard page to start a campaign$")
 
-	public void requestDashboard_verification() {
+	public void requestDashBoard_Verification() {
 		adPortalScreenShots = new AdPortalScreenShots(driver);
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
 		requestDashBoardPage.request_DashBoardPage_With_Drafts_verification();
 		adPortalScreenShots.takeScreenShotLoginTest();
-	
-
 	}
 
 }

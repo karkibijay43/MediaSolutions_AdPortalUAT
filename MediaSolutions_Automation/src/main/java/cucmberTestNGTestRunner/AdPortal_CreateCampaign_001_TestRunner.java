@@ -16,21 +16,17 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
-@CucumberOptions
-(features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_CreateCampaign_001.feature", 
-glue = {
-		"adPortalstepdefinitions" 
+@CucumberOptions(
+		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_CreateCampaign_001.feature", 
+		glue = {"adPortalstepdefinitions"						
 		}, 
-plugin = { 
-		"com.cucumber.listener.ExtentCucumberFormatter:",
-		// AdPortalRegressionTestReport/CreateCampaignDefaultReport.html"
-		"rerun:target/rerun.txt"
-	},
-
+		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:",
+				"rerun:target/rerun.txt" 
+		},
 		monochrome = true, 
 		dryRun = false
+		)
 
-)
 public class AdPortal_CreateCampaign_001_TestRunner {
 	private TestNGCucumberRunner testNGCucumberRunner;
 	WebDriver driver;
@@ -61,5 +57,4 @@ public class AdPortal_CreateCampaign_001_TestRunner {
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();
 	}
-
 }

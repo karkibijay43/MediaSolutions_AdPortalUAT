@@ -17,15 +17,17 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-
-		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_NewUser_FAQ_link_Functionality.feature", glue = {
-				"adPortalstepdefinitions" }, plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
-		}, tags = { "@FAQLink"
+		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_NewUser_FAQ_link_Functionality.feature", 
+		glue = {
+				"adPortalstepdefinitions" 
+		}, 
+		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
+		}, 
+		tags = { "@FAQLink"
 
 		},
 
 		monochrome = true
-
 )
 
 public class AdPortal_NewUser_FAQ_link_Functionality_TestRunner {

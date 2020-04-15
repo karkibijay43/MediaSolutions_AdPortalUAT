@@ -35,8 +35,8 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 	ExtentReports extent;
 	AdPortalScreenShots adPortalScreenShots;
 
-	@Given("^User is on AdPortal UAT SignUp page and clicks log in$")
-	public void user_is_on_logIn_page() {
+	@Given("^User is on AdPortal UAT signup page and clicks log in$")
+	public void user_Is_On_LogIn_Page() {
 		webDriverManager = new WebDriverManager();
 		driver = WebDriverManager.getDriver();
 		configFileReader = new ConfigFileReader();
@@ -45,7 +45,8 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		signUpPage.navigateTo_SignUpPage();
 		try {
 			Thread.sleep(3000);
-		} catch (InterruptedException e) {
+		} 
+		catch (InterruptedException e) {
 			System.out.println("SignUp Page is still loading");
 			e.printStackTrace();
 		}
@@ -53,51 +54,45 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
 		signUpPage.click_Login();
-		
 	}
 
-	@When("^User enters Email and Password and clicks LogIn$")
-	public void enter_UserName_and_Password() {
+	@When("^User enters email and password and clicks log in$")
+	public void enter_UserName_And_Password() {
 		logInPage = pageObjectManager.getLogInPage();
 		logInPage.enter_LogInEmail("MSTestEmail@charter.com");
 		logInPage.enter_LogInPassword("testpwd@MS1");
 		logInPage.clickLogIn();
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
-
 	}
 
-	@Then("^User should land on Request Dashboard page$")
+	@Then("^User should land on request dashboard page and be able to create a campaign$")
 
-	public void requestDashboard_verification() {
+	public void requestDashBoard_Verification() {
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
 		requestDashBoardPage.request_DashBoardPage_With_Drafts_verification();
-
 	}
 
-	@Then("^User should be able to Get started with the campaign$")
+	@Then("^User should be able to get started with the campaign$")
 
-	public void start_campaign() {
+	public void start_Campaign() {
 		// If the user has already started creating campaign, and needs to continue with
 		// the camapign details
-
 		reachPage = pageObjectManager.getReachPage();
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
 		// requestDashBoardPage.continue_Draft();
-		 requestDashBoardPage.get_Started_Or_ContinueCamapaign();
-		//requestDashBoardPage.click_Continue();
+		requestDashBoardPage.get_Started_Or_ContinueCamapaign();
+		// requestDashBoardPage.click_Continue();
 		reachPage.explicitly_Wait_For_ReachPageNextButton();
 		reachPage.click_ReachPageNextButton();
 		reachPage.explicitly_Wait_For_RaiseAwarenessButton();
 		reachPage.select_RaiseAwareness();
 		reachPage.click_ReachPage1NextButton();
-
 	}
 
-	@Then("^User enters the address on the address field and selects the distance and clicks Next$")
-	public void enter_Address_and_Distance() throws InterruptedException {
-
+	@Then("^User enters the address and selects the distance and clicks next$")
+	public void enter_Address_And_Distance() throws InterruptedException {
 		reachPage = pageObjectManager.getReachPage();
 		reachPage.explicitly_Wait_For_AddressEntry();
 		reachPage.enter_Address("Austin");
@@ -107,11 +102,10 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		reachPage.click_DropDownArrow();
 		reachPage.click_ReachPage2NextButton();
 		reachPage.click_ReachPage3NextButton();
-		
 	}
 
-	@Then("^User should be able to schedule a campaign")
-	public void Schedule_Campaign() {
+	@Then("^User should be able to schedule a campaign$")
+	public void schedule_Campaign() {
 		SchedulePage schedulePage = new SchedulePage(driver);
 		schedulePage.click_startCalednderArrow();
 		schedulePage.click_stopCalenderArrow();
@@ -119,35 +113,33 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		schedulePage.click_SchedulePage1NextButton();
 		try {
 			Thread.sleep(30000);
-		} catch (InterruptedException e) {
+		} 
+		catch (InterruptedException e) {
 			System.out.println("The Review campaign couldn't load");
 			e.printStackTrace();
 		}
-
 	}
 
 	@Then("^User should be able to review campaign$")
-	public void review_campaign() {
+	public void review_Campaign() {
 		schedulePage = new SchedulePage(driver);
 		schedulePage.explicitly_Wait_For_ReviewPageNextButton();
 		adPortalScreenShots = new AdPortalScreenShots(driver);
 		adPortalScreenShots.takeScreenShotCreateCampaignDefault_RewviewPage();
 		schedulePage.click_SchedulePage2_NextButton();
-
 	}
 
 	@Then("^User should be able to name their campaign and upload commercial$")
 	public void name_Campaign_UploadCommercial() throws AWTException, InterruptedException {
 		schedulePage = new SchedulePage(driver);
 		reviewOrderPage = pageObjectManager.getReviewOrderPage();
-		adPortalScreenShots = new AdPortalScreenShots(driver);
 		commercialPage = pageObjectManager.getCommercialPage();
 		// schedulePage.explicitly_Wait_For_campaignName_AlertBox();
 		schedulePage.enter_CampaignName_Or_Continue_With_Commercial("TestCampaign");
 		commercialPage.enter_Things_To_KnowAbout1("Test1");
 		commercialPage.enter_Things_To_KnowAbout2("Test2");
 		commercialPage.enter_Things_To_KnowAbout3("Test3");
-		commercialPage.enter_Commercial_TagLine("Commercial TagLine");
+		commercialPage.enter_Commercial_TagLine("Commercial tagline");
 		commercialPage.click_commercial_UploadBox();
 		commercialPage.click_ImageRights_CheckBox();
 		commercialPage.click_CommericialPage1_NextButton();
@@ -161,15 +153,20 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		commercialPage.enter_Website_URL("Adportal.com");
 		commercialPage.enter_Email_Address("MSTestEmail@charter.com");
 		commercialPage.enter_Other_Way_To_Contact("MSolutionsTestemail@charter.com");
-		commercialPage.enter_Other_Message_For_Audience("This is a test camppaign");
+		commercialPage.enter_Other_Message_For_Audience("This is a test campaign");
 		commercialPage.click_commercialPage2_NextButton();
 		commercialPage.select_No_Voice_Preference();
 		commercialPage.select_No_Music_Preference();
 		commercialPage.select_No_Color_Preference();
-		commercialPage.enter_Special_Instructions("Stay Home and Watch your Campaign Air");
+		commercialPage.enter_Special_Instructions("Stay home and watch your campaign air");
 		commercialPage.click_CommercialPage3_NextButton();
 		adPortalScreenShots.takeScreenShotCreateCampaignDefault_RewviewOrderPage();
 		reviewOrderPage.click_place_OrderButton();
+	}
+	@Then ("^User should be able to enter credit card information and place an order$")
+	public void place_An_Order (){
+		reviewOrderPage = pageObjectManager.getReviewOrderPage();
+		adPortalScreenShots = new AdPortalScreenShots(driver);
 		reviewOrderPage.select_BusinessCategory("Advertising");
 		reviewOrderPage.enter_Credit_Card_FirstNAme("zztestspp");
 		reviewOrderPage.enter_Credit_Card_LastName("whatever");
@@ -184,6 +181,5 @@ public class AdPortal_CreateCampaign_001_StepDefinition {
 		reviewOrderPage.select_dropDown_Billing_State("CO");
 		reviewOrderPage.enter_Billing_Phone_Number("1234567890");
 		adPortalScreenShots.takeScreenShotCreateCampaignDefault_CheckOutPage();
-			
 	}
 }

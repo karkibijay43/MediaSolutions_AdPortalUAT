@@ -13,8 +13,6 @@ import org.testng.Assert;
 import adPortalUtilities.AdPortalScreenShots;
 
 public class RequestDashBoardPage {
-
-	// WebDriver driver;
 	public WebDriver driver;
 
 	By button_GetStarted = By.className("spp-btn-large ng-star-inserted");
@@ -43,17 +41,15 @@ public class RequestDashBoardPage {
 			if (driver.findElement(button_Continue).isDisplayed()) {
 				System.out.println("Continuing with the Draft Camapaign");
 				driver.findElement(button_Continue).click();
-
-			} else {
-
+			} 
+			else {
 				System.out.println("This is you first camapaign creation, You are ready to get started");
 				driver.findElement(button_GetStarted).click();
 			}
-		} catch (NoSuchElementException e) {
+		} 
+		catch (NoSuchElementException e) {
 			driver.findElement(button_Continue).click();
-
 		}
-
 	}
 
 	public void explicitly_Wait_For_GetStartedButton() {
@@ -70,7 +66,6 @@ public class RequestDashBoardPage {
 	public void explicitly_Wait_For_ContinueButton() {
 		WebDriverWait wait = new WebDriverWait(driver, 25);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(button_Continue));
-
 	}
 
 	public void click_Continue() {
@@ -100,7 +95,6 @@ public class RequestDashBoardPage {
 		} else {
 			System.out.println("Please revisit Sign up page to create new Log In credentials");
 		}
-
 	}
 
 	public void explicitly_Wait_For_FAQ_Links() {
@@ -113,13 +107,10 @@ public class RequestDashBoardPage {
 		String actualHeader = driver.findElement(faq_Header).getText();
 		System.out.println("The header of this page is :" + actualHeader);
 		Assert.assertEquals(expectedHeader, actualHeader);
-
 	}
 
 	public void click_LinkText1() {
-
 		driver.findElement(faq_Link1).click();
-
 	}
 
 	public void click_LinkText() {
@@ -128,7 +119,6 @@ public class RequestDashBoardPage {
 		List<WebElement> links = driver.findElements(By.tagName("a"));
 		for (int i = 0; i < links.size(); i++) {
 			hrefValue = links.get(i).getAttribute("href");
-
 			if (hrefValue != null) {
 				if (hrefValue.contains("center")) {
 					System.out.println(hrefValue + " = internal domain");
@@ -139,16 +129,14 @@ public class RequestDashBoardPage {
 					adPortalScreenShots.takeScreenShotNewDashBoardView_FAQ_Link();
 					driver.close();
 					driver.switchTo().window(tabs.get(0));
-
-				} else {
+				} 
+				else {
 					System.out.println(hrefValue + " = external domain");
 				}
-			} else {
+			}
+			else {
 				System.out.println("element doesn't have href attriubte");
 			}
-
 		}
-
 	}
-
 }

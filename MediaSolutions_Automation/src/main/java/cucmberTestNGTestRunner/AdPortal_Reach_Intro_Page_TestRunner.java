@@ -14,14 +14,17 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-
-		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_Reach_Intro_Page.feature", glue = {
-				"adPortalstepdefinitions" }, plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
+		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_Reach_Intro_Page.feature", 
+		glue = {
+				"adPortalstepdefinitions" 
+		}, 
+		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
 		// AdPortalRegressionTestReport/AdPortalLogInDefaultReport.html"
-		}, tags = { "@ReachIntroPage" },
-
+		}, 
+		tags = { "@ReachIntroPage" 
+				
+		},
 		monochrome = true
-
 )
 
 public class AdPortal_Reach_Intro_Page_TestRunner {

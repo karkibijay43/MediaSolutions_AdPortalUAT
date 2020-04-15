@@ -15,17 +15,18 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-
 		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures", 
 		glue = {
-				"adPortalstepdefinitions" }, plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
+				"adPortalstepdefinitions" 
+		}, 
+		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
 
 		}, 
 		tags = { "@AdPortalLogInDefault,@SSULogIn,@DashBoardView,@CreateCampaignDefault,@FAQLink,@ReachIntroPage"
 
 		},
-
-		monochrome = true)
+		monochrome = true
+)
 
 public class RegressionTestRunner extends TestListener {
 
@@ -62,7 +63,6 @@ public class RegressionTestRunner extends TestListener {
 		testNGCucumberRunner.finish();
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();
-
 	}
 
 }

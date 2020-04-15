@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignUpPage {
-
-	// WebDriver driver;
 	public WebDriver driver;
 
 	By txtBox_FirstName = By.id("firstName");
@@ -24,7 +22,6 @@ public class SignUpPage {
 	By WebElement_nextStep = By.xpath("//button[contains(text(),'Next Step')]");
 	By signuplogInLink = By.linkText("Login");
 	String SignUpURL = "https://adportal-uat.brandcdnstage.com/sign-up-1";
-	
 
 	public SignUpPage(WebDriver driver) {
 		this.driver = driver;
@@ -90,7 +87,6 @@ public class SignUpPage {
 	public void explicitly_Wait_ForLogInLink() {
 		WebDriverWait wait = new WebDriverWait(driver, 50);
 		wait.until(ExpectedConditions.presenceOfElementLocated(signuplogInLink));
-
 	}
 
 	public void click_Login() {
@@ -100,7 +96,5 @@ public class SignUpPage {
 		else {
 			System.out.println("Login button is not enabled");
 		}
-
 	}
-
 }

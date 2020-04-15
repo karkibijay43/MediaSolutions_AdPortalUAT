@@ -11,15 +11,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ReachPage {
-	// WebDriver driver;
 	public WebDriver driver;
 
 	public ReachPage(WebDriver driver) {
 		this.driver = driver;
 	}
+
 	By reach_Intro_Page_Title = By.xpath("//div[contains(text(),'Reach the customers you need.')]");
-	By reachPage_NextButton = By.xpath("//*[@id=\"card-item-wrapper\"]/div/div[2]/div[2]/div/div/span"); // ("//div[@class='spp-btn']");
-	By get_Text_From_ReachPage1_= By.xpath("//div[contains(text(),'What do you want to achieve?')]");
+	By reachPage_NextButton = By.xpath("//span[contains(text(),'Next')]"); // ("//div[@class='spp-btn']");
+	By get_Text_From_ReachPage1_ = By.xpath("//div[contains(text(),'What do you want to achieve?')]");
 	By button_RaiseAwareness = By.xpath(
 			"/html[1]/body[1]/app-root[1]/div[1]/app-order[1]/div[1]/div[2]/div[1]/div[1]/section[1]/app-goals[1]/app-card-item[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/app-goals-card[1]/div[2]/button[1]");
 	By button_PromoteYourEvent = By.xpath("//button[@class='ap-btn-large d-none d-sm-flex']");
@@ -39,8 +39,7 @@ public class ReachPage {
 	By age18_14_Label = By.xpath("//label[contains(text(),'18 - 49')]");
 	By audience_Male = By.xpath("//span[contains(text(),'Male')]");
 	By audice_Female = By.xpath("//span[contains(text(),'Female')]");
-	
-	
+
 	public void verify_Reach_Intro_Page_Title() {
 		String expectedTitle = "SPP - Creative Requests";
 		String actualTitle = driver.getTitle();
@@ -51,22 +50,21 @@ public class ReachPage {
 		} else {
 			System.out.println("This is not an intro page");
 		}
-	}	
-	
+	}
+
 	public void explicitly_Wait_For_ReachPageNextButton() {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait wait = new WebDriverWait(driver, 45);
 		wait.until(ExpectedConditions.presenceOfElementLocated(reachPage_NextButton));
 	}
 
 	public void click_ReachPageNextButton() {
 		driver.findElement(reachPage_NextButton).click();
-
 	}
-	
+
 	public void get_Text_From_ReachPage1() {
 		String text = driver.findElement(get_Text_From_ReachPage1_).getText();
 		System.out.println("The text of title is :" + text);
-		}
+	}
 
 	public void explicitly_Wait_For_RaiseAwarenessButton() {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -75,7 +73,6 @@ public class ReachPage {
 
 	public void select_RaiseAwareness() {
 		driver.findElement(button_RaiseAwareness).click();
-
 	}
 
 	public void select_PromoteYourEvent() {
@@ -93,17 +90,15 @@ public class ReachPage {
 	}
 
 	public void enter_Address(String address) {
-
 		driver.findElement(txtBox_AddressField).clear();
 		driver.findElement(txtBox_AddressField).sendKeys(address);
 		try {
 			Thread.sleep(1000);
-
-		} catch (InterruptedException e) {
+		} 
+		catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		driver.findElement(txtBox_AddressField).sendKeys(Keys.ARROW_DOWN);
-
 	}
 
 	public void UserInPut_Address() {
@@ -113,23 +108,20 @@ public class ReachPage {
 		driver.findElement(txtBox_AddressField).sendKeys(EnterAddress);
 		try {
 			Thread.sleep(1000);
-
-		} catch (InterruptedException e) {
+		} 
+		catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		driver.findElement(txtBox_AddressField).sendKeys(Keys.ARROW_DOWN);
 		// driver.findElement(txtBox_AddressField).sendKeys(Keys.ENTER);
-
 	}
 
 	public void click_HeaderTtile() {
 		driver.findElement(headerTitle).click();
-
 	}
 
 	public void click_DropDownArrow() {
 		driver.findElement(distanceArrowdropdown).click();
-
 	}
 
 	public void enter_Distance() {
@@ -149,49 +141,43 @@ public class ReachPage {
 			driver.findElement(miles_2).click();
 
 		} else if (enterDistance.equals("20")) {
-			driver.findElement(By.xpath("//span[contains(text(),'20 miles')]")).click();
+			driver.findElement(miles_20).click();
 		}
 
 		else if (enterDistance.equals("30")) {
-			driver.findElement(
-					By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'30 miles')]")).click();
+			driver.findElement(miles_30).click();
+
 		} else if (enterDistance.equals("40")) {
-			driver.findElement(By.xpath("//span[contains(text(),'40 miles')]")).click();
+			driver.findElement(miles_40).click();
 		}
 
 		if (enterDistance.equals("50")) {
-			driver.findElement(By.xpath("//span[contains(text(),'50 miles')]")).click();
+			driver.findElement(defaultDistance_50).click();
 		}
 
 		else {
 			System.out.println("Please enter valid Distance in miles");
 		}
-
 	}
 
 	public void Select_2Miles() {
 		driver.findElement(miles_2).click();
-
 	}
 
 	public void Select_50Miles() {
 		driver.findElement(defaultDistance_50).click();
-
 	}
 
 	public void Select_20Miles() {
 		driver.findElement(miles_20).click();
-
 	}
 
 	public void Select_30Miles() {
 		driver.findElement(miles_30).click();
-
 	}
 
 	public void Select_40Miles() {
 		driver.findElement(miles_40).click();
-
 	}
 
 	public void click_ReachPage2NextButton() {
@@ -231,7 +217,6 @@ public class ReachPage {
 	public void uncheck_Check_Age18_49Button() {
 		driver.findElement(age18_14_Label).click();
 		driver.findElement(age18_14_Label).click();
-
 	}
 
 	public void click_Audience_Male() {
@@ -241,35 +226,22 @@ public class ReachPage {
 
 	public void click_ReachPage3NextButton() {
 		System.out.println("clicking on Next Button again");
-		/*
-		 * WebElement reachPage3NextButton = driver.findElement(reachPage3_NextButton);
-		 * if (reachPage3NextButton.isEnabled()) { reachPage3NextButton.click(); } else
-		 * {
-		 * 
-		 * System.out.println("Next button is not enabled"); }
-		 * 
-		 * try { reachPage3NextButton.click();
-		 * 
-		 * } catch (StaleElementReferenceException e) {
-		 * driver.findElement(reachPage3_NextButton).click(); }
-		 */
-		// driver.findElement(reachPage2_NextButton2).click();
-				{
-					int count = 0;
-					boolean clicked = false;
-					while (count < 4 && !clicked) {
-						try {
-							WebElement reachPage3NextButton = driver.findElement(reachPage3_NextButton);
-							reachPage3NextButton.click();
-							clicked = true;
-						} catch (StaleElementReferenceException e) {
-							e.toString();
-							System.out.println("Trying to recover from a stale element :" + e.getMessage());
-							count = count + 1;
-						}
-					}
+		{
+			int count = 0;
+			boolean clicked = false;
+			while (count < 4 && !clicked) {
+				try {
+					WebElement reachPage3NextButton = driver.findElement(reachPage3_NextButton);
+					reachPage3NextButton.click();
+					clicked = true;
+				} catch (StaleElementReferenceException e) {
+					e.toString();
+					System.out.println("Trying to recover from a stale element :" + e.getMessage());
+					count = count + 1;
 				}
-		//driver.findElement(reachPage3_NextButton).click();
+			}
+		}
+		// driver.findElement(reachPage3_NextButton).click();
 	}
 
 	public void click_ReachPage3NextButton_JSExecutor() {
@@ -278,19 +250,17 @@ public class ReachPage {
 		if (reachPage3NextButton.isEnabled()) {
 			reachPage3NextButton.click();
 		} else {
-
 			System.out.println("Next button is not enabled");
 		}
 
 		try {
 			reachPage3NextButton.click();
-
-		} catch (StaleElementReferenceException e) {
+		} 
+		catch (StaleElementReferenceException e) {
 
 			WebElement reachPage3NextBtn = driver.findElement(reachPage3_NextButton);
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", reachPage3NextBtn);
-			// driver.findElement(reachPage3_NextButton).click();
 		}
 	}
 

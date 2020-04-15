@@ -48,7 +48,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Apr 9, 2020 03:49:41 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Apr 14, 2020 10:38:03 AM</span>
 				</a>
 			</li>
 			<li>
@@ -89,7 +89,7 @@
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>@cucumberHooks</a></li>
-					<li><a href='#'>@CreateCampaignUserInPut</a></li>
+					<li><a href='#'>@CreateCampaignDefault</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -167,10 +167,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='62.5%'><span class='strong'>5</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='77.778%'><span class='strong'>7</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='12.5%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='25%'>2</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='11.111%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='11.111%'>1</span> others
 				</div>
 			</div>
 		</div>
@@ -187,25 +187,25 @@
 				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>AdPortal UAT Create Campaign feature</span>
-						<span class='test-time'>Apr 9, 2020 03:49:41 PM</span>
+						<span class='test-time'>Apr 14, 2020 10:38:03 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='fail'>
 	<div class='category-list'>
-		<span class='category label white-text'>@CreateCampaignUserInPut</span>
+		<span class='category label white-text'>@CreateCampaignDefault</span>
 	</div>
-	<span class='duration right label'>0h 0m 34s+923ms</span>
+	<span class='duration right label'>0h 2m 26s+207ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Create a campaign with User Based Input using your Valid AdPortal UAT logIn Email and Password</span>
+		<span class="desc-text">Create a campaign using your Valid UAT logIn userID and Password</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node given pass' status='pass'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given User is on AdPortal UAT SignUp page and clicks Log in</span>
+			<span class="bdd-step-name">Given User is on AdPortal UAT signup page and clicks log in</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -213,7 +213,7 @@
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When User enters Existing Email and Password and clicks LogIn</span>
+			<span class="bdd-step-name">When User enters email and password and clicks log in</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -221,7 +221,7 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User should land on Request Dashboard page with Campaign drafts</span>
+			<span class="bdd-step-name">Then User should land on Request Dashboard page</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -229,7 +229,7 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User should be able to Get started or continue with the campaign</span>
+			<span class="bdd-step-name">Then User should be able to get started with the campaign</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -237,24 +237,40 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User enters the address on the address field and selects the distance in miles and clicks Next</span>
+			<span class="bdd-step-name">Then User enters the address and selects the distance and clicks next</span>
 				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='8' class='node then fail' status='fail'>
+		<li test-id='8' class='node then pass' status='pass'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User should be able to create a campaign for selected Dates</span>
-				<div class='pre'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
+			<span class="bdd-step-name">Then User should be able to schedule a campaign</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='9' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User should be able to review campaign</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='10' class='node then fail' status='fail'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User should be able to name their campaign and upload commercial</span>
+				<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/ng-select[@placeholder='No music preference']/div/div/div[3]"}
   (Session info: chrome=80.0.3987.163)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SR-C02ZM0XQLVDQ', ip: 'fe80:0:0:0:c59:4374:45cd:fe5b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_192'
+System info: host: 'SR-C02ZM0XQLVDQ', ip: 'fe80:0:0:0:d2:e57e:39a8:592b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_192'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/4_/d9d08_0n2_q...}, goog:chromeOptions: {debuggerAddress: localhost:52941}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 6c71276d3c43c948a2f1440d3ad590ea
-*** Element info: {Using=tag name, value=button}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/4_/d9d08_0n2_q...}, goog:chromeOptions: {debuggerAddress: localhost:59941}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 66770e08824bce75e3ebb2d47f2b5665
+*** Element info: {Using=xpath, value=//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/ng-select[@placeholder='No music preference']/div/div/div[3]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -265,29 +281,21 @@ Session ID: 6c71276d3c43c948a2f1440d3ad590ea
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByTagName(RemoteWebDriver.java:400)
-	at org.openqa.selenium.By$ByTagName.findElements(By.java:312)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:311)
-	at adportalPageObjects.SchedulePage.click_startCalednderArrow(SchedulePage.java:48)
-	at adPortalstepdefinitions.AdPortal_CreateCampaign_002_StepDefinition.Schedule_Campaign(AdPortal_CreateCampaign_002_StepDefinition.java:126)
-	at ✽.Then User should be able to create a campaign for selected Dates(/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_CreateCampaign_002.feature:12)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at adportalPageObjects.CommercialPage.select_No_Music_Preference(CommercialPage.java:382)
+	at adPortalstepdefinitions.AdPortal_CreateCampaign_001_StepDefinition.name_Campaign_UploadCommercial(AdPortal_CreateCampaign_001_StepDefinition.java:159)
+	at ✽.Then User should be able to name their campaign and upload commercial(/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_CreateCampaign_001.feature:14)
 </pre></div>
 			
 		</li>
-		<li test-id='9' class='node then skip' status='skip'>
+		<li test-id='11' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User should be able to review their campaign Details</span>
-				<div class='pre'>skipped</div>
-			
-		</li>
-		<li test-id='10' class='node then skip' status='skip'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then User should be able to name campaign and upload commercial</span>
+			<span class="bdd-step-name">Then User should be able to enter credit card information and place an order</span>
 				<div class='pre'>skipped</div>
 			
 		</li>
@@ -370,7 +378,7 @@ Session ID: 6c71276d3c43c948a2f1440d3ad590ea
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 9, 2020 03:49:41 PM</td>
+										<td>Apr 14, 2020 10:38:03 AM</td>
 										<td class='linked' test-id='1'>AdPortal UAT Create Campaign feature</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
@@ -381,7 +389,7 @@ Session ID: 6c71276d3c43c948a2f1440d3ad590ea
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@CreateCampaignUserInPut</span>
+						<span class='category-name'>@CreateCampaignDefault</span>
 						<span class='category-status right'>
 							<span class='label fail'>1</span>
 						</span>
@@ -404,8 +412,8 @@ Session ID: 6c71276d3c43c948a2f1440d3ad590ea
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 9, 2020 03:49:41 PM</td>
-										<td class='linked' test-id='2'>AdPortal UAT Create Campaign feature.Create a campaign with User Based Input using your Valid AdPortal UAT logIn Email and Password</td>
+										<td>Apr 14, 2020 10:38:03 AM</td>
+										<td class='linked' test-id='2'>AdPortal UAT Create Campaign feature.Create a campaign using your Valid UAT logIn userID and Password</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
@@ -452,7 +460,7 @@ Session ID: 6c71276d3c43c948a2f1440d3ad590ea
 
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
-                                <span class='exception-name'>org.openqa.selenium.NoSuchWindowException</span>
+                                <span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
                                 <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
                             </div>
                             <div class='exception-content hide'>
@@ -467,17 +475,17 @@ Session ID: 6c71276d3c43c948a2f1440d3ad590ea
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Apr 9, 2020 03:50:02 PM</td>
-                                                        <td class='linked' test-id='8'>AdPortal UAT Create Campaign feature.Create a campaign with User Based Input using your Valid AdPortal UAT logIn Email and Password.Then User should be able to create a campaign for selected Dates</td>
-                                                        <td><pre><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
+                                                        <td>Apr 14, 2020 10:38:57 AM</td>
+                                                        <td class='linked' test-id='10'>AdPortal UAT Create Campaign feature.Create a campaign using your Valid UAT logIn userID and Password.Then User should be able to name their campaign and upload commercial</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/ng-select[@placeholder='No music preference']/div/div/div[3]"}
   (Session info: chrome=80.0.3987.163)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SR-C02ZM0XQLVDQ', ip: 'fe80:0:0:0:c59:4374:45cd:fe5b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_192'
+System info: host: 'SR-C02ZM0XQLVDQ', ip: 'fe80:0:0:0:d2:e57e:39a8:592b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_192'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/4_/d9d08_0n2_q...}, goog:chromeOptions: {debuggerAddress: localhost:52941}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 6c71276d3c43c948a2f1440d3ad590ea
-*** Element info: {Using=tag name, value=button}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/4_/d9d08_0n2_q...}, goog:chromeOptions: {debuggerAddress: localhost:59941}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 66770e08824bce75e3ebb2d47f2b5665
+*** Element info: {Using=xpath, value=//body/app-root/div/app-order/div/div/div/div/section/app-creative-look-and-feel/app-card-item/div/div/div/div/div/div/div/div/ng-select[@placeholder='No music preference']/div/div/div[3]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -488,13 +496,13 @@ Session ID: 6c71276d3c43c948a2f1440d3ad590ea
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByTagName(RemoteWebDriver.java:400)
-	at org.openqa.selenium.By$ByTagName.findElements(By.java:312)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:311)
-	at adportalPageObjects.SchedulePage.click_startCalednderArrow(SchedulePage.java:48)
-	at adPortalstepdefinitions.AdPortal_CreateCampaign_002_StepDefinition.Schedule_Campaign(AdPortal_CreateCampaign_002_StepDefinition.java:126)
-	at ✽.Then User should be able to create a campaign for selected Dates(/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_CreateCampaign_002.feature:12)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at adportalPageObjects.CommercialPage.select_No_Music_Preference(CommercialPage.java:382)
+	at adPortalstepdefinitions.AdPortal_CreateCampaign_001_StepDefinition.name_Campaign_UploadCommercial(AdPortal_CreateCampaign_001_StepDefinition.java:159)
+	at ✽.Then User should be able to name their campaign and upload commercial(/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_CreateCampaign_001.feature:14)
 </pre></pre></td>
                                                     </tr>
                                         </tbody>
@@ -533,25 +541,25 @@ Session ID: 6c71276d3c43c948a2f1440d3ad590ea
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>8</div>
+					<div class='panel-lead'>9</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Apr 9, 2020 03:49:41 PM</div>
+					<div class='panel-lead'>Apr 14, 2020 10:38:03 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Apr 9, 2020 03:50:16 PM</div>
+			 		<div class='panel-lead'>Apr 14, 2020 10:40:30 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 34s+985ms</div>
+					<div class='panel-lead'>0h 2m 27s+371ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -576,7 +584,7 @@ Session ID: 6c71276d3c43c948a2f1440d3ad590ea
 							</td>
 						</tr>
 						<tr>
-							<td>@CreateCampaignUserInPut</td>
+							<td>@CreateCampaignDefault</td>
 							<td>0</td>
 							<td>1</td>
 							<td>0</td>
@@ -614,14 +622,14 @@ Session ID: 6c71276d3c43c948a2f1440d3ad590ea
 				infoChild: 0,
 				exceptionsChild: 1,
 				
-				passGrandChild: 5,
+				passGrandChild: 7,
 				failGrandChild: 1,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 2,
+				skipGrandChild: 1,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 3,
+				exceptionsGrandChild: 2,
 			};
 		</script>
 		

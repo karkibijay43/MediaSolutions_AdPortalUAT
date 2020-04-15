@@ -22,8 +22,8 @@ public class ReviewOrderPage {
 	By txtBox_Billing_City = By.id("city");
 	By dropDown_Billing_State = By.xpath("//ng-select[@name='State']//div//div//div//input");
 	By txtBox_Billing_Phone_Number = By.id("phone");
-	
-	public ReviewOrderPage (WebDriver driver) {
+
+	public ReviewOrderPage(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -56,11 +56,9 @@ public class ReviewOrderPage {
 		WebElement expiration_Month = driver.findElement(dropDown_Credit_Card_Expiration_Month);
 		expiration_Month.click();
 		expiration_Month.sendKeys("J");
-	
-		//expiration_Month.sendKeys(Keys.ARROW_DOWN);
-		//expiration_Month.sendKeys(Keys.ARROW_DOWN);
+		// expiration_Month.sendKeys(Keys.ARROW_DOWN);
+		// expiration_Month.sendKeys(Keys.ARROW_DOWN);
 		expiration_Month.sendKeys(Keys.ENTER);
-			
 	}
 
 	public void select_Credit_Card_Expiration_Year() {
@@ -73,7 +71,6 @@ public class ReviewOrderPage {
 	public void enter_Credit_Card_SecurtiyCode(String CVV) {
 		driver.findElement(txtBox_Credit_Card_SecurtiyCode).clear();
 		driver.findElement(txtBox_Credit_Card_SecurtiyCode).sendKeys(CVV);
-
 	}
 
 	public void enter_Billing_Street_Address(String address) {
@@ -101,12 +98,10 @@ public class ReviewOrderPage {
 		billing_State.clear();
 		billing_State.sendKeys(state);
 		billing_State.sendKeys(Keys.ENTER);
-
 	}
 
 	public void enter_Billing_Phone_Number(String phoneNumber) {
 		driver.findElement(txtBox_Billing_Phone_Number).clear();
 		driver.findElement(txtBox_Billing_Phone_Number).sendKeys(phoneNumber);
 	}
-
 }

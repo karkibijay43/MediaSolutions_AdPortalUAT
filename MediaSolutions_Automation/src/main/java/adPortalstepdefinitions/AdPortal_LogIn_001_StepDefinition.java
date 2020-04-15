@@ -25,9 +25,9 @@ public class AdPortal_LogIn_001_StepDefinition {
 	WebDriverManager webDriverManager;
 	AdPortalScreenShots adPortalScreenShots;
 
-	@Given("^User is on AdPortal UAT SignUp Page and clicks Log in link$")
+	@Given("^User is on AdPortal UAT sign up page and clicks Login link$")
 
-	public void user_is_on_AdPortal_UAT_SignUp_page() {
+	public void user_Is_On_AdPortal_UAT_SignUp_Page() {
 		webDriverManager = new WebDriverManager();
 		driver = WebDriverManager.getDriver();
 		configFileReader = new ConfigFileReader();
@@ -53,17 +53,17 @@ public class AdPortal_LogIn_001_StepDefinition {
 
 	@When("^User enters username and password and clicks log in$")
 
-	public void enter_UserName_and_Password() throws IOException {
+	public void enter_UserName_And_Password() throws IOException {
 		logInPage = new LogInPage(driver);
-		logInPage.enter_LogInEmail("MSTestEmail@charter.com");
-		logInPage.enter_LogInPassword("testpwd@MS1");
+		logInPage.enter_LogInEmail("c-bijay.karki@charter.com");
+		logInPage.enter_LogInPassword("Spectrum123!");
 		logInPage.clickLogIn();
 
 	}
 
 	@Then("^User lands on request dashboard page$")
 
-	public void requestDashboard_verification() {
+	public void requestDashBoard_Verification() {
 		adPortalScreenShots = new AdPortalScreenShots(driver);
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();

@@ -47,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Apr 9, 2020 05:15:51 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Apr 14, 2020 01:12:34 PM</span>
 				</a>
 			</li>
 			<li>
@@ -86,7 +86,7 @@
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>@cucumberHooks</a></li>
-					<li><a href='#'>@UploadYourCommercial</a></li>
+					<li><a href='#'>@FAQLink</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -164,7 +164,7 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>8</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>5</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -183,26 +183,26 @@
 				
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>AdPortal UAT</span>
-						<span class='test-time'>Apr 9, 2020 05:15:51 PM</span>
+						<span class='test-name'>AdPortal UAT new user FAQ link functionlaity</span>
+						<span class='test-time'>Apr 14, 2020 01:12:34 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='pass'>
 	<div class='category-list'>
-		<span class='category label white-text'>@UploadYourCommercial</span>
+		<span class='category label white-text'>@FAQLink</span>
 	</div>
-	<span class='duration right label'>0h 1m 9s+738ms</span>
+	<span class='duration right label'>0h 0m 34s+167ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Upload your own commercial</span>
+		<span class="desc-text">New User lands on dashboard and selects the FAQ links</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node given pass' status='pass'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given User is on SignUp page and clicks log in</span>
+			<span class="bdd-step-name">Given I am a new SSU user to Ad Portal</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -210,7 +210,7 @@
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When User logs in using Email and Password</span>
+			<span class="bdd-step-name">When I log in using newly signed up log in email and password</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -218,7 +218,7 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User should land Request Dashboard page with draft campaign</span>
+			<span class="bdd-step-name">Then I should land on the AdPortal new dashboard</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -226,7 +226,7 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User should be able to continue with the campaign</span>
+			<span class="bdd-step-name">Then I should see the FAQ links</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -234,31 +234,7 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User selects the address and distance and clicks Next</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='8' class='node then pass' status='pass'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then User should be able to select the dates to schedule a campaign</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='9' class='node then pass' status='pass'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then User should be able to review the campaign details</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='10' class='node then pass' status='pass'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then User should be able to upload their own commercial</span>
+			<span class="bdd-step-name">Then When I select the links the links should open the relevant FAQ page in a new browser tab</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -341,8 +317,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 9, 2020 05:15:51 PM</td>
-										<td class='linked' test-id='1'>AdPortal UAT</td>
+										<td>Apr 14, 2020 01:12:34 PM</td>
+										<td class='linked' test-id='1'>AdPortal UAT new user FAQ link functionlaity</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -352,7 +328,7 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@UploadYourCommercial</span>
+						<span class='category-name'>@FAQLink</span>
 						<span class='category-status right'>
 							<span class='label pass'>1</span>
 						</span>
@@ -375,8 +351,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 9, 2020 05:15:51 PM</td>
-										<td class='linked' test-id='2'>AdPortal UAT.Upload your own commercial</td>
+										<td>Apr 14, 2020 01:12:34 PM</td>
+										<td class='linked' test-id='2'>AdPortal UAT new user FAQ link functionlaity.New User lands on dashboard and selects the FAQ links</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -417,25 +393,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>8</div>
+					<div class='panel-lead'>5</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Apr 9, 2020 05:15:51 PM</div>
+					<div class='panel-lead'>Apr 14, 2020 01:12:34 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Apr 9, 2020 05:17:02 PM</div>
+			 		<div class='panel-lead'>Apr 14, 2020 01:13:10 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 1m 10s+862ms</div>
+					<div class='panel-lead'>0h 0m 35s+231ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -460,7 +436,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@UploadYourCommercial</td>
+							<td>@FAQLink</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -498,7 +474,7 @@
 				infoChild: 0,
 				exceptionsChild: 0,
 				
-				passGrandChild: 8,
+				passGrandChild: 5,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,

@@ -8,9 +8,7 @@ import org.openqa.selenium.WebDriver;
 import dataProvider.ConfigFileReader;
 
 public class LogInPage {
-
 	ConfigFileReader configFileReader;
-	//WebDriver driver;
 	public WebDriver driver;
 	JavascriptExecutor executor;
 
@@ -44,7 +42,6 @@ public class LogInPage {
 	public void enter_LogInPassword(String password) {
 		driver.findElement(txtBox_LogInPassword).clear();
 		driver.findElement(txtBox_LogInPassword).sendKeys(password);
-
 	}
 
 	public void userInPut_LogInPassword() {
@@ -56,7 +53,6 @@ public class LogInPage {
 
 	public void clickLogIn() {
 		driver.findElement(clickLogIn).click();
-
 	}
 
 	public void page_Scroll_Down() {

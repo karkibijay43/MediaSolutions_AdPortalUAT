@@ -1,10 +1,10 @@
 @cucumberHooks
-Feature: AdPortal UAT login  
+Feature: AdPortal UAT log in  
 
 @AdPortalLogInDefault
 Scenario: Log in with default username and password
 
-Given User is on AdPortal UAT SignUp Page and clicks Log in link
+Given User is on AdPortal UAT sign up page and clicks Login link
 When User enters username and password and clicks log in
 Then User lands on request dashboard page
 

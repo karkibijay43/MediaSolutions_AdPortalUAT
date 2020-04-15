@@ -1,13 +1,15 @@
 @cucumberHooks
-Feature: AdPortal UAT Create Campaign feature
-@CreateCampaignDefault
-Scenario: Create a campaign using your Valid UAT logIn userID and Password
+Feature: AdPortal UAT create campaign feature
 
-Given User is on AdPortal UAT SignUp page and clicks log in
-When User enters Email and Password and clicks LogIn
-Then User should land on Request Dashboard page
-Then User should be able to Get started with the campaign
-Then User enters the address on the address field and selects the distance and clicks Next
+@CreateCampaignDefault
+Scenario: Create a campaign using your valid UAT login email and password
+
+Given User is on AdPortal UAT signup page and clicks log in
+When User enters email and password and clicks log in
+Then User should land on request dashboard page and be able to create a campaign
+Then User should be able to get started with the campaign
+Then User enters the address and selects the distance and clicks next
 Then User should be able to schedule a campaign
 Then User should be able to review campaign
 Then User should be able to name their campaign and upload commercial 
+Then User should be able to enter credit card information and place an order

@@ -15,17 +15,14 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
-public class TestHooks 
+public class TestHooks{
 //extends WebDriverManager
-{
 	WebDriver driver;
 	AdPortalScreenShots adPortalScreenShots;
-	WebDriverManager webDriverManager;
-	
+	WebDriverManager webDriverManager;	
 //	public TestHooks() {
 //		this.driver = super.getDriver();
 //	}
-
 
 	@Before
 	public void beforeScenario(Scenario scenario) {
@@ -38,7 +35,6 @@ public class TestHooks
 		System.out.println("=========================================");
 		System.out.println("Executing before AdPortalLogInDefault");
 		System.out.println("=========================================");
-
 	}
 
 	@Before("@AdPortalLogInUserInPut")
@@ -47,7 +43,6 @@ public class TestHooks
 		System.out.println("=========================================");
 		System.out.println("Executing before AdPortalLogInUserInPut");
 		System.out.println("=========================================");
-
 	}
 
 	@Before("@SSULogIn")
@@ -56,7 +51,6 @@ public class TestHooks
 		System.out.println("=========================================");
 		System.out.println("Executing before SSULogIn");
 		System.out.println("=========================================");
-
 	}
 
 	@Before("@CreateCampaignDefault")
@@ -65,7 +59,6 @@ public class TestHooks
 		System.out.println("=========================================");
 		System.out.println("Executing before CreateCampaignDefault");
 		System.out.println("=========================================");
-
 	}
 
 	@Before("@CreateCampaigUserInPut")
@@ -74,7 +67,6 @@ public class TestHooks
 		System.out.println("=========================================");
 		System.out.println("Executing before CreateCampaignUserInPut");
 		System.out.println("=========================================");
-
 	}
 
 	@Before("@DashBoardView")
@@ -83,7 +75,6 @@ public class TestHooks
 		System.out.println("=========================================");
 		System.out.println("Executing before DashBoardView");
 		System.out.println("=========================================");
-
 	}
 	
 	@Before("@FAQLink")
@@ -92,7 +83,6 @@ public class TestHooks
 		System.out.println("=========================================");
 		System.out.println("Executing before FAQ_Link_Functionality");
 		System.out.println("=========================================");
-
 	}
 	@Before("@ReachIntroPage")
 	public void reach_Intro_Page (Scenario scenario) {
@@ -100,7 +90,6 @@ public class TestHooks
 		System.out.println("=========================================");
 		System.out.println("Executing before Reach_Intro_Page");
 		System.out.println("=========================================");
-
 	}
 	
 	@Before("@UploadYourCommercial")
@@ -109,7 +98,6 @@ public class TestHooks
 		System.out.println("=========================================");
 		System.out.println("Executing before upload_Your_Commercial");
 		System.out.println("=========================================");
-
 	}
 	
 	@After()
@@ -119,7 +107,6 @@ public class TestHooks
 		 webDriverManager = new WebDriverManager(); 
 		 driver = WebDriverManager.getDriver();
 		 //if (scenario.isFailed()) 
-
 		try {
 			byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			File screenshot_with_scenario_name = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -127,15 +114,13 @@ public class TestHooks
 			new File("/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Test_Pass_Fail_ScreenShot/"+ scenario.getName() + ".png"));
 			System.out.println(scenario.getName());
 			scenario.embed(screenshot, "image/png");
-		} catch (WebDriverException somePlatformsDontSupportScreenshots) {
+		} 
+		catch 
+		(WebDriverException somePlatformsDontSupportScreenshots) {
 			System.err.println(somePlatformsDontSupportScreenshots.getMessage());
 		}
-
 	}
-	
-	
-	
-	
+		
 }
 	
 

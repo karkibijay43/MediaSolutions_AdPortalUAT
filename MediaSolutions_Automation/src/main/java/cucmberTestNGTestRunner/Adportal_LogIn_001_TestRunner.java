@@ -8,18 +8,24 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.cucumber.listener.ExtentProperties;
+import com.cucumber.listener.Reporter;
+
 import adPortalManagers.WebDriverManager;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-
-		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_LogIn_001.feature", glue = {
-				"adPortalstepdefinitions" }, plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
+		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_LogIn_001.feature", 
+		glue = {"adPortalstepdefinitions" 
+				
+		}, 
+		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
 		// AdPortalRegressionTestReport/AdPortalLogInDefaultReport.html"
-		}, tags = { "@AdPortalLogInDefault" },
-
+		}, 
+		tags = { "@AdPortalLogInDefault" 
+				
+		},
 		monochrome = true
 
 )
@@ -50,6 +56,10 @@ public class Adportal_LogIn_001_TestRunner {
 
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() {
+		  Reporter.setSystemInfo("OS", "MAC"); 
+		  Reporter.setSystemInfo("AUTOMATION", "ADPORTAL"); 
+		  Reporter.assignAuthor("Bijay Karki");
+		 
 		testNGCucumberRunner.finish();
 		//driver = WebDriverManager.getDriver();
 		//driver.close();

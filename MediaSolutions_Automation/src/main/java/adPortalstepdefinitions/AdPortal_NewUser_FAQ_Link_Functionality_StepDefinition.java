@@ -27,34 +27,39 @@ public class AdPortal_NewUser_FAQ_Link_Functionality_StepDefinition {
 	WebDriverManager webDriverManager;
 	AdPortalScreenShots adPortalScreenShots;
 
-	
-	  @Given("^I am a new SSU user to Ad Portal$") public void
-	  new_SSU_USer_SignUp() throws InterruptedException { webDriverManager = new
-	  WebDriverManager(); driver = WebDriverManager.getDriver();
-	  driver.manage().timeouts().implicitlyWait(4000, TimeUnit.SECONDS);
-	  configFileReader = new ConfigFileReader(); pageObjectManager = new
-	  PageObjectManager(driver); configFileReader.getApplicationUrl(); signUpPage =
-	  pageObjectManager.getSignUpPage(); signUpPage.navigateTo_SignUpPage();
-	  signUpPage.enter_FirstName("Media"); signUpPage.enter_LastName("Solutions");
-	  signUpPage.enter_BusinessName("Spectrum Reach");
-	  signUpPage.enter_ZipCode("80111");
-	  signUpPage.enter_PhoneNumber("1234567890");
-	  signUpPage.enter_Email("QATestEmail@charter.com");
-	  signUpPage.enter_ConfirmEmail("QATestEmail@charter.com");
-	  signUpPage.enter_Password("testpwd@MS1");
-	  signUpPage.eneter_ConfirmPassword("testpwd@MS1"); signUpPage =
-	  pageObjectManager.getSignUpPage(); signUpPage.click_CheckBox();
-	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-	  driver.switchTo().window(tabs.get(1)); driver.close();
-	  driver.switchTo().window(tabs.get(0)); requestDashBoardPage = new
-	  RequestDashBoardPage(driver); signUpPage.click_nextStep();
-	  Thread.sleep(17000); // driver.close();
-	  
-	  }
-	 
+	@Given("^I am a new SSU user to Ad Portal$")
+	public void new_SSU_User_SignUp() throws InterruptedException {
+		webDriverManager = new WebDriverManager();
+		driver = WebDriverManager.getDriver();
+		driver.manage().timeouts().implicitlyWait(4000, TimeUnit.SECONDS);
+		configFileReader = new ConfigFileReader();
+		pageObjectManager = new PageObjectManager(driver);
+		configFileReader.getApplicationUrl();
+		signUpPage = pageObjectManager.getSignUpPage();
+		signUpPage.navigateTo_SignUpPage();
+		signUpPage.enter_FirstName("Media");
+		signUpPage.enter_LastName("Solutions");
+		signUpPage.enter_BusinessName("Spectrum Reach");
+		signUpPage.enter_ZipCode("80111");
+		signUpPage.enter_PhoneNumber("1234567890");
+		signUpPage.enter_Email("QATestEmail@charter.com");
+		signUpPage.enter_ConfirmEmail("QATestEmail@charter.com");
+		signUpPage.enter_Password("testpwd@MS1");
+		signUpPage.eneter_ConfirmPassword("testpwd@MS1");
+		signUpPage = pageObjectManager.getSignUpPage();
+		signUpPage.click_CheckBox();
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.close();
+		driver.switchTo().window(tabs.get(0));
+		requestDashBoardPage = new RequestDashBoardPage(driver);
+		signUpPage.click_nextStep();
+		Thread.sleep(17000);
+		
+	}
 
-	@When("^I log in using newly created User Email and Password$")
-	public void user_LogsIn_Using_New_Email_And_Password() {
+	@When("^I log in using newly signed up log in email and password$")
+	public void user_LogIn_Using_New_Email_And_Password() {
 		webDriverManager = new WebDriverManager();
 		driver = WebDriverManager.getDriver();
 		configFileReader = new ConfigFileReader();
@@ -75,11 +80,10 @@ public class AdPortal_NewUser_FAQ_Link_Functionality_StepDefinition {
 		logInPage.enter_LogInEmail("QATestEmail@charter.com");
 		logInPage.enter_LogInPassword("testpwd@MS1");
 		logInPage.clickLogIn();
-
 	}
 
-	@Then("^I should land on the Ad Portal New Dashboard$")
-	public void requestDashboard_verification() {
+	@Then("^I should land on the AdPortal new dashboard$")
+	public void requestDashBoard_Verification() {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_FAQ_Links();
 		adPortalScreenShots = new AdPortalScreenShots(driver);

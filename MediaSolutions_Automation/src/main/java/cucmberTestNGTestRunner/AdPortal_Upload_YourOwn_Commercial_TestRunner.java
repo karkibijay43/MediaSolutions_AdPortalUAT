@@ -13,21 +13,20 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
-@CucumberOptions
-(features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_Commercial_Upload.feature", 
-glue = {
+@CucumberOptions(
+		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_Upload_YourOwn_Commercial.feature", 
+		glue = {
 		"adPortalstepdefinitions"
 		}, 
-plugin = { 
+		plugin = { 
 		"com.cucumber.listener.ExtentCucumberFormatter:",
 		"rerun:target/rerun.txt"
-	},
-
+		},
 		monochrome = true, 
 		dryRun = false
 
 )
-public class AdPortal_Commercial_Upload_TestRunner {
+public class AdPortal_Upload_YourOwn_Commercial_TestRunner {
 	private TestNGCucumberRunner testNGCucumberRunner;
 	WebDriver driver;
 	WebDriverManager webDriverManager;
@@ -54,7 +53,7 @@ public class AdPortal_Commercial_Upload_TestRunner {
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() {
 		testNGCucumberRunner.finish();
-		//webDriverManager = new WebDriverManager();
-		//webDriverManager.closeDriver();
+		webDriverManager = new WebDriverManager();
+		webDriverManager.closeDriver();
 	}
 }

@@ -49,7 +49,7 @@ public class AdPortal_Reach_Intro_Page_StepDefinition {
 		logInPage.clickLogIn();
 	}
 
-	@When("^User is on the Request DashBoard with drafts page$")
+	@When("^User is on the request dashBoard with drafts page$")
 	public void verify_RequestDashBoard() {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
@@ -62,14 +62,14 @@ public class AdPortal_Reach_Intro_Page_StepDefinition {
 		requestDashBoardPage.get_Started_Or_ContinueCamapaign();
 	}
 
-	@Then("^USer should land on intro step of the Reach page$")
+	@Then("^USer should land on intro step of the reach page$")
 	public void reach_Intro_Page_Verification() {
 		ReachPage reachPage = new ReachPage(driver);
 		reachPage.verify_Reach_Intro_Page_Title();
 
 	}
 
-	@Then("^User clicks on Next button$")
+	@Then("^User clicks on next button$")
 	public void click_ReachPage_NextButton() {
 		ReachPage reachPage = new ReachPage(driver);
 		reachPage.explicitly_Wait_For_ReachPageNextButton();
@@ -77,7 +77,7 @@ public class AdPortal_Reach_Intro_Page_StepDefinition {
 	}
 
 	@Then("^User should be taken to the Reach 1 of 3 page$")
-	public void Verify_ReachPage_1_Of_3() {
+	public void verify_ReachPage_1_Of_3() {
 		ReachPage reachPage = new ReachPage(driver);
 		reachPage.get_Text_From_ReachPage1();
 		adPortalScreenShots = new AdPortalScreenShots(driver);

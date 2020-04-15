@@ -47,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Apr 9, 2020 03:16:11 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Apr 14, 2020 01:20:47 PM</span>
 				</a>
 			</li>
 			<li>
@@ -73,6 +73,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -86,7 +87,7 @@
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>@cucumberHooks</a></li>
-					<li><a href='#'>@CreateCampaignUserInPut</a></li>
+					<li><a href='#'>@SSULogIn</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -134,10 +135,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
 				</div>
 			</div>
 		</div>
@@ -149,10 +150,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
 				</div>
 			</div>
 		</div>
@@ -164,10 +165,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>8</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='25%'><span class='strong'>1</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='75%'>3</span> others
 				</div>
 			</div>
 		</div>
@@ -181,85 +182,53 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf skip' status='skip' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>AdPortal UAT Create Campaign feature</span>
-						<span class='test-time'>Apr 9, 2020 03:16:11 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>SSO LogIn SignUP AdportalUAT</span>
+						<span class='test-time'>Apr 14, 2020 01:20:47 PM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenario node' test-id='2' status='pass'>
+<div class='scenario node' test-id='2' status='skip'>
 	<div class='category-list'>
-		<span class='category label white-text'>@CreateCampaignUserInPut</span>
+		<span class='category label white-text'>@SSULogIn</span>
 	</div>
-	<span class='duration right label'>0h 1m 59s+303ms</span>
+	<span class='duration right label'>0h 0m 3s+809ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Create a campaign with User Based Input using your Valid AdPortal UAT logIn Email and Password</span>
+		<span class="desc-text">Sign up with user email and password</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node given pass' status='pass'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given User is on AdPortal UAT SignUp page and clicks Log in</span>
+			<span class="bdd-step-name">Given User is on AdPortal UAT sign up page</span>
 				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='4' class='node when pass' status='pass'>
+		<li test-id='4' class='node when skip' status='skip'>
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When User enters Existing Email and Password and clicks LogIn</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">When User enters First Name,Last Name,Business Name, Zip Code,Phone Number,Email and Password</span>
+				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='5' class='node then pass' status='pass'>
+		<li test-id='5' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User should land on Request Dashboard page with Campaign drafts</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">Then User reads and agrees terms and conditions and clicks next step</span>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='6' class='node then pass' status='pass'>
+		<li test-id='6' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User should be able to Get started or continue with the campaign</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='7' class='node then pass' status='pass'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then User enters the address on the address field and selects the distance in miles and clicks Next</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='8' class='node then pass' status='pass'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then User should be able to create a campaign for selected Dates</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='9' class='node then pass' status='pass'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then User should be able to review their campaign Details</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='10' class='node then pass' status='pass'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then User should be able to name campaign and upload commercial</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">Then User should be able to create log in credentiasls for Adportal UAT</span>
+				<div class='pre'>skipped</div>
 			
 		</li>
 	</ul>
@@ -320,14 +289,14 @@
 					<div class='category-heading'>
 						<span class='category-name'>@cucumberHooks</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label others'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
 							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
 						</div>
 					
 						<div class='category-tests'>
@@ -341,9 +310,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 9, 2020 03:16:11 PM</td>
-										<td class='linked' test-id='1'>AdPortal UAT Create Campaign feature</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td>Apr 14, 2020 01:20:47 PM</td>
+										<td class='linked' test-id='1'>SSO LogIn SignUP AdportalUAT</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -352,16 +321,16 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@CreateCampaignUserInPut</span>
+						<span class='category-name'>@SSULogIn</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label others'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
 							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
 						</div>
 					
 						<div class='category-tests'>
@@ -375,9 +344,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 9, 2020 03:16:11 PM</td>
-										<td class='linked' test-id='2'>AdPortal UAT Create Campaign feature.Create a campaign with User Based Input using your Valid AdPortal UAT logIn Email and Password</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td>Apr 14, 2020 01:20:47 PM</td>
+										<td class='linked' test-id='2'>SSO LogIn SignUP AdportalUAT.Sign up with user email and password</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -417,25 +386,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>8</div>
+					<div class='panel-lead'>4</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Apr 9, 2020 03:16:11 PM</div>
+					<div class='panel-lead'>Apr 14, 2020 01:20:47 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Apr 9, 2020 03:18:12 PM</div>
+			 		<div class='panel-lead'>Apr 14, 2020 01:20:52 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 2m 0s+331ms</div>
+					<div class='panel-lead'>0h 0m 5s+309ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -452,20 +421,20 @@
 						</tr>
 						<tr>
 							<td>@cucumberHooks</td>
+							<td>0</td>
+							<td>0</td>
 							<td>1</td>
-							<td>0</td>
-							<td>0</td>
 							<td>
-									100%
+									0%
 							</td>
 						</tr>
 						<tr>
-							<td>@CreateCampaignUserInPut</td>
+							<td>@SSULogIn</td>
+							<td>0</td>
+							<td>0</td>
 							<td>1</td>
-							<td>0</td>
-							<td>0</td>
 							<td>
-									100%
+									0%
 							</td>
 						</tr>
 					</table>
@@ -481,31 +450,31 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
+				passParent: 0,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 0,
-				exceptionsParent: 0,
+				skipParent: 1,
+				exceptionsParent: 1,
 				
-				passChild: 1,
+				passChild: 0,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
-				skipChild: 0,
+				skipChild: 1,
 				infoChild: 0,
-				exceptionsChild: 0,
+				exceptionsChild: 1,
 				
-				passGrandChild: 8,
+				passGrandChild: 1,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 0,
+				skipGrandChild: 3,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 0,
+				exceptionsGrandChild: 3,
 			};
 		</script>
 		

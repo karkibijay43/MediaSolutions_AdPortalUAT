@@ -34,8 +34,8 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	ReviewOrderPage reviewOrderPage;
 	AdPortalScreenShots adPortalScreenShots;
 
-	@Given("^User is on AdPortal UAT SignUp page and clicks Log in$")
-	public void user_is_on_AdportalUAT_SignUP_page() {
+	@Given("^User is on AdPortal UAT signup page and clicks log in link$")
+	public void user_Is_On_AdPortalUAT_SignUp_Page() {
 		webDriverManager = new WebDriverManager();
 		driver = WebDriverManager.getDriver();
 		configFileReader = new ConfigFileReader();
@@ -73,8 +73,8 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		 */
 	}
 
-	@When("^User enters Existing Email and Password and clicks LogIn$")
-	public void enter_UserName_and_Password() {
+	@When("^User enters existing email and password and clicks log in$")
+	public void enter_UserName_And_Password() {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		logInPage = new LogInPage(driver);
 		logInPage.enter_LogInEmail("MSTestEmail@charter.com");
@@ -85,17 +85,17 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 
 	}
 
-	@Then("^User should land on Request Dashboard page with Campaign drafts$")
+	@Then("^User should land on request dashboard page with campaign drafts$")
 
-	public void requestDashboard_verification() {
+	public void requestDashBoard_Verification() {
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
 		requestDashBoardPage.request_DashBoardPage_With_Drafts_verification();
 
 	}
 
-	@Then("^User should be able to Get started or continue with the campaign$")
+	@Then("^User should be able to get started or continue with campaign draft$")
 
-	public void start_campaign() {
+	public void start_Campaign() {
 		reachPage = pageObjectManager.getReachPage();
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
@@ -108,8 +108,8 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 
 	}
 
-	@Then("^User enters the address on the address field and selects the distance in miles and clicks Next$")
-	public void enter_Address_and_Distance() throws InterruptedException {
+	@Then("^User enters the desired address and selects the distance in miles and clicks next$")
+	public void enter_Address_And_Distance() throws InterruptedException {
 		ReachPage reachPage = new ReachPage(driver);
 		reachPage.explicitly_Wait_For_AddressEntry();
 		reachPage.UserInPut_Address();
@@ -120,8 +120,8 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		reachPage.click_ReachPage3NextButton_JSExecutor();
 	}
 
-	@Then("^User should be able to create a campaign for selected Dates$")
-	public void Schedule_Campaign() {
+	@Then("^User should be able to create a campaign for selected dates$")
+	public void schedule_Campaign() {
 		SchedulePage schedulePage = new SchedulePage(driver);
 		schedulePage.click_startCalednderArrow();
 		schedulePage.click_stopCalenderArrow();
@@ -136,8 +136,8 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 
 	}
 
-	@Then("^User should be able to review their campaign Details$")
-	public void review_campaign_details() {
+	@Then("^User should be able to review their campaign details$")
+	public void review_Campaign_Details() {
 		schedulePage = new SchedulePage(driver);
 		schedulePage.explicitly_Wait_For_ReviewPageNextButton();
 		adPortalScreenShots = new AdPortalScreenShots(driver);
@@ -146,14 +146,14 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	}
 
 	@Then("^User should be able to name campaign and upload commercial$")
-	public void name_campaign_UploadCommercial() throws AWTException, InterruptedException {
+	public void name_Campaign_UploadCommercial() throws AWTException, InterruptedException {
 		reviewOrderPage = pageObjectManager.getReviewOrderPage();
 		commercialPage = pageObjectManager.getCommercialPage();
-		schedulePage.enter_CampaignName_Or_Continue_With_Commercial("TestCampaign");
+		schedulePage.enter_CampaignName_Or_Continue_With_Commercial("Test campaign");
 		commercialPage.enter_Things_To_KnowAbout1("Test1");
 		commercialPage.enter_Things_To_KnowAbout2("Test2");
 		commercialPage.enter_Things_To_KnowAbout3("Test3");
-		commercialPage.enter_Commercial_TagLine("TestCommercial_TagLine");
+		commercialPage.enter_Commercial_TagLine("Test commercial tagline");
 		commercialPage.commercial_Upload();
 		commercialPage.click_ImageRights_CheckBox();
 		commercialPage.click_CommericialPage1_NextButton();
@@ -167,15 +167,21 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		commercialPage.enter_Website_URL("Adportal.com");
 		commercialPage.enter_Email_Address("MSTestEmail@charter.com");
 		commercialPage.enter_Other_Way_To_Contact("MSolutionsTestemail@charter.com");
-		commercialPage.enter_Other_Message_For_Audience("This is a test camppaign");
+		commercialPage.enter_Other_Message_For_Audience("This is a test campaign");
 		commercialPage.click_commercialPage2_NextButton();
 		commercialPage.select_Male_Voice_Preference();
 		commercialPage.select_Easy_Listening_Music_Preference();
 		commercialPage.select_Color_Preference();
-		commercialPage.enter_Special_Instructions("Media solutions test campaign");
+		commercialPage.enter_Special_Instructions("Media solutions test campaign.");
 		commercialPage.click_CommercialPage3_NextButton();
 		adPortalScreenShots.takeScreenShotCreateCampaignDefault_RewviewOrderPage();
 		reviewOrderPage.click_place_OrderButton();
+		
+	}
+	@Then ("^User should be able to enter payment information and place an order$")
+	public void place_An_Order() {
+		reviewOrderPage = pageObjectManager.getReviewOrderPage();
+		adPortalScreenShots = new AdPortalScreenShots(driver);
 		reviewOrderPage.select_BusinessCategory("Advertising");
 		reviewOrderPage.enter_Credit_Card_FirstNAme("zztestspp");
 		reviewOrderPage.enter_Credit_Card_LastName("whatever");
@@ -189,7 +195,7 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		reviewOrderPage.enter_Billing_City("Greenwood Village");
 		reviewOrderPage.select_dropDown_Billing_State("CO");
 		reviewOrderPage.enter_Billing_Phone_Number("1234567890");
-		adPortalScreenShots.takeScreenShotCreateCampaignDefault_CheckOutPage();
+		adPortalScreenShots.takeScreenShotCreateCampaignDefault_CheckOutPage();	
+	}
 
 	}
-}

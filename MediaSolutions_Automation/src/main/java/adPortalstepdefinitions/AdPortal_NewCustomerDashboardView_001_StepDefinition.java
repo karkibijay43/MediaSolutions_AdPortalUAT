@@ -28,8 +28,8 @@ public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 	WebDriverManager webDriverManager;
 	AdPortalScreenShots adPortalScreenShots;
 
-	@Given("^A new User is on AdPortal UAT SignUP page$")
-	public void user_is_on_SignUp_page() {
+	@Given("^A new user is on AdPortal UAT sign up page$")
+	public void user_Is_On_SignUp_Page() {
 		webDriverManager = new WebDriverManager();
 		driver = WebDriverManager.getDriver();
 		driver.manage().timeouts().implicitlyWait(4000, TimeUnit.SECONDS);
@@ -56,9 +56,9 @@ public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 
 	}
 
-	@Then("^User accepts license agreement and clicks Next Step$")
+	@Then("^User accepts license agreement and clicks next step$")
 
-	public void read_Accept_licenseAgreement() throws InterruptedException {
+	public void read_Accept_LicenseAgreement() throws InterruptedException {
 		SignUpPage signUpPage = new SignUpPage(driver);
 		signUpPage.click_CheckBox();
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -70,8 +70,8 @@ public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 
 	}
 
-	@Then("^User should be able to see blank dashboard page wtih no campaigns$")
-	public void requestDashboard_verification() {
+	@Then("^User should be able to see blank dashboard page with no campaigns$")
+	public void requestDashBoard_Verification() {
 		adPortalScreenShots = new AdPortalScreenShots (driver);
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();	
 		//requestDashBoardPage.explicitly_Wait_For_GetStartedButton();

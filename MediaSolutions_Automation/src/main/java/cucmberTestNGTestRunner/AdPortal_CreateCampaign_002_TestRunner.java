@@ -18,9 +18,10 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
 		features="/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_CreateCampaign_002.feature",
-		glue= {"adPortalstepdefinitions"},
+		glue= {"adPortalstepdefinitions"
+				
+		},
 		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
-				//AdPortalRegressionTestReport/CreateCampaignUserInPutReport.html" },
 		},
 		monochrome = true
 		

@@ -29,7 +29,7 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 	AdPortalScreenShots adPortalScreenShots;
 
 	@Given("^User is on AdPortal UAT sign up page$")
-	public void user_is_on_SignUp_page() throws Throwable {
+	public void user_Is_On_SignUp_Page() throws Throwable {
 		webDriverManager = new WebDriverManager();
 		driver = WebDriverManager.getDriver();
 		driver.manage().timeouts().implicitlyWait(4000, TimeUnit.SECONDS);
@@ -38,10 +38,9 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 		configFileReader.getApplicationUrl();
 		signUpPage = pageObjectManager.getSignUpPage();
 		signUpPage.navigateTo_SignUpPage();
-
 	}
 
-	@When("^User enters First Namme,Last Name,Business Name, Zip Code,Phone NUmbmer,Email and Password$")
+	@When("^User enters First Name,Last Name,Business Name,Zip Code,Phone Number,Email and Password$")
 	public void enter_DataField() {
 		signUpPage = pageObjectManager.getSignUpPage();
 		// signUpPage = new SignUpPage(driver);
@@ -57,9 +56,9 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 
 	}
 
-	@Then("^User Reads and agrees Terms and conditions and clicks Next Step$")
+	@Then("^User reads and agrees terms and conditions and clicks next step$")
 
-	public void read_Accept_licenseAgreement() {
+	public void read_Accept_LicenseAgreement() {
 		signUpPage = pageObjectManager.getSignUpPage();
 		signUpPage.click_CheckBox();
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -69,8 +68,8 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 
 	}
 
-	@Then("^User should be able to create log in credentiasls for Adportal UAT$")
-	public void next_step_LogIn() throws InterruptedException {
+	@Then("^User should be able to create log in credentials for AdPortal UAT$")
+	public void next_Step_LogIn() throws InterruptedException {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		SignUpPage signUpPage = new SignUpPage(driver);
 		signUpPage.click_nextStep();

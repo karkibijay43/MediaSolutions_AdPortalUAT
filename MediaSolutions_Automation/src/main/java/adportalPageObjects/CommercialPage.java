@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,8 +16,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommercialPage {
-
-	// WebDriver driver;
 	public WebDriver driver;
 	JavascriptExecutor executor;
 
@@ -28,6 +27,7 @@ public class CommercialPage {
 	By link_Click_Here = By.xpath("//u[contains(text(),'Click here')]");
 	By upload_Your_Own_Commercial_Box = By.xpath(
 			"//body/app-root/div/app-order/div/div/div/div/section/app-creative-upload-full-page/app-card-item/div/div/div/div/div/div/div/div/div/label/div[1]");
+	By enabled_Button_Next = By.className("spp-btn");
 	By txtBox_Things_To_KnowAbout1 = By.id("brandInfo0");
 	By txtBox_Things_To_KnowAbout2 = By.id("brandInfo1");
 	By txtBox_Things_To_KnowAbout3 = By.id("brandInfo2");
@@ -124,16 +124,36 @@ public class CommercialPage {
 		robot.keyRelease(KeyEvent.VK_RIGHT);
 		robot.setAutoDelay(1000);
 
-		/*
-		 * robot.keyPress(KeyEvent.VK_DOWN); robot.keyRelease(KeyEvent.VK_DOWN);
-		 * robot.setAutoDelay(1000);
-		 */
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
+		robot.setAutoDelay(1000);
 
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 
-		Thread.sleep(11000);
+		Thread.sleep(150000);
 	}
+
+	public void click_Upload_YourOwnCommercialPage_Next_Button() {
+			WebDriverWait wait_For_Next_Button = new WebDriverWait(driver, 300);
+			wait_For_Next_Button.until(ExpectedConditions.visibilityOfElementLocated(enabled_Button_Next));
+
+			WebElement nextButtonEnabled = driver.findElement(enabled_Button_Next);
+			if (nextButtonEnabled.isEnabled()) {
+				nextButtonEnabled.click();
+			} else {
+
+				System.out.println("Next button is not enabled");
+			}
+
+			try {
+				nextButtonEnabled.click();
+
+			} catch (StaleElementReferenceException e) {
+				driver.findElement(enabled_Button_Next).click();
+			}
+		}
+	
 
 	public void enter_Things_To_KnowAbout1(String text) {
 		driver.findElement(txtBox_Things_To_KnowAbout1).clear();
@@ -199,16 +219,10 @@ public class CommercialPage {
 		robot.keyRelease(KeyEvent.VK_RIGHT);
 		robot.setAutoDelay(1000);
 
-		/*
-		 * robot.keyPress(KeyEvent.VK_DOWN); robot.keyRelease(KeyEvent.VK_DOWN);
-		 * robot.setAutoDelay(1000);
-		 */
-
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 
 		Thread.sleep(11000);
-
 	}
 
 	public void commercial_Upload() throws AWTException, InterruptedException {
@@ -246,7 +260,6 @@ public class CommercialPage {
 		robot.keyRelease(KeyEvent.VK_ENTER);
 
 		Thread.sleep(11000);
-
 	}
 
 	public void click_ImageRights_CheckBox() {
@@ -287,13 +300,11 @@ public class CommercialPage {
 		dropDown_State.clear();
 		dropDown_State.sendKeys(state);
 		dropDown_State.sendKeys(Keys.ENTER);
-
 	}
 
 	public void enter_Zip_Code(String zipCode) {
 		driver.findElement(txtBox_Zip_Code).clear();
 		driver.findElement(txtBox_Zip_Code).sendKeys(zipCode);
-
 	}
 
 	public void enter_PhoneNumber(String phoneNumber) {
@@ -339,27 +350,39 @@ public class CommercialPage {
 
 	public void select_No_Music_Preference() throws InterruptedException {
 		driver.findElement(dropDown_Music_Preference).click();
-		{
-			int count = 0;
-			boolean clicked = false;
-			while (count < 4 && !clicked) {
-				try {
-					WebElement NoMusicPreference = driver.findElement(radioButton_No_Music_Preference);
-					NoMusicPreference.click();
-					clicked = true;
-				} catch (ElementClickInterceptedException e) {
-					driver.findElement(radioButton_No_Music_Preference).click();
-					e.toString();
-					System.out.println("Trying to click the element:" + e.getMessage());
-					count = count + 1;
+		while (true) {
+			if (driver.findElement(radioButton_No_Music_Preference).isSelected()) {
+				System.out.println("No Music preference is selected");
 
+				if (!driver.findElement(radioButton_No_Music_Preference).isSelected()) {
+
+					break;
 				}
-
+				return;
 			}
+			break;
 		}
+
+		int count = 0;
+		boolean clicked = false;
+		while (count < 3 && !clicked) {
+			try {
+				WebElement NoMusicPreference = driver.findElement(radioButton_No_Music_Preference);
+				NoMusicPreference.click();
+				clicked = true;
+			} catch (ElementClickInterceptedException e) {
+				driver.findElement(radioButton_No_Music_Preference).click();
+				e.toString();
+				System.out.println("Trying to click the element:" + e.getMessage());
+				count = count + 1;
+			}
+			driver.findElement(radioButton_No_Music_Preference).click();
+		} 
+		//driver.findElement(radioButton_No_Music_Preference).click();
 		driver.findElement(dropDown_Music_Preference).click();
-		// Actions action = new Actions(driver);
-		// action.sendKeys(Keys.SHIFT, Keys.TAB);
+		/*
+		 * Actions action = new Actions(driver); action.sendKeys(Keys.SHIFT, Keys.TAB);
+		 */
 
 	}
 
@@ -397,13 +420,6 @@ public class CommercialPage {
 	public void select_No_Color_Preference() {
 		Actions action = new Actions(driver);
 		action.moveToElement(driver.findElement(radioButton_No_Color_Preference)).click().perform();
-
-		/*
-		 * JavascriptExecutor js = (JavascriptExecutor) driver;
-		 * js.executeScript("arguments[0].click():",driver.findElement(
-		 * radioButton_No_Color_Preference));
-		 */
-
 	}
 
 	public void select_Color_Preference() {

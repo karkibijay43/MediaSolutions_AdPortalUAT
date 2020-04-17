@@ -44,8 +44,8 @@ public class AdPortal_Reach_Intro_Page_StepDefinition {
 		signUpPage.explicitly_Wait_ForLogInLink();
 		signUpPage.click_Login();
 		logInPage = new LogInPage(driver);
-		logInPage.enter_LogInEmail("MSTestEmail@charter.com");
-		logInPage.enter_LogInPassword("testpwd@MS1");
+		logInPage.enter_LogInEmail("c-bijay.karki@charter.com");
+		logInPage.enter_LogInPassword("Spectrum123!");
 		logInPage.clickLogIn();
 	}
 

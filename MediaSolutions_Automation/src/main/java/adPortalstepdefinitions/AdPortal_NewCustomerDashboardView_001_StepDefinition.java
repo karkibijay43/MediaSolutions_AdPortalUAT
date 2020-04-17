@@ -51,9 +51,8 @@ public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 		signUpPage.enter_PhoneNumber("1234567890");
 		signUpPage.enter_Email("QATestEmail@charter.com");
 		signUpPage.enter_ConfirmEmail("QATestEmail@charter.com");
-		signUpPage.enter_Password("testpwd@MS1");
-		signUpPage.eneter_ConfirmPassword("testpwd@MS1");
-
+		signUpPage.enter_Password("Spectrum123!");
+		signUpPage.eneter_ConfirmPassword("Spectrum123!");
 	}
 
 	@Then("^User accepts license agreement and clicks next step$")
@@ -67,18 +66,15 @@ public class AdPortal_NewCustomerDashboardView_001_StepDefinition {
 		driver.switchTo().window(tabs.get(0));
 		signUpPage.click_nextStep();
 		Thread.sleep(22000);
-
 	}
 
 	@Then("^User should be able to see blank dashboard page with no campaigns$")
 	public void requestDashBoard_Verification() {
 		adPortalScreenShots = new AdPortalScreenShots (driver);
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();	
-		//requestDashBoardPage.explicitly_Wait_For_GetStartedButton();
 		adPortalScreenShots.takeScreenShotNewDashBoardView();
 		//requestDashBoardPage.click_GetStarted();
 		//requestDashBoardPage.dashBoardPage_Title_verification();
-
 	}
 
 	

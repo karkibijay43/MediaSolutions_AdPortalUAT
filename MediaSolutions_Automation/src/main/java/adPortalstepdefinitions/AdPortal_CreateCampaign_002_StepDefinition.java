@@ -77,8 +77,8 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	public void enter_UserName_And_Password() {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		logInPage = new LogInPage(driver);
-		logInPage.enter_LogInEmail("MSTestEmail@charter.com");
-		logInPage.enter_LogInPassword("testpwd@MS1");
+		logInPage.enter_LogInEmail("c-bijay.karki@charter.com");
+		logInPage.enter_LogInPassword("Spectrum123!");
 		logInPage.clickLogIn();
 		requestDashBoardPage = pageObjectManager.getRequestDashBoardPage();
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
@@ -158,11 +158,13 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 		commercialPage.click_ImageRights_CheckBox();
 		commercialPage.click_CommericialPage1_NextButton();
 		commercialPage.enter_primary_Call_To_Action("Give us a call");
+		commercialPage.click_Edit_Address();
 		commercialPage.enter_Street_Address("6501 S Fiddlers Green cir");
 		commercialPage.enter_Apartment("007");
 		commercialPage.enter_City("Greenwood Village");
 		commercialPage.select_State("CO");
 		commercialPage.enter_Zip_Code("80111");
+		commercialPage.click_Button_SaveChanges();
 		commercialPage.enter_PhoneNumber("1234567890");
 		commercialPage.enter_Website_URL("Adportal.com");
 		commercialPage.enter_Email_Address("MSTestEmail@charter.com");
@@ -180,16 +182,15 @@ public class AdPortal_CreateCampaign_002_StepDefinition {
 	}
 	@Then ("^User should be able to enter payment information and place an order$")
 	public void place_An_Order() {
-		reviewOrderPage = pageObjectManager.getReviewOrderPage();
+		reviewOrderPage = new ReviewOrderPage(driver);		
 		adPortalScreenShots = new AdPortalScreenShots(driver);
-		reviewOrderPage.select_BusinessCategory("Advertising");
 		reviewOrderPage.enter_Credit_Card_FirstNAme("zztestspp");
-		reviewOrderPage.enter_Credit_Card_LastName("whatever");
+		reviewOrderPage.enter_Credit_Card_LastName("Solutions");
 		reviewOrderPage.enter_Credit_Card_Number("1234567890123456");
 		reviewOrderPage.select_Credit_Card_Expiration_Month();
-		reviewOrderPage.select_Credit_Card_Expiration_Year();
+		reviewOrderPage.select_Credit_Card_Expiration_Year("2024");
 		reviewOrderPage.enter_Credit_Card_SecurtiyCode("7777");
-		reviewOrderPage.enter_Billing_Street_Address("6051 S Fiddlers Green cir");
+		reviewOrderPage.enter_Billing_Street_Address("6399 S Fiddlers Green cir");
 		reviewOrderPage.enter_Billing_Apt("007");
 		reviewOrderPage.enter_Billing_Zip_Code("80111");
 		reviewOrderPage.enter_Billing_City("Greenwood Village");

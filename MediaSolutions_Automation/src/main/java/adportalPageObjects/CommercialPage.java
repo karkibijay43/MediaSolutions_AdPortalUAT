@@ -38,11 +38,20 @@ public class CommercialPage {
 			"body.white-background:nth-child(2) div.main app-order.ng-star-inserted:nth-child(2) div.order-comp:nth-child(1) div.main-section div.row-materialize.header-row-all:nth-child(2) div.row-materialize.s9.card-section section.section-container app-creative-business-description.ng-star-inserted:nth-child(2) div.ng-animate-disabled div.card-item-position div.tv-commerical-question-card div.card.card-client.ng-star-inserted div.card-content.ng-star-inserted div.creative-business-description div.text-left:nth-child(2) div.row.image-info-container.m-0:nth-child(3) div.col-sm-7.col-12.p-0.mr-5.mb-3 app-upload-creatives:nth-child(3) > label.ng-star-inserted:nth-child(3)");
 	By CommericialPage1_NextButton = By.className("spp-btn");
 	By txtBox_primary_Call_To_Action = By.id("newCommercialCallToAction");
-	By txtBox_Street_Address_ = By.id("streetFirst_firstuser");
-	By txtBox_Apartment = By.id("streetSecond_seconduser");
-	By txtBox_City = By.id("city_firstuser");
-	By dropdown_State = By.xpath("//ng-select[@name='state']//div//div//div//input");
-	By txtBox_Zip_Code = By.id("zip_firstuser");
+	By click_Edit_Address = By.xpath("//li[1]//div[2]//div[1]//a[1]");
+	By txtBox_Street_Address_ = By.id("streetFirst");
+	By txtBox_Apartment = By.id("streetSecond");
+	By txtBox_City = By.id("city");
+	By txtBox_State = By.id("state");
+	By txtBox_Zip_Code = By.id("zip");
+	By button_SaveChanges = By.className("button-text");
+	/*
+	 * By txtBox_Street_Address_ = By.id("streetFirst_firstuser"); By
+	 * txtBox_Apartment = By.id("streetSecond_seconduser"); By txtBox_City =
+	 * By.id("city_firstuser"); By dropdown_State =
+	 * By.xpath("//ng-select[@name='state']//div//div//div//input"); By
+	 * txtBox_Zip_Code = By.id("zip_firstuser");
+	 */
 	By txtBox_PhoneNumber = By.name("Phone number");
 	By txtBox_Website_URL = By.name("Website URL");
 	By txxBox_Email_Address = By.name("Email address");
@@ -277,7 +286,10 @@ public class CommercialPage {
 	public void enter_primary_Call_To_Action(String text) {
 		driver.findElement(txtBox_primary_Call_To_Action).clear();
 		driver.findElement(txtBox_primary_Call_To_Action).sendKeys(text);
-
+	}
+	
+	public void click_Edit_Address() {
+		driver.findElement(click_Edit_Address).click();
 	}
 
 	public void enter_Street_Address(String address) {
@@ -296,12 +308,16 @@ public class CommercialPage {
 	}
 
 	public void select_State(String state) {
-		WebElement dropDown_State = driver.findElement(dropdown_State);
-		dropDown_State.clear();
-		dropDown_State.sendKeys(state);
-		dropDown_State.sendKeys(Keys.ENTER);
+		WebElement enter_State = driver.findElement(txtBox_State);
+		enter_State.clear();
+		enter_State.sendKeys(state);
+		//enter_State.sendKeys(Keys.ENTER);
 	}
-
+	public void click_Button_SaveChanges() {
+		 WebDriverWait wait = new WebDriverWait(driver, 20);
+		 wait.until(ExpectedConditions.elementToBeClickable(button_SaveChanges));
+		driver.findElement(button_SaveChanges).click();
+	}
 	public void enter_Zip_Code(String zipCode) {
 		driver.findElement(txtBox_Zip_Code).clear();
 		driver.findElement(txtBox_Zip_Code).sendKeys(zipCode);

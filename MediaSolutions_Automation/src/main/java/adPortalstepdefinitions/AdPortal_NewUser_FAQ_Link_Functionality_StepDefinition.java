@@ -44,8 +44,8 @@ public class AdPortal_NewUser_FAQ_Link_Functionality_StepDefinition {
 		signUpPage.enter_PhoneNumber("1234567890");
 		signUpPage.enter_Email("QATestEmail@charter.com");
 		signUpPage.enter_ConfirmEmail("QATestEmail@charter.com");
-		signUpPage.enter_Password("testpwd@MS1");
-		signUpPage.eneter_ConfirmPassword("testpwd@MS1");
+		signUpPage.enter_Password("Spectrum123!");
+		signUpPage.eneter_ConfirmPassword("Spectrum123!");
 		signUpPage = pageObjectManager.getSignUpPage();
 		signUpPage.click_CheckBox();
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -54,8 +54,7 @@ public class AdPortal_NewUser_FAQ_Link_Functionality_StepDefinition {
 		driver.switchTo().window(tabs.get(0));
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		signUpPage.click_nextStep();
-		Thread.sleep(17000);
-		
+		Thread.sleep(17000);		
 	}
 
 	@When("^I log in using newly signed up log in email and password$")
@@ -78,7 +77,7 @@ public class AdPortal_NewUser_FAQ_Link_Functionality_StepDefinition {
 		signUpPage.click_Login();
 		logInPage = pageObjectManager.getLogInPage();
 		logInPage.enter_LogInEmail("QATestEmail@charter.com");
-		logInPage.enter_LogInPassword("testpwd@MS1");
+		logInPage.enter_LogInPassword("Spectrum123!");
 		logInPage.clickLogIn();
 	}
 
@@ -88,20 +87,17 @@ public class AdPortal_NewUser_FAQ_Link_Functionality_StepDefinition {
 		requestDashBoardPage.explicitly_Wait_For_FAQ_Links();
 		adPortalScreenShots = new AdPortalScreenShots(driver);
 		adPortalScreenShots.takeScreenShotNewDashBoardView_FAQ_Link();
-
 	}
 
 	@Then("^I should see the FAQ links$")
 	public void verify_Presence_Of_FAQ_Links() {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.verify_FAQ_Header();
-
 	}
 
 	@Then("^When I select the links the links should open the relevant FAQ page in a new browser tab$")
 	public void open_FAQ_Page() {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
-		// requestDashBoardPage.click_LinkText1();
 		requestDashBoardPage.click_LinkText();
 	}
 

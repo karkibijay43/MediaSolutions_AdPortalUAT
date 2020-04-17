@@ -8,7 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
-
+import com.cucumber.listener.Reporter;
 import adPortalManagers.WebDriverManager;
 import adPortalUtilities.AdPortalScreenShots;
 import cucumber.api.Scenario;
@@ -114,6 +114,10 @@ public class TestHooks{
 			new File("/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Test_Pass_Fail_ScreenShot/"+ scenario.getName() + ".png"));
 			System.out.println(scenario.getName());
 			scenario.embed(screenshot, "image/png");
+			  Reporter.setSystemInfo("OS", "MAC"); 
+			  Reporter.setSystemInfo("AUTOMATION", "ADPORTAL UAT"); 
+			  Reporter.assignAuthor("Bijay Karki");
+			Reporter.addScreenCaptureFromPath("/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Test_Pass_Fail_ScreenShot/"+ scenario.getName() + ".png");
 		} 
 		catch 
 		(WebDriverException somePlatformsDontSupportScreenshots) {

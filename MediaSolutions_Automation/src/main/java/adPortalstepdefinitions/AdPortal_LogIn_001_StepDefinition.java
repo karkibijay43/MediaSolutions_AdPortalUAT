@@ -33,7 +33,7 @@ public class AdPortal_LogIn_001_StepDefinition {
 		configFileReader = new ConfigFileReader();
 		pageObjectManager = new PageObjectManager(driver);
 		// configFileReader.getLoginURL();
-		// configFileReader.getApplicationUrl();
+		//configFileReader.getApplicationUrl();
 		// logInPage = pageObjectManager.getLogInPage();
 		// logInPage.navigateTo_LogInPage();
 		signUpPage = pageObjectManager.getSignUpPage();
@@ -68,6 +68,7 @@ public class AdPortal_LogIn_001_StepDefinition {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		requestDashBoardPage.explicitly_Wait_For_ContinueButton();
 		requestDashBoardPage.request_DashBoardPage_With_Drafts_verification();
+		adPortalScreenShots.takeScreenShotLoginTest();
 	}
 
 }

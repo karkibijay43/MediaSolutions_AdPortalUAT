@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+
 public class ReviewOrderPage {
 	public WebDriver driver;
 
@@ -18,10 +19,10 @@ public class ReviewOrderPage {
 	By txtBox_Credit_Card_SecurtiyCode = By.id("cvv");
 	By txtBox_Billing_Street_Address = By.id("billing-address-1");
 	By txtBox_Billing_Apt = By.id("billing-address-2");
-	By txtBox_Billing_Zip_Code = By.id("billing-address-1");
-	By txtBox_Billing_City = By.id("city");
+	By txtBox_Billing_Zip_Code = By.id("zip");
+	By txtBox_Billing_City = By.xpath("//input[@name='City']");
 	By dropDown_Billing_State = By.xpath("//ng-select[@name='State']//div//div//div//input");
-	By txtBox_Billing_Phone_Number = By.id("phone");
+	By txtBox_Billing_Phone_Number = By.xpath("//input[@name='Phone']");
 
 	public ReviewOrderPage(WebDriver driver) {
 		this.driver = driver;
@@ -61,10 +62,10 @@ public class ReviewOrderPage {
 		expiration_Month.sendKeys(Keys.ENTER);
 	}
 
-	public void select_Credit_Card_Expiration_Year() {
+	public void select_Credit_Card_Expiration_Year(String year) {
 		WebElement expiration_Year = driver.findElement(dropDown_Credit_Card_Expiration_Year);
 		expiration_Year.click();
-		expiration_Year.sendKeys("2024");
+		expiration_Year.sendKeys(year);
 		expiration_Year.sendKeys(Keys.ENTER);
 	}
 
@@ -87,12 +88,13 @@ public class ReviewOrderPage {
 		driver.findElement(txtBox_Billing_Zip_Code).clear();
 		driver.findElement(txtBox_Billing_Zip_Code).sendKeys(zipCode);
 	}
-
+	
 	public void enter_Billing_City(String city) {
-		driver.findElement(txtBox_Billing_City).clear();
-		driver.findElement(txtBox_Billing_City).sendKeys(city);
+		  driver.findElement(txtBox_Billing_City).click();
+	  driver.findElement(txtBox_Billing_City).clear();
+	  driver.findElement(txtBox_Billing_City).sendKeys(city); 
 	}
-
+	 
 	public void select_dropDown_Billing_State(String state) {
 		WebElement billing_State = driver.findElement(dropDown_Billing_State);
 		billing_State.clear();
@@ -101,6 +103,7 @@ public class ReviewOrderPage {
 	}
 
 	public void enter_Billing_Phone_Number(String phoneNumber) {
+		driver.findElement(txtBox_Billing_Phone_Number).click();
 		driver.findElement(txtBox_Billing_Phone_Number).clear();
 		driver.findElement(txtBox_Billing_Phone_Number).sendKeys(phoneNumber);
 	}

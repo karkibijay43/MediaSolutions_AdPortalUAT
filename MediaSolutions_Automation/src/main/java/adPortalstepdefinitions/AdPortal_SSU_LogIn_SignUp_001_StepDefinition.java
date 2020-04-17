@@ -25,7 +25,6 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 	RequestDashBoardPage requestDashBoardPage;
 	PageObjectManager pageObjectManager;
 	WebDriverManager webDriverManager;
-	//ExtentReports extent;
 	AdPortalScreenShots adPortalScreenShots;
 
 	@Given("^User is on AdPortal UAT sign up page$")
@@ -43,7 +42,6 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 	@When("^User enters First Name,Last Name,Business Name,Zip Code,Phone Number,Email and Password$")
 	public void enter_DataField() {
 		signUpPage = pageObjectManager.getSignUpPage();
-		// signUpPage = new SignUpPage(driver);
 		signUpPage.enter_FirstName("Media");
 		signUpPage.enter_LastName("Solutions");
 		signUpPage.enter_BusinessName("Spectrum Reach");
@@ -51,8 +49,8 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 		signUpPage.enter_PhoneNumber("1234567890");
 		signUpPage.enter_Email("QATestEmail@charter.com");
 		signUpPage.enter_ConfirmEmail("QATestEmail@charter.com");
-		signUpPage.enter_Password("testpwd@MS1");
-		signUpPage.eneter_ConfirmPassword("testpwd@MS1");
+		signUpPage.enter_Password("Spectrum123!");
+		signUpPage.eneter_ConfirmPassword("Spectrum123!");
 
 	}
 
@@ -73,7 +71,7 @@ public class AdPortal_SSU_LogIn_SignUp_001_StepDefinition {
 		requestDashBoardPage = new RequestDashBoardPage(driver);
 		SignUpPage signUpPage = new SignUpPage(driver);
 		signUpPage.click_nextStep();
-		Thread.sleep(17000);
+		Thread.sleep(15000);
 		//requestDashBoardPage.explicitly_Wait_For_GetStartedButton();
 		//requestDashBoardPage.click_GetStarted();
 		requestDashBoardPage.new_Request_DashBoard_Verification();

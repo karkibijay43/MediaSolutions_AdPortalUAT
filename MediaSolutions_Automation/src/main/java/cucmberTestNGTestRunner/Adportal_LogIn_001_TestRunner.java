@@ -1,5 +1,7 @@
 package cucmberTestNGTestRunner;
 
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +11,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.cucumber.listener.ExtentProperties;
 import com.cucumber.listener.Reporter;
-
 import adPortalManagers.WebDriverManager;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
@@ -21,7 +22,6 @@ import cucumber.api.testng.TestNGCucumberRunner;
 				
 		}, 
 		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
-		// AdPortalRegressionTestReport/AdPortalLogInDefaultReport.html"
 		}, 
 		tags = { "@AdPortalLogInDefault" 
 				
@@ -55,16 +55,15 @@ public class Adportal_LogIn_001_TestRunner {
 	}
 
 	@AfterClass(alwaysRun = true)
-	public void testDownClass() {
+	public void testDownClass() throws IOException {
 		  Reporter.setSystemInfo("OS", "MAC"); 
 		  Reporter.setSystemInfo("AUTOMATION", "ADPORTAL"); 
-		  Reporter.assignAuthor("Bijay Karki");
-		 
-		testNGCucumberRunner.finish();
+		  Reporter.assignAuthor("Bijay Karki");	
+		  Reporter.addScreenCaptureFromPath("/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Test_Pass_Fail_ScreenShot/Log in with default username and password.png");		
+		  testNGCucumberRunner.finish();
 		//driver = WebDriverManager.getDriver();
 		//driver.close();
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();
 	}
-
 }

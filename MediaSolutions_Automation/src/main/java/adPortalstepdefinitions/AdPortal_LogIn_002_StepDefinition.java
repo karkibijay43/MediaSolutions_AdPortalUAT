@@ -32,10 +32,6 @@ public class AdPortal_LogIn_002_StepDefinition {
 		driver = WebDriverManager.getDriver();
 		configFileReader = new ConfigFileReader();
 		pageObjectManager = new PageObjectManager(driver);
-		// configFileReader.getLoginURL();
-		// configFileReader.getApplicationUrl();
-		//logInPage = pageObjectManager.getLogInPage();
-		//logInPage.navigateTo_LogInPage();
 		signUpPage = pageObjectManager.getSignUpPage();
 		signUpPage.navigateTo_SignUpPage();
 		try {
@@ -48,7 +44,6 @@ public class AdPortal_LogIn_002_StepDefinition {
 		js.executeScript("window.scrollBy(0,100)");
 		signUpPage.explicitly_Wait_ForLogInLink();
 		signUpPage.click_Login();
-
 	}
 
 	@When("^User enters desired email and password and clicks log in button$")
@@ -57,7 +52,6 @@ public class AdPortal_LogIn_002_StepDefinition {
 		logInPage.userInPut_LogInEmail();
 		logInPage.userInPut_LogInPassword();
 		logInPage.clickLogIn();
-
 	}
 
 	@Then("^User lands on request dashboard page to start a campaign$")

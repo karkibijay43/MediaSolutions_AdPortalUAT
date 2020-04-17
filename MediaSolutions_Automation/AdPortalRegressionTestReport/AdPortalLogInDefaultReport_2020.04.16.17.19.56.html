@@ -34,6 +34,7 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+				<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
@@ -47,7 +48,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Apr 14, 2020 11:58:51 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Apr 16, 2020 05:19:56 PM</span>
 				</a>
 			</li>
 			<li>
@@ -86,7 +87,7 @@
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>@cucumberHooks</a></li>
-					<li><a href='#'>@AdPortalLogInUserInPut</a></li>
+					<li><a href='#'>@AdPortalLogInDefault</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -183,26 +184,26 @@
 				
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>AdPortal UAT login  feature</span>
-						<span class='test-time'>Apr 14, 2020 11:58:51 AM</span>
+						<span class='test-name'>AdPortal UAT log in</span>
+						<span class='test-time'>Apr 16, 2020 05:19:56 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='pass'>
 	<div class='category-list'>
-		<span class='category label white-text'>@AdPortalLogInUserInPut</span>
+		<span class='category label white-text'>@AdPortalLogInDefault</span>
 	</div>
-	<span class='duration right label'>0h 0m 27s+361ms</span>
+	<span class='duration right label'>0h 0m 8s+560ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Log in with user based email and password</span>
+		<span class="desc-text">Log in with default username and password</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node given pass' status='pass'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given User is on AdPortal UAT sign up page and clicks Login</span>
+			<span class="bdd-step-name">Given User is on AdPortal UAT sign up page and clicks Login link</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -210,7 +211,7 @@
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When User enters desired email and password and clicks log in button</span>
+			<span class="bdd-step-name">When User enters username and password and clicks log in</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -218,7 +219,10 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User lands on request dashboard page to start a campaign</span>
+			<span class="bdd-step-name">Then User lands on request dashboard page</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Test_Pass_Fail_ScreenShot/Log in with default username and password/.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -301,8 +305,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 14, 2020 11:58:51 AM</td>
-										<td class='linked' test-id='1'>AdPortal UAT login  feature</td>
+										<td>Apr 16, 2020 05:19:56 PM</td>
+										<td class='linked' test-id='1'>AdPortal UAT log in</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -312,7 +316,7 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@AdPortalLogInUserInPut</span>
+						<span class='category-name'>@AdPortalLogInDefault</span>
 						<span class='category-status right'>
 							<span class='label pass'>1</span>
 						</span>
@@ -335,8 +339,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 14, 2020 11:58:51 AM</td>
-										<td class='linked' test-id='2'>AdPortal UAT login  feature.Log in with user based email and password</td>
+										<td>Apr 16, 2020 05:19:56 PM</td>
+										<td class='linked' test-id='2'>AdPortal UAT log in.Log in with default username and password</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -356,6 +360,75 @@
 	</div>
 </div>
 <!-- category view -->
+<div id='author-view' class='view hide'>
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Authors' title='Search Authors'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Authors...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Authors</h5>
+                <ul id='author-collection' class='author-collection'>
+
+                        <li class='author displayed active'>
+                            <div class='author-heading'>
+                                <span class='author-name'>BijayKarki</span>
+                                <span class='author-status right'>
+                                        <span class='label pass'>1</span>
+						        </span>
+                            </div>
+                            <div class='author-content hide'>
+                                <div class='author-status-counts'>
+                                    <span class='label green accent-4 white-text'>Passed: 1</span>
+                                    
+                                    
+                                </div>
+
+                                <div class='author-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Apr 16, 2020 05:19:56 PM</td>
+                                                <td class='linked' test-id='2'>AdPortal UAT log in.Log in with default username and password</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='author-name'></h5>
+        </div>
+    </div>
+</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -383,19 +456,39 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Apr 14, 2020 11:58:51 AM</div>
+					<div class='panel-lead'>Apr 16, 2020 05:19:56 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Apr 14, 2020 11:59:19 AM</div>
+			 		<div class='panel-lead'>Apr 16, 2020 05:20:06 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 28s+421ms</div>
+					<div class='panel-lead'>0h 0m 9s+609ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>OS</td>
+								<td>MAC</td>
+							</tr>
+							<tr>
+								<td>AUTOMATION</td>
+								<td>ADPORTAL</td>
+							</tr>
+					</table>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -420,7 +513,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@AdPortalLogInUserInPut</td>
+							<td>@AdPortalLogInDefault</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>

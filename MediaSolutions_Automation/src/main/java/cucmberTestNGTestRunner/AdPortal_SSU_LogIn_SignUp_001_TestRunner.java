@@ -24,7 +24,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
 				
 		},
-				//"AdPortalRegressionTestReport/SSULogInSignUpReport.html" },
+				
 		monochrome = true
 		
  )

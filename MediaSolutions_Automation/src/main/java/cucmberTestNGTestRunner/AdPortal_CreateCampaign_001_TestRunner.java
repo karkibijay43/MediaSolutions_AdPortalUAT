@@ -54,7 +54,7 @@ public class AdPortal_CreateCampaign_001_TestRunner {
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() {
 		testNGCucumberRunner.finish();
-		webDriverManager = new WebDriverManager();
-		webDriverManager.closeDriver();
+		//webDriverManager = new WebDriverManager();
+		//webDriverManager.closeDriver();
 	}
 }

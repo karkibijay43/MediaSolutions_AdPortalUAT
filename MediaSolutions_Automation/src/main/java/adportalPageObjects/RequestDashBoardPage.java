@@ -55,8 +55,8 @@ public class RequestDashBoardPage {
 	public void explicitly_Wait_For_GetStartedButton() {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(button_GetStarted));
-		WebElement getStartedButton = driver.findElement(button_GetStarted);
-		getStartedButton.click();
+		//WebElement getStartedButton = driver.findElement(button_GetStarted);
+		//getStartedButton.click();
 	}
 
 	public void click_GetStarted() {
@@ -85,7 +85,7 @@ public class RequestDashBoardPage {
 	}
 	//This is to verify New request DashBoard "Welcome to your campaign and commercial dashboard.
 	public void new_Request_DashBoard_Verification() {
-		driver.navigate().refresh();
+		//driver.navigate().refresh();
 		String expectedTitle = "Spectrum Reach Ad Portal";
 		String actualTitle = driver.getTitle();
 		System.out.println("The Title this page is:" + " " + actualTitle);
@@ -93,7 +93,7 @@ public class RequestDashBoardPage {
 		if (expectedTitle.equalsIgnoreCase(actualTitle)) {
 			System.out.println("Welcome to your campaign and commercial dashBoard Page");
 		} else {
-			System.out.println("Please revisit Sign up page to create new Log In credentials");
+			System.out.println("Please revisit sign up page to create new log in credentials");
 		}
 	}
 

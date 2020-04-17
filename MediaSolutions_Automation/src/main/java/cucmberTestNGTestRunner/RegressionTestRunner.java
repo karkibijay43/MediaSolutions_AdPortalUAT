@@ -1,5 +1,6 @@
 package cucmberTestNGTestRunner;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.cucumber.listener.ExtentProperties;
+import com.cucumber.listener.Reporter;
+
 import adPortal.extentReporter.TestListener;
 import adPortalManagers.WebDriverManager;
 import cucumber.api.CucumberOptions;
@@ -55,11 +58,10 @@ public class RegressionTestRunner extends TestListener {
 	}
 
 	@AfterClass(alwaysRun = true)
-	public void testDownClass() {
-		/*
-		 * Reporter.setSystemInfo("OS", "MAC"); Reporter.setSystemInfo("AUTOMATION",
-		 * "ADPORTAL"); Reporter.assignAuthor("Bijay");
-		 */
+	public void testDownClass() throws IOException {
+		Reporter.setSystemInfo("OS", "MAC");
+		Reporter.setSystemInfo("AUTOMATION", "ADPORTAL");
+		Reporter.assignAuthor("Bijay");
 		testNGCucumberRunner.finish();
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();

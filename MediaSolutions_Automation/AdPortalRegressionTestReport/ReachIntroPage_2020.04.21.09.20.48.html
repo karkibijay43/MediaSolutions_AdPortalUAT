@@ -48,7 +48,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Apr 16, 2020 05:21:38 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Apr 21, 2020 09:20:48 AM</span>
 				</a>
 			</li>
 			<li>
@@ -87,7 +87,7 @@
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>@cucumberHooks</a></li>
-					<li><a href='#'>@AdPortalLogInDefault</a></li>
+					<li><a href='#'>@ReachIntroPage</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -165,7 +165,7 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>6</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -184,26 +184,26 @@
 				
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>AdPortal UAT log in</span>
-						<span class='test-time'>Apr 16, 2020 05:21:38 PM</span>
+						<span class='test-name'>Reach intro page validation</span>
+						<span class='test-time'>Apr 21, 2020 09:20:48 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='pass'>
 	<div class='category-list'>
-		<span class='category label white-text'>@AdPortalLogInDefault</span>
+		<span class='category label white-text'>@ReachIntroPage</span>
 	</div>
-	<span class='duration right label'>0h 0m 9s+293ms</span>
+	<span class='duration right label'>0h 0m 9s+176ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Log in with default username and password</span>
+		<span class="desc-text">User selects next button on reach intro page</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node given pass' status='pass'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given User is on AdPortal UAT sign up page and clicks Login link</span>
+			<span class="bdd-step-name">Given User is logged into Ad Portal</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -211,7 +211,7 @@
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When User enters username and password and clicks log in</span>
+			<span class="bdd-step-name">When User is on the request dashBoard with drafts page</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -219,9 +219,33 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then User lands on request dashboard page</span>
+			<span class="bdd-step-name">Then User starts or continues with campaign</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='6' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then USer should land on intro step of the reach page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='7' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User clicks on next button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='8' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User should be taken to the Reach 1 of 3 page</span>
 			<ul class='screenshots right'>
-				<li><a data-featherlight="image" href="/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Test_Pass_Fail_ScreenShot/Log in with default username and password.png"><i class='material-icons'>panorama</i></a></li>
+				<li><a data-featherlight="image" href="/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Test_Pass_Fail_ScreenShot/User selects next button on reach intro page.png"><i class='material-icons'>panorama</i></a></li>
 			</ul>
 				<div class='pre'>passed</div>
 			
@@ -305,8 +329,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 16, 2020 05:21:38 PM</td>
-										<td class='linked' test-id='1'>AdPortal UAT log in</td>
+										<td>Apr 21, 2020 09:20:48 AM</td>
+										<td class='linked' test-id='1'>Reach intro page validation</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -316,7 +340,7 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@AdPortalLogInDefault</span>
+						<span class='category-name'>@ReachIntroPage</span>
 						<span class='category-status right'>
 							<span class='label pass'>1</span>
 						</span>
@@ -339,8 +363,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 16, 2020 05:21:38 PM</td>
-										<td class='linked' test-id='2'>AdPortal UAT log in.Log in with default username and password</td>
+										<td>Apr 21, 2020 09:20:48 AM</td>
+										<td class='linked' test-id='2'>Reach intro page validation.User selects next button on reach intro page</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -409,8 +433,8 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Apr 16, 2020 05:21:38 PM</td>
-                                                <td class='linked' test-id='2'>AdPortal UAT log in.Log in with default username and password</td>
+                                                <td>Apr 21, 2020 09:20:48 AM</td>
+                                                <td class='linked' test-id='2'>Reach intro page validation.User selects next button on reach intro page</td>
                                                 <td><span class='test-status pass'>pass</span></td>
                                             </tr>
                                         </tbody>
@@ -450,25 +474,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>3</div>
+					<div class='panel-lead'>6</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Apr 16, 2020 05:21:38 PM</div>
+					<div class='panel-lead'>Apr 21, 2020 09:20:48 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Apr 16, 2020 05:21:49 PM</div>
+			 		<div class='panel-lead'>Apr 21, 2020 09:20:58 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 10s+351ms</div>
+					<div class='panel-lead'>0h 0m 10s+262ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -486,7 +510,7 @@
 							</tr>
 							<tr>
 								<td>AUTOMATION</td>
-								<td>ADPORTAL</td>
+								<td>ADPORTAL UAT</td>
 							</tr>
 					</table>
 				</div>
@@ -513,7 +537,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@AdPortalLogInDefault</td>
+							<td>@ReachIntroPage</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -551,7 +575,7 @@
 				infoChild: 0,
 				exceptionsChild: 0,
 				
-				passGrandChild: 3,
+				passGrandChild: 6,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,

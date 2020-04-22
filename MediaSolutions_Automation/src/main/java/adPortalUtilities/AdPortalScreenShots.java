@@ -25,7 +25,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdportalRegressioin_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdportalRegressioin_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken!!!!");
 		} catch (IOException e) {
@@ -37,7 +37,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_LogIn_feature/AdPortalLoginTest_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_LogIn_feature/AdPortalLoginTest_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken!!!!");
 		} catch (IOException e) {
@@ -49,7 +49,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_SSU_LogIn_feature/SSU_SignUp"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_SSU_LogIn_feature/SSU_SignUp"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken!!!!");
 
@@ -62,7 +62,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_DashBoardView_feature/NewDashBoardView_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_DashBoardView_feature/NewDashBoardView_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken!!!!");
 
@@ -75,7 +75,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_DashBoardView_FAQ_Link_feature/FAQ_Link_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_DashBoardView_FAQ_Link_feature/FAQ_Link_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken!!!!");
 
@@ -88,7 +88,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_CreateCampaign_feature/Review_YourCampaign_Top_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_CreateCampaign_feature/Review_YourCampaign_Top_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken for the top section of the page!!!!");
 
@@ -102,7 +102,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_CreateCampaign_feature/Review_YourCampaign_Bottom_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_CreateCampaign_feature/Review_YourCampaign_Bottom_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken for Bottom section of the page!!!!");
 		} catch (IOException e) {
@@ -115,7 +115,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_CreateCampaign_feature/ReviewYourOrder_Top_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_CreateCampaign_feature/ReviewYourOrder_Top_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken for the top section of the page!!!!");
 
@@ -127,7 +127,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_CreateCampaign_feature/ReviewYourOrder_Bottom_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_CreateCampaign_feature/ReviewYourOrder_Bottom_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken for Bottom section of the page!!!!");
 		} catch (IOException e) {
@@ -139,7 +139,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_CreateCampaign_feature/CreateCampaignUserInPut_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_CreateCampaign_feature/CreateCampaignUserInPut_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken!!!!");
 
@@ -152,7 +152,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_CreateCampaign_feature/CheckOutPage_Top_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_CreateCampaign_feature/CheckOutPage_Top_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken for the top section of the page!!!!");
 
@@ -164,7 +164,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_CreateCampaign_feature/CheckOutPage_Bottom_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_CreateCampaign_feature/CheckOutPage_Bottom_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken for Bottom section of the page!!!!");
 		} catch (IOException e) {
@@ -176,7 +176,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_CreateCampaign_feature/AdPortal_Upload_Your_Own_Commercial_feature_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_CreateCampaign_feature/AdPortal_Upload_Your_Own_Commercial_feature_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken for the top section of the page!!!!");
 
@@ -189,7 +189,7 @@ public class AdPortalScreenShots {
 		try {
 			source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(source, new File(
-					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Atuomation Test Screenshot/AdPortal_ReachIntroPage_feature/Reach_1_of_3_Page_"
+					"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Automation Test Screenshot/AdPortal_ReachIntroPage_feature/Reach_1_of_3_Page_"
 							+ timeStamp + ".png"));
 			System.out.println("Screenshot Taken!!!!");
 

@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="174080" started-at="2020-04-17T16:21:49 MDT" finished-at="2020-04-17T16:24:43 MDT">
+  <suite name="Default suite" duration-ms="203167" started-at="2020-04-21T09:28:22 MDT" finished-at="2020-04-21T09:31:46 MDT">
     <groups>
       <group name="cucumber">
         <method signature="RegressionTestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" class="cucmberTestNGTestRunner.RegressionTestRunner"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="174080" started-at="2020-04-17T16:21:49 MDT" finished-at="2020-04-17T16:24:43 MDT">
+    <test name="Default test" duration-ms="203167" started-at="2020-04-21T09:28:22 MDT" finished-at="2020-04-21T09:31:46 MDT">
       <class name="cucmberTestNGTestRunner.RegressionTestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="setUpClass" is-config="true" duration-ms="162" started-at="2020-04-17T16:21:49 MDT" finished-at="2020-04-17T16:21:49 MDT">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="setUpClass" is-config="true" duration-ms="146" started-at="2020-04-21T09:28:22 MDT" finished-at="2020-04-21T09:28:23 MDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="84877" started-at="2020-04-17T16:21:49 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-17T16:23:14 MDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="113472" started-at="2020-04-21T09:28:23 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-21T09:30:16 MDT">
           <params>
             <param index="0">
               <value>
@@ -25,7 +25,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="7052" started-at="2020-04-17T16:23:14 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-17T16:23:21 MDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="6741" started-at="2020-04-21T09:30:16 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-21T09:30:23 MDT">
           <params>
             <param index="0">
               <value>
@@ -36,7 +36,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="25259" started-at="2020-04-17T16:23:21 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-17T16:23:46 MDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="25185" started-at="2020-04-21T09:30:23 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-21T09:30:48 MDT">
           <params>
             <param index="0">
               <value>
@@ -47,7 +47,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="31156" started-at="2020-04-17T16:23:46 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-17T16:24:17 MDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="32156" started-at="2020-04-21T09:30:48 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-21T09:31:20 MDT">
           <params>
             <param index="0">
               <value>
@@ -58,7 +58,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="6916" started-at="2020-04-17T16:24:17 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-17T16:24:24 MDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="6812" started-at="2020-04-21T09:31:20 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-21T09:31:27 MDT">
           <params>
             <param index="0">
               <value>
@@ -69,7 +69,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="18296" started-at="2020-04-17T16:24:24 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-17T16:24:43 MDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="feature" duration-ms="18304" started-at="2020-04-21T09:31:27 MDT" description="Runs cucmber Features" data-provider="features" finished-at="2020-04-21T09:31:45 MDT">
           <params>
             <param index="0">
               <value>
@@ -80,7 +80,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="testDownClass()[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="testDownClass" is-config="true" duration-ms="277" started-at="2020-04-17T16:24:43 MDT" finished-at="2020-04-17T16:24:43 MDT">
+        <test-method status="PASS" signature="testDownClass()[pri:0, instance:cucmberTestNGTestRunner.RegressionTestRunner@6a79c292]" name="testDownClass" is-config="true" duration-ms="273" started-at="2020-04-21T09:31:45 MDT" finished-at="2020-04-21T09:31:46 MDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDownClass -->

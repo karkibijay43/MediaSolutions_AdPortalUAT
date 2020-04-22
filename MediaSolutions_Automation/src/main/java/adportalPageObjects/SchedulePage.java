@@ -44,7 +44,7 @@ public class SchedulePage extends CommercialPage {
 		List<WebElement> allStartDates = driver.findElements(date_Button);
 		for (WebElement dates : allStartDates) {
 			String date = dates.getText();
-			if (date.equalsIgnoreCase("27")) {
+			if (date.equalsIgnoreCase("4")) {
 				dates.click();
 				break;
 			}
@@ -56,7 +56,7 @@ public class SchedulePage extends CommercialPage {
 		List<WebElement> allEndDates = driver.findElements(date_Button);
 		for (WebElement dates : allEndDates) {
 			String date = dates.getText();
-			if (date.equalsIgnoreCase("3")) {
+			if (date.equalsIgnoreCase("10")) {
 				dates.click();
 				break;
 			}

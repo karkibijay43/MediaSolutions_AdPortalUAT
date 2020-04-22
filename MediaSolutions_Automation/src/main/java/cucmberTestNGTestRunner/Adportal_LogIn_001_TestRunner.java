@@ -56,13 +56,11 @@ public class Adportal_LogIn_001_TestRunner {
 
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() throws IOException {
-		  Reporter.setSystemInfo("OS", "MAC"); 
-		  Reporter.setSystemInfo("AUTOMATION", "ADPORTAL"); 
-		  Reporter.assignAuthor("Bijay Karki");	
-		  Reporter.addScreenCaptureFromPath("/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Test_Pass_Fail_ScreenShot/Log in with default username and password.png");		
-		  testNGCucumberRunner.finish();
-		//driver = WebDriverManager.getDriver();
-		//driver.close();
+		Reporter.setSystemInfo("OS", "MAC");
+		Reporter.setSystemInfo("AUTOMATION", "ADPORTAL");
+		Reporter.assignAuthor("Bijay Karki");
+		// driver = WebDriverManager.getDriver();
+		// driver.close();
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();
 	}

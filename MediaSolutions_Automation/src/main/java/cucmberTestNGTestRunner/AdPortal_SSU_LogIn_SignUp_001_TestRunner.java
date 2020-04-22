@@ -10,6 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.cucumber.listener.ExtentProperties;
+import com.cucumber.listener.Reporter;
 
 import adPortalManagers.WebDriverManager;
 import cucumber.api.CucumberOptions;
@@ -54,6 +55,9 @@ public class AdPortal_SSU_LogIn_SignUp_001_TestRunner {
 
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() {
+		Reporter.setSystemInfo("OS", "MAC");
+		Reporter.setSystemInfo("AUTOMATION", "ADPORTAL");
+		Reporter.assignAuthor("Bijay Karki");
 		testNGCucumberRunner.finish();
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();

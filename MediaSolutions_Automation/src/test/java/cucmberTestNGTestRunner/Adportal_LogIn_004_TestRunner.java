@@ -17,8 +17,7 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-		features = //"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_LogIn_001.feature", 
-				"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/test/resources/adportalfeatures/AdPortal_LogIn_001.feature",
+		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/test/resources/adportalfeatures/AdPortal_LogIn_001.feature",
 		glue = {"adPortalstepdefinitions" 
 				
 		}, 
@@ -31,11 +30,10 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 )
 
-public class Adportal_LogIn_001_TestRunner {
+public class Adportal_LogIn_004_TestRunner {
+	private TestNGCucumberRunner testNGCucumberRunner;
 	WebDriver driver;
 	WebDriverManager webDriverManager;
-
-	static TestNGCucumberRunner testNGCucumberRunner;
 
 	@BeforeClass(alwaysRun = true)
 	public void setUpClass() {

@@ -16,8 +16,7 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-		features = //"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_Reach_Intro_Page.feature",
-				"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/test/resources/adportalfeatures/AdPortal_Reach_Intro_Page.feature", 
+		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/test/resources/adportalfeatures/AdPortal_Reach_Intro_Page.feature", 
 		glue = {
 				"adPortalstepdefinitions" 
 		}, 

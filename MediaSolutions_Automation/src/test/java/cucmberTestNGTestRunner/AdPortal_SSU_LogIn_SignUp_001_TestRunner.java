@@ -18,8 +18,7 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-		features= //"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_SSU_LogIn_SignUp_001.feature",
-				"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/test/resources/adportalfeatures/AdPortal_SSU_LogIn_SignUp_001.feature",
+		features= "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/test/resources/adportalfeatures/AdPortal_SSU_LogIn_SignUp_001.feature",
 		glue= {"adPortalstepdefinitions"
 				
 		},

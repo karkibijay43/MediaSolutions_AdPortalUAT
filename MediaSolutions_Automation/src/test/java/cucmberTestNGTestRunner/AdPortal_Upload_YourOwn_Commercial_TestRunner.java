@@ -16,30 +16,29 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_Reach_Intro_Page.feature", 
+		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/test/resources/adportalfeatures/AdPortal_Upload_YourOwn_Commercial.feature", 
 		glue = {
-				"adPortalstepdefinitions" 
+		"adPortalstepdefinitions"
 		}, 
-		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
-		// AdPortalRegressionTestReport/AdPortalLogInDefaultReport.html"
-		}, 
-		tags = { "@ReachIntroPage" 
-				
+		plugin = { 
+		"com.cucumber.listener.ExtentCucumberFormatter:",
+		"rerun:target/rerun.txt"
 		},
-		monochrome = true
-)
+		monochrome = true, 
+		dryRun = false
 
-public class AdPortal_Reach_Intro_Page_TestRunner {
+)
+public class AdPortal_Upload_YourOwn_Commercial_TestRunner {
+	private TestNGCucumberRunner testNGCucumberRunner;
 	WebDriver driver;
 	WebDriverManager webDriverManager;
-
-	static TestNGCucumberRunner testNGCucumberRunner;
 
 	@BeforeClass(alwaysRun = true)
 	public void setUpClass() {
 		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		extentProperties.setReportPath("AdPortalRegressionTestReport/ReachIntroPage_" + timeStamp + ".html");
+		extentProperties
+				.setReportPath("AdPortalRegressionTestReport/Commercial_Upload_" + timeStamp + ".html");
 		testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 	}
 
@@ -62,5 +61,4 @@ public class AdPortal_Reach_Intro_Page_TestRunner {
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();
 	}
-
 }

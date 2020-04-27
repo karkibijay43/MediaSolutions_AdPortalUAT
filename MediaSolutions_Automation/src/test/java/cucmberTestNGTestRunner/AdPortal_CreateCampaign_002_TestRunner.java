@@ -1,49 +1,43 @@
 package cucmberTestNGTestRunner;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.cucumber.listener.ExtentProperties;
 import com.cucumber.listener.Reporter;
 
-import adPortal.extentReporter.TestListener;
 import adPortalManagers.WebDriverManager;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures", 
-		glue = {
-				"adPortalstepdefinitions" 
-		}, 
+		features= //"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_CreateCampaign_002.feature",
+				"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/test/resources/adportalfeatures/AdPortal_CreateCampaign_002.feature",
+		glue= {"adPortalstepdefinitions"
+				
+		},
 		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
-
-		}, 
-		tags = { "@AdPortalLogInDefault,@SSULogIn,@DashBoardView,@CreateCampaignDefault,@FAQLink,@ReachIntroPage"
-
 		},
 		monochrome = true
-)
-
-public class RegressionTestRunner extends TestListener {
-
-	static TestNGCucumberRunner testNGCucumberRunner;
+		
+		
+ )
+public class AdPortal_CreateCampaign_002_TestRunner {
+	private TestNGCucumberRunner testNGCucumberRunner;
 	WebDriver driver;
 	WebDriverManager webDriverManager;
-
 	@BeforeClass(alwaysRun = true)
 	public void setUpClass() {
 		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		extentProperties.setReportPath(
-				"/Users/p2815492/Syncplicity Folders/Media Solutions (James.A.Harris@charter.com )/Quality Assurance/Automation Testing Repo/Adportal Automation Test Report/RegressionSuite_Test_Report"
-						+ timeStamp + ".html");
+		extentProperties.setReportPath("AdPortalRegressionTestReport/CreateCampaignUserInPutReport_" + timeStamp + ".html");
 		testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 	}
 
@@ -58,13 +52,12 @@ public class RegressionTestRunner extends TestListener {
 	}
 
 	@AfterClass(alwaysRun = true)
-	public void testDownClass() throws IOException {
+	public void testDownClass() {
 		Reporter.setSystemInfo("OS", "MAC");
 		Reporter.setSystemInfo("AUTOMATION", "ADPORTAL");
-		Reporter.assignAuthor("Bijay");
+		Reporter.assignAuthor("Bijay Karki");
 		testNGCucumberRunner.finish();
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();
 	}
-
 }

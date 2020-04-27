@@ -18,31 +18,29 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-		features = "/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_NewUser_FAQ_link_Functionality.feature", 
-		glue = {
-				"adPortalstepdefinitions" 
-		}, 
-		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
-		}, 
-		tags = { "@FAQLink"
-
+		features= //"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_SSU_LogIn_SignUp_001.feature",
+				"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/test/resources/adportalfeatures/AdPortal_SSU_LogIn_SignUp_001.feature",
+		glue= {"adPortalstepdefinitions"
+				
 		},
-
+		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
+				
+		},
+				
 		monochrome = true
-)
+		
+ )
 
-public class AdPortal_NewUser_FAQ_link_Functionality_TestRunner {
+public class AdPortal_SSU_LogIn_SignUp_001_TestRunner {
+	private TestNGCucumberRunner testNGCucumberRunner;
 	WebDriver driver;
 	WebDriverManager webDriverManager;
-
-	static TestNGCucumberRunner testNGCucumberRunner;
 
 	@BeforeClass(alwaysRun = true)
 	public void setUpClass() {
 		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		extentProperties.setReportPath(
-				"AdPortalRegressionTestReport/AdPortal_NewUser_FAQ_link_Functionality_" + timeStamp + ".html");
+		extentProperties.setReportPath("AdPortalRegressionTestReport/SSULogInSignUpReport_" + timeStamp + ".html");
 		testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 	}
 
@@ -65,5 +63,4 @@ public class AdPortal_NewUser_FAQ_link_Functionality_TestRunner {
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();
 	}
-
 }

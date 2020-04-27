@@ -1,45 +1,47 @@
 package cucmberTestNGTestRunner;
 
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.cucumber.listener.ExtentProperties;
 import com.cucumber.listener.Reporter;
-
 import adPortalManagers.WebDriverManager;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-		features="/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_SSU_LogIn_SignUp_001.feature",
-		glue= {"adPortalstepdefinitions"
+		features = //"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/main/java/adportalfeatures/AdPortal_LogIn_001.feature", 
+				"/Users/p2815492/git/MediaSolutionsRepo/MediaSolutions_Automation/src/test/resources/adportalfeatures/AdPortal_LogIn_001.feature",
+		glue = {"adPortalstepdefinitions" 
 				
-		},
+		}, 
 		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:"
+		}, 
+		tags = { "@AdPortalLogInDefault" 
 				
 		},
-				
 		monochrome = true
-		
- )
 
-public class AdPortal_SSU_LogIn_SignUp_001_TestRunner {
-	private TestNGCucumberRunner testNGCucumberRunner;
+)
+
+public class Adportal_LogIn_001_TestRunner {
 	WebDriver driver;
 	WebDriverManager webDriverManager;
+
+	static TestNGCucumberRunner testNGCucumberRunner;
 
 	@BeforeClass(alwaysRun = true)
 	public void setUpClass() {
 		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		extentProperties.setReportPath("AdPortalRegressionTestReport/SSULogInSignUpReport_" + timeStamp + ".html");
+		extentProperties.setReportPath("AdPortalRegressionTestReport/AdPortalLogInDefaultReport_" + timeStamp + ".html");
 		testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 	}
 
@@ -54,11 +56,12 @@ public class AdPortal_SSU_LogIn_SignUp_001_TestRunner {
 	}
 
 	@AfterClass(alwaysRun = true)
-	public void testDownClass() {
+	public void testDownClass() throws IOException {
 		Reporter.setSystemInfo("OS", "MAC");
 		Reporter.setSystemInfo("AUTOMATION", "ADPORTAL");
 		Reporter.assignAuthor("Bijay Karki");
-		testNGCucumberRunner.finish();
+		// driver = WebDriverManager.getDriver();
+		// driver.close();
 		webDriverManager = new WebDriverManager();
 		webDriverManager.closeDriver();
 	}
